@@ -1,0 +1,17 @@
+# Tools
+git
+
+# Interpreters
+python3
+apache2
+
+# Php
+php
+php-mysqli
+php-xml
+php-json
+php-mbstring
+php-phar
+php-intl
+gcc
+libgd-dev
