@@ -204,7 +204,7 @@ class StreamUpgrader extends SetupWizard {
             $email->sendAlert($thisstaff->getEmail(), $subject, $error);
         } else {//no luck - try the system mail.
             osTicket\Mail\Mailer::sendmail($thisstaff->getEmail(), $subject, $error,
-                '"'._S('osTicket Alerts')."\" <{$thisstaff->getEmail()}>");
+                '"'._S('autoTicket Alerts')."\" <{$thisstaff->getEmail()}>");
         }
 
     }

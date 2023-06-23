@@ -67,7 +67,7 @@ UPDATE `%TABLE_PREFIX%email` as T1 JOIN `%TABLE_PREFIX%email_pop3` as T2 ON(T1.e
 -- Transfer alert email configuration
 INSERT INTO `%TABLE_PREFIX%email` (`created`, `updated`, `priority_id`,
     `dept_id`, `name`, `email`)
-    SELECT NOW(), NOW(), 2, COALESCE(`default_dept_id`, 1), 'osTicket Alerts',
+    SELECT NOW(), NOW(), 2, COALESCE(`default_dept_id`, 1), 'autoTicket Alerts',
         `alert_email`
     FROM `%TABLE_PREFIX%config` WHERE `id`=1;
 
