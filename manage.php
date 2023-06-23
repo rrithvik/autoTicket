@@ -25,7 +25,7 @@ require_once 'bootstrap.php';
 require_once CLI_DIR . 'cli.inc.php';
 class Manager extends Module {
     var $prologue =
-        "Manage one or more osTicket installations";
+        "Manage one or more autoTicket installations";
 
     var $arguments = array(
         'action' => "Action to be managed"

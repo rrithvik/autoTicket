@@ -18,3 +18,8 @@ stage
 include/mpdf/ttfontdata
 include/mpdf/tmp
 nbproject/
+
+CREATE
+USE
+mysql
+select

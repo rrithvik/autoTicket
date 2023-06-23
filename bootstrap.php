@@ -340,8 +340,8 @@ class Bootstrap {
 
     static function croak($message) {
         $msg = $message."\n\n".THISPAGE;
-        osTicket\Mail\Mailer::sendmail(ADMIN_EMAIL, 'osTicket Fatal Error', $msg,
-            sprintf('"osTicket Alerts"<%s>', ADMIN_EMAIL));
+        osTicket\Mail\Mailer::sendmail(ADMIN_EMAIL, 'autoTicket Fatal Error', $msg,
+            sprintf('"autoTicket Alerts"<%s>', ADMIN_EMAIL));
         //Display generic error to the user
         Http::response(500, "<b>Fatal Error:</b> Contact system administrator.");
     }

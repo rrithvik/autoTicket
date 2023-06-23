@@ -1,9 +1,9 @@
 autoTicket
 ========
-<a href="https://osticket.com"><img height="80px" width="80px" src="images/favicon.png"
-align="left" hspace="10" vspace="6"></a>
+<img height="80px" width="80px" src="images/favicon.png"
+align="left" hspace="10" vspace="6">
 
-**osTicket** is a widely-used open source support ticket system. It seamlessly
+**autoTicket** is an expansion of osTicket, a widely-used open source support ticket system. It seamlessly
 integrates inquiries created via email, phone and web-based forms into a
 simple easy-to-use multi-user web interface. Manage, organize and archive
 all your support requests and responses in one place while providing your
@@ -15,7 +15,7 @@ How autoTicket works for you
   1. Incoming tickets are saved and assigned to agents
   1. Agents help your users resolve their issues
 
-osTicket is an attractive alternative to higher-cost and complex customer
+autoTicket is an attractive alternative to higher-cost and complex customer
 support systems; simple, lightweight, reliable, open source, web-based and
 easy to setup and use. The best part is, it's completely free.
 
@@ -32,83 +32,59 @@ Requirements
 
 Deployment
 ----------
-osTicket now supports bleeding-edge installations. The easiest way to
+autoTicket now supports bleeding-edge installations. The easiest way to
 install the software and track updates is to clone the public repository.
 Create a folder on you web server (using whatever method makes sense for
 you) and cd into it. Then clone the repository (the folder must be empty!):
 
-    git clone https://github.com/osTicket/osTicket
+    git clone https://github.com/rrithvik/autoTicket
+
+And install the required dependencies. (Note: There may be more dependencies required during the setup)
+
+    pip install requirements.txt
+    sed 's/#.*//' requirements-apt.txt | xargs sudo apt-get install
 
 And deploy the code into somewhere in your server's www root folder, for
 instance
 
-    cd osTicket
-    php manage.php deploy --setup /var/www/htdocs/osticket/
+    cd autoTicket
+    php manage.php deploy --setup /var/www/htdocs/autoticket/
 
 Then you can configure your server if necessary to serve that folder, and
-visit the page and install osTicket as usual. Go ahead and even delete
+visit the page and install autoTicket as usual. Go ahead and even delete
 setup/ folder out of the deployment location when you’re finished. Then,
 later, you can fetch updates and deploy them (from the folder where you
 cloned the git repo into)
 
     git pull
-    php manage.php deploy -v /var/www/htdocs/osticket/
-
-Upgrading
----------
-osTicket supports upgrading from 1.6-rc1 and later versions. As with any
-upgrade, strongly consider a backup of your attachment files, database, and
-osTicket codebase before embarking on an upgrade.
-
-To trigger the update process, fetch the osTicket tarball from either
-the osTicket [github](http://github.com/osTicket/osTicket/releases) page
-or from the [osTicket website](https://osticket.com). Extract the tarball
-into the folder of your osTicket codebase. This can also be accomplished
-with the zip file, and a FTP client can of course be used to upload the new
-source code to your server.
-
-Any way you choose your adventure, when you have your codebase upgraded to
-osTicket-1.7, visit the /scp page of you ticketing system. The upgrader will
-be presented and will walk you through the rest of the process. (The couple
-clicks needed to go through the process are pretty boring to describe).
-
-### Upgrading from v1.6
-**WARNING**: If you are upgrading from osTicket 1.6, please ensure that all
-    your files in your upload folder are both readable and writable to your
-    http server software. Unreadable files will not be migrated to the
-    database during the upgrade and will be effectively lost.
-
-After upgrading, we recommend migrating your attachments to the database or
-to the new filesystem plugin. Use the `file` command-line applet to perform
-the migration.
-
-    php manage.php file migrate --backend=6 --to=D
-
-View the UPGRADING.txt file for other todo items to complete your upgrade.
+    php manage.php deploy -v /var/www/htdocs/autoTicket/
 
 Help
 ----
 Visit the [Documentation](https://docs.osticket.com/) or the
 [forum](https://forum.osticket.com/). And if you'd like professional help
-managing your osTicket installation,
+managing your autoTicket installation,
 [commercial support](https://osticket.com/support/) is available.
+Many of the issues you may face can be addressed in the osTicket. If the 
+answer to your issue does not exist there, please ask the question in 
+autoTicket's issue's tab.
 
 Contributing
 ------------
 Create your own fork of the project and use
 [git-flow](https://github.com/nvie/gitflow) to create a new feature. Once
 the feature is published in your fork, send a pull request to begin the
-conversation of integrating your new feature into osTicket.
+conversation of integrating your new feature into autoTicket.
 
 ### Localization
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/osticket-official/localized.png)](http://i18n.osticket.com/project/osticket-official)
 
-The interface for osTicket is now completely translatable. Language packs
+The interface for autoTicket is now completely translatable. Language packs
 are available on the [download page](https://osticket.com/download). If you
 do not see your language there, join the [Crowdin](https://crowdin.com/project/osticket-official)
 project and request to have your language added. Languages which reach 100%
 translated are are significantly reviewed will be made available on the
-osTicket download page.
+autoTicket download page.
 
 The software can also be translated in place in our [JIPT site](http://jipt.i18n.osticket.com).
 Once you have a Crowdin account, login and translate the software in your browser!
@@ -117,11 +93,11 @@ Localizing strings in new code requires usage of a [few rules](setup/doc/i18n.md
 
 License
 -------
-osTicket is released under the GPL2 license. See the included LICENSE.txt
+autoTicket is released under the GPL2 license. See the included LICENSE.txt
 file for the gory details of the General Public License.
 
-osTicket is supported by several magical open source projects including:
-
+autoTicket is supported by several magical open source projects including:
+  * [osTicket](https://github.com/osTicket/osTicket/)
   * [Font-Awesome](http://fortawesome.github.com/Font-Awesome/)
   * [HTMLawed](http://www.bioinformatics.org/phplabware/internal_utilities/htmLawed)
   * [jQuery dropdown](http://labs.abeautifulsite.net/jquery-dropdown/)

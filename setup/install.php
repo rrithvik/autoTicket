@@ -24,8 +24,8 @@ define('OSTICKET_CONFIGFILE','../include/ost-config.php'); //XXX: Make sure the 
 
 $installer = new Installer(OSTICKET_CONFIGFILE); //Installer instance.
 $wizard=array();
-$wizard['title']=__('osTicket Installer');
-$wizard['tagline']=sprintf(__('Installing osTicket %s'),$installer->getVersionVerbose());
+$wizard['title']=__('autoTicket Installer');
+$wizard['tagline']=sprintf(__('Installing autoTicket %s'),$installer->getVersionVerbose());
 $wizard['logo']='logo.png';
 $wizard['menu']=array(__('Installation Guide')=>'https://docs.osticket.com/en/latest/Getting%20Started/Installation.html',
         __('Get Professional Help')=>'https://osticket.com/support');
@@ -57,7 +57,7 @@ if($_POST && $_POST['s']) {
                 $_SESSION['ost_installer']['s']='done';
             } elseif(!($errors=$installer->getErrors()) || !$errors['err']) {
                 $errors['err'] = sprintf('%s %s',
-                    __('Error installing osTicket.'),
+                    __('Error installing autoTicket.'),
                     __('Correct any errors below and try again.'));
             }
             break;
