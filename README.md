@@ -41,7 +41,7 @@ you) and cd into it. Then clone the repository (the folder must be empty!):
 
 And install the required dependencies. (Note: There may be more dependencies required during the setup)
 
-    pip install requirements.txt
+    pip install  -r requirements.txt
     sed 's/#.*//' requirements-apt.txt | xargs sudo apt-get install
 
 And deploy the code into somewhere in your server's www root folder, for
