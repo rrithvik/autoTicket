@@ -1,7 +1,7 @@
 @import url("../../css/font-awesome.min.css");
 body { background: url('../images/background.jpg?1312906017') top left repeat-x white; font-family: arial, helvetica, sans-serif; font-size: 10pt; color: #000; margin: 0; padding: 0; line-height: 1.3em; }
 
-#wizard { background: #fff; width: 800px; margin: 30px auto; padding: 10px; border: 1px solid #2a67ac; border-right: 2px solid #2a67ac; border-bottom: 3px solid #2a67ac; overflow: hidden; margin-bottom:5px;}
+#wizard { background: #fff; width: fit-content; margin: 30px auto; padding: 20px; border: 2px solid #2a67ac; border-right: 2px solid #2a67ac; border-bottom: 3px solid #2a67ac; overflow: auto; margin-bottom:5px;}
 
 a { color: #2a67ac; display: inline-block; }
 
@@ -47,23 +47,23 @@ ul.progress li.no small {color:red;}
 }
 
 #bar { clear: both; padding-top: 10px; height: 24px; line-height: 24px; text-align: center; border-top: 1px solid #aaaaaa; }
-#bar a, #bar .btn { display: inline-block; margin: 0; height: 24px; line-height: 24px; font-weight: bold; border: 1px solid #666666; text-decoration: none; padding: 0 10px; background: url('../images/grey_btn_bg.png?1312910883') top left repeat-x; color: #333; }
+#bar a, #bar .btn { display: inline-block; padding: 0 10px; }
 #bar a:hover, #bar .btn:hover, #bar .btnover { background-position: bottom left; }
 #bar a.unstyled, #bar a.unstyled:hover { font-weight: normal; background: none; border: none; text-decoration: underline; color: #2a67ac; }
 
 #bar.error { background: #ffd; text-align: center; color: #a00; font-weight: bold; }
 
-form { margin: 0; padding: 0; }
-form h4.head { display: block; clear: both; border-top: 1px solid #2a67ac; height: 16px; line-height: 16px; padding: 5px 5px 5px 24px; margin: 10px 0 0 0; font-size: 10pt; background-position: 5px 50%; background-repeat: no-repeat; background-color: #e7f1fd; }
-form span.subhead { display: block; background: #f4f4f4; border-bottom: 1px solid #cccccc; margin-bottom: 3px; padding: 3px 5px 3px 24px; font-style: italic; font-size: 9pt; }
-form h4.system { background-image: url('../images/system.png?1262713696'); }
-form h4.admin { background-image: url('../images/user.png?1262713720'); }
-form h4.database { background-image: url('../images/database.png?1262713698'); }
-form h4.email { background-image: url('../images/email.png?1142218352'); }
-form .row { clear: both; padding: 2px 0 0 24px; background: #F7FBFE; }
-form .row input { background: #fff; height: 22px; padding: 0 5px; line-height: 22px; border: 1px solid #cccccc; }
-form .row label, form .row span { display: block; line-height: 24px; padding: 0 5px; }
-form .row span { width: 600px; color: #666666; }
+/*form { margin: 0; padding: 0; }*/
+/*form h4.head { display: block; clear: both; border-top: 1px solid #2a67ac; height: 16px; line-height: 16px; padding: 5px 5px 5px 24px; margin: 10px 0 0 0; font-size: 10pt; background-position: 5px 50%; background-repeat: no-repeat; background-color: #e7f1fd; }*/
+/*form span.subhead { display: block; background: #f4f4f4; border-bottom: 1px solid #cccccc; margin-bottom: 3px; padding: 3px 5px 3px 24px; font-style: italic; font-size: 9pt; }*/
+/*form h4.system { background-image: url('../images/system.png?1262713696'); }*/
+/*form h4.admin { background-image: url('../images/user.png?1262713720'); }*/
+/*form h4.database { background-image: url('../images/database.png?1262713698'); }*/
+/*form h4.email { background-image: url('../images/email.png?1142218352'); }*/
+/*form .row { clear: both; padding: 2px 0 0 24px; background: #F7FBFE; }*/
+/*form .row input { background: #fff; height: 22px; padding: 0 5px; line-height: 22px; border: 1px solid #cccccc; }*/
+/*form .row label, form .row span { display: block; line-height: 24px; padding: 0 5px; }*/
+/*form .row span { width: 600px; color: #666666; }*/
 
 .tip_box {
     display:block;

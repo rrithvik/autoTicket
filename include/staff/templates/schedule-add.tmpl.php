@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><?php echo __('Add New Schedule'); ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 <form method="post" action="<?php echo $action; ?>">
 <?php echo csrf_token(); ?>
@@ -25,8 +25,8 @@ if ($schedule) { ?>
 <hr>
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="reset" value="<?php echo __('Reset'); ?>">
-        <input type="button" value="<?php echo __('Cancel'); ?>" class="close">
+        <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+        <input class="btn btn-danger close" type="button" value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">
         <input type="submit" value="<?php echo __('Create'); ?>">

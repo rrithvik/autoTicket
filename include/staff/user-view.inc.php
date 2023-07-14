@@ -15,7 +15,7 @@ $extras = new ArrayObject();
 <?php if (($account && $account->isConfirmed())
     || $thisstaff->hasPerm(User::PERM_EDIT)) { ?>
             <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
-                <i class="icon-caret-down pull-right"></i>
+                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <span><i class="icon-cog"></i> <?php echo __('More'); ?></span>
             </span>
 <?php }
@@ -169,7 +169,7 @@ if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
 </div>
 <div class="hidden dialog" id="confirm-action">
     <h3><?php echo __('Please Confirm'); ?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" style="display:none;" id="banemail-confirm">
         <?php echo sprintf(__('Are you sure you want to <b>ban</b> %s?'), $user->getEmail()); ?>
@@ -195,7 +195,7 @@ if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
         <hr style="margin-top:1em"/>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="button" value="<?php echo __('Cancel'); ?>" class="close">
+                <input class="btn btn-danger close" type="button" value="<?php echo __('Cancel'); ?>">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('OK'); ?>">

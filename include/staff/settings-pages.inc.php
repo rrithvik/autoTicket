@@ -23,7 +23,7 @@ $pages = Page::getPages();
 </ul>
 
 <div class="tab_content" id="basic-information">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
     <?php
         $form = $ost->company->getForm();
@@ -34,7 +34,7 @@ $pages = Page::getPages();
 </table>
 </div>
 <div class="hidden tab_content" id="site-pages">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -109,7 +109,7 @@ $pages = Page::getPages();
 </table>
 </div>
 <div class="hidden tab_content" id="logos">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -131,13 +131,13 @@ $pages = Page::getPages();
                     <tbody>
                         <tr>
                             <td>
-                                <input type="radio" name="selected-logo" value="0"
+                                <input class="form-check-input" type="radio" name="selected-logo" value="0"
                                        style="margin-left: 1em"
                                        <?php if (!$ost->getConfig()->getClientLogoId())
                                         echo 'checked="checked"'; ?>/>
                             </td>
                             <td>
-                                <input type="radio" name="selected-logo-scp" value="0"
+                                <input class="form-check-input" type="radio" name="selected-logo-scp" value="0"
                                        style="margin-left: 1em"
                                        <?php if (!$ost->getConfig()->getStaffLogoId())
                                             echo 'checked="checked"'; ?>/>
@@ -166,14 +166,14 @@ $pages = Page::getPages();
                         foreach (AttachmentFile::allLogos() as $logo) { ?>
                         <tr>
                             <td>
-                                <input type="radio" name="selected-logo"
+                                <input class="form-check-input" type="radio" name="selected-logo"
                                        style="margin-left: 1em" value="<?php
                             echo $logo->getId(); ?>" <?php
                             if ($logo->getId() == $current)
                                 echo 'checked="checked"'; ?>/>
                             </td>
                             <td>
-                                <input type="radio" name="selected-logo-scp"
+                                <input class="form-check-input" type="radio" name="selected-logo-scp"
                                        style="margin-left: 1em" value="<?php
                             echo $logo->getId(); ?>" <?php
                             if ($logo->getId() == $currentScp)
@@ -187,7 +187,7 @@ $pages = Page::getPages();
                                             vertical-align: middle;"/>
                                 <?php if ($logo->getId() != $current && $logo->getId() != $currentScp) { ?>
                                 <label class="checkbox inline">
-                                    <input type="checkbox" name="delete-logo[]" value="<?php
+                                    <input class="form-check-input" type="checkbox" name="delete-logo[]" value="<?php
                                     echo $logo->getId(); ?>"/> <?php echo __('Delete'); ?>
                                 </label>
                                 <?php } ?>
@@ -206,7 +206,7 @@ $pages = Page::getPages();
 </div>
 
 <div class="hidden tab_content" id="backdrops">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -228,7 +228,7 @@ $pages = Page::getPages();
                     <tbody>
                         <tr>
                             <td>
-                                <input type="radio" name="selected-backdrop" value="0"
+                                <input class="form-check-input" type="radio" name="selected-backdrop" value="0"
                                        style="margin-left: 1em"
                                        <?php if (!$ost->getConfig()->getStaffLogoId())
                                             echo 'checked="checked"'; ?>/>
@@ -252,7 +252,7 @@ $pages = Page::getPages();
                         foreach (AttachmentFile::allBackdrops() as $logo) { ?>
                         <tr>
                             <td>
-                                <input type="radio" name="selected-backdrop"
+                                <input class="form-check-input" type="radio" name="selected-backdrop"
                                        style="margin-left: 1em" value="<?php
                             echo $logo->getId(); ?>" <?php
                             if ($logo->getId() == $current)
@@ -266,7 +266,7 @@ $pages = Page::getPages();
                                             vertical-align: middle;"/>
                                 <?php if ($logo->getId() != $current) { ?>
                                 <label class="checkbox inline">
-                                    <input type="checkbox" name="delete-backdrop[]" value="<?php
+                                    <input class="form-check-input" type="checkbox" name="delete-backdrop[]" value="<?php
                                     echo $logo->getId(); ?>"/> <?php echo __('Delete'); ?>
                                 </label>
                                 <?php } ?>
@@ -288,14 +288,14 @@ $pages = Page::getPages();
 <p style="text-align:center;">
     <input class="button" type="submit" name="submit-button" value="<?php
     echo __('Save Changes'); ?>">
-    <input class="button" type="reset" name="reset" value="<?php
+    <input class="btn btn-secondary button" type="reset" name="reset" value="<?php
     echo __('Reset Changes'); ?>">
 </p>
 </form>
 
 <div style="display:none;" class="dialog" id="confirm-action">
     <h3><?php echo __('Please Confirm'); ?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" id="delete-confirm">
         <font color="red"><strong><?php echo sprintf(
@@ -307,10 +307,10 @@ $pages = Page::getPages();
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="btn btn-danger close">
         </span>
         <span class="buttons pull-right">
-            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">
+            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="btn btn-success confirm">
         </span>
      </p>
     <div class="clear"></div>

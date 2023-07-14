@@ -29,7 +29,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     — <?php echo $info['name']; ?></small>
      <?php } ?>
 </h2>
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -53,9 +53,9 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <span>
-                <label><input type="radio" name="isactive" value="1" <?php echo $info['isactive']?'checked="checked"':''; ?>><strong>&nbsp;<?php echo __('Enabled'); ?></strong></label>
+                <label><input class="form-check-input" type="radio" name="isactive" value="1" <?php echo $info['isactive']?'checked="checked"':''; ?>><strong>&nbsp;<?php echo __('Enabled'); ?></strong></label>
                 &nbsp;
-                <label><input type="radio" name="isactive" value="0" <?php echo !$info['isactive']?'checked="checked"':''; ?>>&nbsp;<?php echo __('Disabled'); ?></label>
+                <label><input class="form-check-input" type="radio" name="isactive" value="0" <?php echo !$info['isactive']?'checked="checked"':''; ?>>&nbsp;<?php echo __('Disabled'); ?></label>
                 &nbsp;<span class="error">*&nbsp;<?php echo $errors['isactive']; ?></span>&nbsp;<i class="help-tip icon-question-sign" href="#status"></i>
                 </span>
             </td>
@@ -168,8 +168,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </tbody>
 </table>
 <p style="text-align:center">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="templates.php"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="templates.php"'>
 </p>
 </form>

@@ -43,7 +43,7 @@ $info = $team->getInfo();
 </ul>
 
 <div id="team" class="tab_content">
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -68,9 +68,9 @@ $info = $team->getInfo();
             </td>
             <td>
                 <span>
-                <input type="radio" name="isenabled" value="1" <?php echo $team->isEnabled()?'checked="checked"':''; ?>><strong><?php echo __('Active');?></strong>
+                <input class="form-check-input" type="radio" name="isenabled" value="1" <?php echo $team->isEnabled()?'checked="checked"':''; ?>><strong><?php echo __('Active');?></strong>
                 &nbsp;
-                <input type="radio" name="isenabled" value="0" <?php echo !$team->isEnabled()?'checked="checked"':''; ?>><?php echo __('Disabled');?>
+                <input class="form-check-input" type="radio" name="isenabled" value="0" <?php echo !$team->isEnabled()?'checked="checked"':''; ?>><?php echo __('Disabled');?>
                 &nbsp;<span class="error">*&nbsp;</span>
                 <i class="help-tip icon-question-sign" href="#status"></i>
                 </span>
@@ -102,7 +102,7 @@ $info = $team->getInfo();
                 <?php echo __('Assignment Alert');?>:
             </td>
             <td>
-                <input type="checkbox" name="noalerts" value="1" <?php echo !$team->alertsEnabled()?'checked="checked"':''; ?> >
+                <input class="form-check-input" type="checkbox" name="noalerts" value="1" <?php echo !$team->alertsEnabled()?'checked="checked"':''; ?> >
                 <?php echo sprintf(__('<strong>Disable</strong> for %s'), __('this team')); ?>
                 <i class="help-tip icon-question-sign" href="#assignment_alert"></i>
             </td>
@@ -177,9 +177,9 @@ foreach ($members as $m)
 </div>
 
 <p style="text-align:center">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="?"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="?"'>
 </p>
 </form>
 

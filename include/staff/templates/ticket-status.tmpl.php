@@ -6,7 +6,7 @@ if (!$info['title'])
 
 ?>
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <div class="clear"></div>
 <hr/>
 <?php
@@ -95,7 +95,7 @@ $action = $info['action'] ?: ('#tickets/status/'. $state);
             <tbody>
                 <tr>
                     <td>
-                        <input type="checkbox" name="children">
+                        <input class="form-check-input" type="checkbox" name="children">
                         <?php echo __('Set status for all children.'); ?>
                     </td>
                 </tr>
@@ -105,8 +105,8 @@ $action = $info['action'] ?: ('#tickets/status/'. $state);
         <hr>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="reset" value="<?php echo __('Reset'); ?>">
-                <input type="button" name="cancel" class="close"
+                <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+                <input type="button" name="cancel" class="btn btn-danger close"
                 value="<?php echo __('Cancel'); ?>">
             </span>
             <span class="buttons pull-right">

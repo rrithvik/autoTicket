@@ -21,7 +21,7 @@ if (in_array($qf_field->getLabel(), DatetimeField::getPastPresentLabels()))
   unset($choices['m'], $choices['n7'], $choices['n30']);
 ?>
 <span class="action-button muted" data-dropdown="#quickfilter-dropdown">
-  <i class="icon-caret-down pull-right"></i>
+  <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
   <span><i class="icon-filter"></i> <?php
     echo $qf_field->get('label');
     if (isset($quick_filter) && isset($choices[$quick_filter]))

@@ -31,7 +31,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     — <?php echo $info['title']; ?></small>
      <?php } ?><i class="help-tip icon-question-sign" href="#canned_response"></i>
 </h2>
- <table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr><td></td><td></td></tr> <!-- For fixed table layout -->
         <tr>
@@ -44,9 +44,9 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
         <tr>
             <td width="180" class="required"><?php echo __('Status');?>:</td>
             <td>
-                <label><input type="radio" name="isenabled" value="1" <?php
+                <label><input class="form-check-input" type="radio" name="isenabled" value="1" <?php
                     echo $info['isenabled']?'checked="checked"':''; ?>>&nbsp;<?php echo __('Active'); ?>&nbsp;</label>
-                <label><input type="radio" name="isenabled" value="0" <?php
+                <label><input class="form-check-input" type="radio" name="isenabled" value="0" <?php
                         echo !$info['isenabled']?'checked="checked"':''; ?>>&nbsp;<?php echo __('Disabled'); ?>&nbsp;</label>
                 &nbsp;<span class="error">*&nbsp;<?php echo $errors['isenabled']; ?></span>
             </td>
@@ -121,11 +121,11 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     echo implode(', ', $canned->getFilters()); ?></div>
  <?php } ?>
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>" onclick="javascript:
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset'); ?>" onclick="javascript:
         $(this.form).find('textarea.richtext')
             .redactor('deleteDraft');
         location.reload();" />
-    <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="canned.php"'>
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="canned.php"'>
 </p>
 </form>

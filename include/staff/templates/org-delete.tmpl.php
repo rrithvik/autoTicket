@@ -7,7 +7,7 @@ $info['warn'] = __('Deleted organization CANNOT be recovered');
 
 ?>
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 
@@ -51,8 +51,8 @@ if ($info['error']) {
         <input type="hidden" name="id" value="<?php echo $org->getId(); ?>" />
         <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close"
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger close"
                 value="<?php echo __('No, Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

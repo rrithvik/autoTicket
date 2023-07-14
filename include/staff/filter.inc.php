@@ -33,7 +33,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
         — <?php echo $info['name']; ?></small>
         <?php } ?>
     </h2>
-    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2">
@@ -62,7 +62,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                     &nbsp;<span class="error">*&nbsp;<?php echo $errors['execorder']; ?></span>
                     &nbsp;&nbsp;&nbsp;
                     <label class="inline checkbox">
-                    <input type="checkbox" name="stop_onmatch" value="1" <?php echo $info['stop_onmatch']?'checked="checked"':''; ?> >
+                    <input class="form-check-input" type="checkbox" name="stop_onmatch" value="1" <?php echo $info['stop_onmatch']?'checked="checked"':''; ?> >
                     <?php echo __('<strong>Stop</strong> processing further on match!');?>
                     </label>
                     &nbsp;<i class="help-tip icon-question-sign" href="#execution_order"></i>
@@ -73,9 +73,9 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                     <?php echo __('Filter Status');?>:
                 </td>
                 <td>
-                    <input type="radio" name="isactive" value="1" <?php echo
+                    <input <button class="btn btn-secondary action-button pull-right" onclick="" name="isactive" value="1" <?php echo
                     $info['isactive']?'checked="checked"':''; ?>> <?php echo __('Active'); ?>
-                    <input type="radio" name="isactive" value="0" <?php echo !$info['isactive']?'checked="checked"':''; ?>
+                    <input class="form-check-input" type="radio" name="isactive" value="0" <?php echo !$info['isactive']?'checked="checked"':''; ?>
                     > <?php echo __('Disabled'); ?>
                     &nbsp;<span class="error">*&nbsp;</span>
                 </td>
@@ -119,7 +119,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </ul>
     <!-- ====================== FILTER RULES ========================== -->
     <div class="tab_content" id="filter_rules">
-        <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
             <thead>
                 <tr>
                     <th colspan="2" style="text-align:left;">
@@ -135,12 +135,12 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                        <em><?php echo __('Rules Matching Criteria');?>:</em>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <label>
-                        <input type="radio" name="match_all_rules" value="1" <?php echo $info['match_all_rules']?'checked="checked"':''; ?>>
+                        <input class="form-check-input" type="radio" name="match_all_rules" value="1" <?php echo $info['match_all_rules']?'checked="checked"':''; ?>>
                             <?php echo __('Match All');?>
                         </label>
                         <span style="display:inline-block;width:10px"> </span>
                         <label>
-                        <input type="radio" name="match_all_rules" value="0" <?php echo !$info['match_all_rules']?'checked="checked"':''; ?>>
+                        <input class="form-check-input" type="radio" name="match_all_rules" value="0" <?php echo !$info['match_all_rules']?'checked="checked"':''; ?>>
                             <?php echo __('Match Any');?>
                         </label>
                         <span class="error">*</span>
@@ -221,7 +221,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </div>
     <!-- ======================= FILTER ACTIONS ========================= -->
     <div class="tab_content hidden" id="filter_actions">
-        <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
             <thead>
                 <tr>
                     <th colspan="2">
@@ -327,7 +327,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </div>
     <!-- ======================== INTERNAL NOTES ======================== -->
     <div class="tab_content hidden" id="internal_notes">
-        <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
             <thead>
                 <tr>
                     <th colspan="2">
@@ -347,9 +347,9 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
         </table>
     </div>
     <p style="text-align:center;">
-        <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-        <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-        <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="filters.php"'>
+        <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+        <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+        <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="filters.php"'>
     </p>
 </form>
 <script type="text/javascript">

@@ -6,28 +6,28 @@
             <h2><?php echo __('Installed Plugins'); ?></h2>
         </div>
         <div class="pull-right flush-right">
-            <a href="plugins.php?a=add" class="green button action-button"><i class="icon-plus-sign"></i> <?php
+      <div style="display: flex">
+            <a href="plugins.php?a=add" class="btn btn-success green button"><i class="icon-plus-sign"></i> <?php
                 echo __('Add New Plugin'); ?></a>
-            <span class="action-button" data-dropdown="#action-dropdown-more">
-                <i class="icon-caret-down pull-right"></i>
-                <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
-            </span>
-            <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                <ul id="actions">
+<div class="dropdown anchor-right">
+                    <span class="btn btn-secondary">                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
+                <i class="icon-cog"></i> <?php echo __('More');?></span>
+                                        <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
+
                     <li>
-                        <a class="confirm" data-name="enable" href="plugins.php?a=enable">
+                        <a class="nav-link confirm" data-name="enable" href="plugins.php?a=enable">
                             <i class="icon-ok-sign icon-fixed-width"></i>
                             <?php echo __( 'Enable'); ?>
                         </a>
                     </li>
                     <li>
-                        <a class="confirm" data-name="disable" href="plugins.php?a=disable">
+                        <a class="nav-link confirm" data-name="disable" href="plugins.php?a=disable">
                             <i class="icon-ban-circle icon-fixed-width"></i>
                             <?php echo __( 'Disable'); ?>
                         </a>
                     </li>
                     <li class="danger">
-                        <a class="confirm" data-name="delete" href="plugins.php?a=delete">
+                        <a class="nav-link confirm" data-name="delete" href="plugins.php?a=delete">
                             <i class="icon-trash icon-fixed-width"></i>
                             <?php echo __( 'Delete'); ?>
                         </a>
@@ -36,6 +36,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <div class="clear"></div>
 
@@ -51,7 +52,7 @@ $showing=$pageNav->showing().' '._N('plugin', 'plugins', $count);
 <?php csrf_token(); ?>
 <input type="hidden" name="do" value="mass_process" >
 <input type="hidden" id="action" name="a" value="" >
-<table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+<table class="table" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
@@ -138,10 +139,10 @@ if ($count) //Show options..
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="btn btn-danger close">
         </span>
         <span class="buttons pull-right">
-            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">
+            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="btn btn-success confirm">
         </span>
      </p>
     <div class="clear"></div>

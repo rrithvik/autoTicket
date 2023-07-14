@@ -1,6 +1,6 @@
 <div id="the-lookup-form">
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 if ($info['error']) {
@@ -47,7 +47,7 @@ if ($org_id) { ?>
     UserForm::getUserForm()->get('title')
 ); ?>
 </p>
-<table class="list"><tr>
+<table class="table"><tr>
 <?php
     $fields = array();
     $data = array(
@@ -70,18 +70,18 @@ if ($org_id) { ?>
     } ?>
 </tr></table>
 <br/>
-<input type="file" name="import"/>
+<input class="form-control" type="file" name="import"/>
 </div>
 </div>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close"  value="<?php
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger close"  value="<?php
             echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
-            <input type="submit" value="<?php echo __('Import Users'); ?>">
+            <input class="btn btn-primary" type="submit" value="<?php echo __('Import Users'); ?>">
         </span>
      </p>
 </form>

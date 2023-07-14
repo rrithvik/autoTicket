@@ -59,7 +59,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="<?php echo $action; ?>">
  <h2><?php echo __('Test Outgoing Email');?></h2>
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -74,7 +74,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <?php echo __('From');?>:
             </td>
             <td>
-                <select name="email_id">
+                <select style="margin-top: 4px; margin-bottom: 0" class="form-select" name="email_id" style="margin: 0">
                     <option value="0">&mdash; <?php echo __('Select FROM Email');?> &mdash;</option>
                     <?php
 
@@ -94,7 +94,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                     }
                     ?>
                 </select>
-                &nbsp;<span class="error"><?php echo $errors['email_id']; ?></span>
+                <span class="error"><?php echo $errors['email_id']; ?></span>
             </td>
         </tr>
         <tr>
@@ -120,7 +120,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td colspan=2>
                 <div style="padding-top:0.5em;padding-bottom:0.5em">
                 <em><strong><?php echo __('Message');?></strong>: <?php echo __('email message to send.');?></em>&nbsp;<span class="error"><?php echo $errors['message']; ?></span></div>
-                <textarea class="richtext draft draft-delete" name="body" cols="21"
+                <textarea class="form-control richtext draft draft-delete" name="body" cols="21"
                     rows="10" style="width: 90%;" <?php
     list($draft, $attrs) = Draft::getDraftAndDataAttrs('email.diag', false, $info['body']);
     echo $attrs; ?>><?php echo $draft ?: $info['body'];
@@ -130,9 +130,9 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </tbody>
 </table>
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo __('Send Message');?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="emails.php"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo __('Send Message');?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="emails.php"'>
 </p>
 </form>
 <?php

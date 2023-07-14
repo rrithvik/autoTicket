@@ -15,7 +15,7 @@
   min-width: 140px;
   list-style: none;
   background: #FFF;
-  border: solid 1px #DDD;
+  /*border: solid 1px #DDD;*/
   border: solid 1px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -44,8 +44,8 @@
   margin-right: 0.1em;
 }
 .action-dropdown ul li > a:hover,
-.action-dropdown ul li.active > a:hover, 
-.noclick-dropdown ul li > a:hover, 
+.action-dropdown ul li.active > a:hover,
+.noclick-dropdown ul li > a:hover,
 .noclick-dropdown ul li.active > a:hover {
   background-color: #08C;
   color: #FFF !important;

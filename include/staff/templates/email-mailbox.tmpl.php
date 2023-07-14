@@ -6,7 +6,7 @@ if (isset($errors['mailbox_auth'])) {
 }
 ?>
 <div>
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
         <tr>
             <th colspan="2">
@@ -99,12 +99,12 @@ if (isset($errors['mailbox_auth'])) {
         <tr>
             <td width="180"><?php echo __('Status'); ?></td>
             <td>
-                <label><input type="radio" name="mailbox_active"  value="1" <?php
+                <label><input class="form-check-input" type="radio" name="mailbox_active"  value="1" <?php
                     echo $info['mailbox_active'] ? 'checked="checked"' : '';
                     ?> />&nbsp;<?php
                     echo __('Enable'); ?></label>
                 &nbsp;&nbsp;
-                <label><input type="radio" name="mailbox_active"  value="0" <?php
+                <label><input class="form-check-input" type="radio" name="mailbox_active"  value="0" <?php
                     echo !$info['mailbox_active'] ? 'checked="checked"' : '';
                     ?>/>&nbsp;<?php
                     echo __('Disable'); ?></label>

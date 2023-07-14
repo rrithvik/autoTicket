@@ -39,7 +39,7 @@
                     ?></option>
 <?php } ?>
                 </select>
-                <button type="button" class="green button"><?php
+                <button type="button" class="btn btn-success green button"><?php
                   echo __('Add'); ?></button>
             </td>
         </tr>

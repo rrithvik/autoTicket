@@ -11,7 +11,7 @@ $form = $instance ? $instance->getForm() : $plugin->getConfigForm($info);
 </ul>
 <div id="instance-tabs_container">
     <div id="instance" class="tab_content <?php if ($instance) echo 'hidden'; ?>">
-        <table class="form_table" width="100%" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="100%" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2">

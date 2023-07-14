@@ -8,7 +8,7 @@ if (count($children ?: array()) != 0 || $ticket->isChild()) { ?>
     <form action="#tickets/<?php echo $ticket->getId(); ?>/relations" method="POST"
         name='relations' id="relations" style="padding-top:7px;">
   <?php csrf_token(); ?>
-    <table class="list" border="0" cellspacing="1" cellpadding="2" width="920">
+    <table class="table" border="0" cellspacing="1" cellpadding="2" width="920">
          <thead>
              <tr>
                  <th width="8px">&nbsp;</th>

@@ -15,9 +15,9 @@ if(!defined('OSTSCPINC') || !$thisstaff || !is_object($org)) die('Invalid path')
             <?php echo __('Delete Organization'); ?></a>
 <?php } ?>
 <?php if ($thisstaff->hasPerm(Organization::PERM_EDIT)) { ?>
-            <span class="action-button" data-dropdown="#action-dropdown-more">
-                <i class="icon-caret-down pull-right"></i>
-                <span ><i class="icon-cog"></i> <?php echo __('More'); ?></span>
+<div class="dropdown anchor-right">
+                    <span class="btn btn-secondary">                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
+                <i class="icon-cog"></i> <?php echo __('More'); ?></span>
             </span>
 <?php } ?>
             <div id="action-dropdown-more" class="action-dropdown anchor-right">

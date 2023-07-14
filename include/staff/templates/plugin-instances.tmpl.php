@@ -11,7 +11,7 @@ $modal = $plugin->useModalConfig();
         <?php
         if ($instances) { ?>
         <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
-            <i class="icon-caret-down pull-right"></i>
+            <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
             <span ><i class="icon-cog"></i>&nbsp;<?php echo __('More');?></span>
         </span>
         <div id="action-dropdown-more" class="action-dropdown anchor-right">
@@ -32,9 +32,9 @@ $modal = $plugin->useModalConfig();
         $newInstanceOptions = $plugin->getNewInstanceOptions();
         if ($newInstanceOptions) {
         ?>
-          <span class="green button action-button pull-right"
+          <span class="btn btn-success green button pull-right"
            data-dropdown="#action-dropdown-add">
-             <i class="icon-caret-down pull-right"></i>
+             <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
              <span><i class="icon-plus-sign">&nbsp;<?php echo __('Add New Instance'); ?></i></span>
           </span>
           <div id="action-dropdown-add" class="action-dropdown anchor-right">
@@ -57,7 +57,7 @@ $modal = $plugin->useModalConfig();
                     :  'plugins.php?id=%d&a=add-instance#instances',
                     $plugin->getId())
             ?>
-            <a class="green button action-button <?php
+            <a class="btn btn-success green button <?php
                 echo $modal ?  'instance-config' : ''; ?>"
                 href="<?php echo $href; ?>" >
                 <i class="icon-plus-sign"></i> <?php echo __('Add New Instance'); ?>
@@ -74,7 +74,7 @@ if ($instances) { ?>
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="instances-actions" >
  <input type="hidden" id="action" name="a" value="" >
-<table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
         <th width="28" nowrap></th>

@@ -127,9 +127,9 @@ $pageNav->setURL('tickets.php', $args);
 ?>
 
 <!-- SEARCH FORM START -->
-<div id='basic_search'>
-  <div class="pull-right" style="height:25px">
-    <span class="valign-helper"></span>
+<div id='basic_search' style="height: 50px">
+  <div class="pull-right" style="height:auto">
+<!--    <span class="valign-helper"></span>-->
     <?php
     require 'queue-quickfilter.tmpl.php';
     if ($queue->getSortOptions())
@@ -149,7 +149,7 @@ return false;">
       <input type="text" class="basic-search" data-url="ajax.php/tickets/lookup" name="query"
         autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query'] ?? null, true); ?>"
         autocomplete="off" autocorrect="off" autocapitalize="off">
-      <button type="submit" class="attached button"><i class="icon-search"></i>
+      <button type="submit" class="btn btn-secondary button"><i class="icon-search"></i>
       </button>
     </div>
     <a href="#" onclick="javascript:
@@ -165,7 +165,7 @@ return false;">
     <div class="sticky bar opaque">
         <div class="content">
             <div class="pull-left flush-left">
-                <h2><a href="<?php echo $refresh_url; ?>"
+                <h2><a class="nav-link" href="<?php echo $refresh_url; ?>"
                     title="<?php echo __('Refresh'); ?>"><i class="icon-refresh"></i> <?php echo
                     $queue->getName(); ?></a>
                     <?php
@@ -227,7 +227,7 @@ if ($queue->id > 0 && $queue->isOwner($thisstaff)) { ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" name="do" id="action" value="" >
 
-<table class="list queue tickets" border="0" cellspacing="1" cellpadding="2" width="940">
+<table class="table list queue tickets" border="0" cellspacing="1" cellpadding="2" width="940">
   <thead>
     <tr>
 <?php

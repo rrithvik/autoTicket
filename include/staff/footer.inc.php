@@ -29,7 +29,7 @@ if(is_object($thisstaff) && $thisstaff->isStaff()) { ?>
 </div>
 <div style="display:none;" class="dialog" id="alert">
     <h3><i class="icon-warning-sign"></i> <span id="title"></span></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <div id="body" style="min-height: 20px;"></div>
     <hr style="margin-top:3em"/>
@@ -54,7 +54,7 @@ if(is_object($thisstaff) && $thisstaff->isStaff()) { ?>
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-autoticket.js"></script>
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/redactor-plugins.js"></script>
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>scp/js/jquery.translatable.js"></script>
-<script type="text/javascript" src="<?php echo ROOT_PATH; ?>scp/js/jquery.dropdown.js"></script>
+<!--<script type="text/javascript" src="--><?php //echo ROOT_PATH; ?><!--scp/js/jquery.dropdown.js"></script>-->
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>scp/js/bootstrap-tooltip.js"></script>
 <script type="text/javascript" src="<?php echo ROOT_PATH; ?>scp/js/jb.overflow.menu.js"></script>
 <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>scp/css/tooltip.css">

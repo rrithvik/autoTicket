@@ -260,11 +260,13 @@ var scp_prep = function() {
         $('.dp').datepicker({
             numberOfMonths: 2,
             showButtonPanel: true,
-            buttonImage: './images/cal.png',
+            buttonImageOnly: true,
+            buttonImage: './images/cal.svg',
             showOn:'both',
             dateFormat: c.date_format || 'm/d/Y'
         });
-
+        // console.log($('.dp').datepicker)
+        // $(".ui-datepicker-trigger").classList.add('fa fa-calendar');
     });
 
     /* Typeahead tickets lookup */
@@ -417,7 +419,8 @@ var scp_prep = function() {
    // Thanks, https://stackoverflow.com/a/17166225/1025836
    $('div.sticky.bar:not(.stop)').each(function() {
      var $that = $(this),
-         placeholder = $('<div class="sticky placeholder">').insertBefore($that),
+         // placeholder = $('<div class="sticky placeholder">').insertBefore($that),
+         placeholder = $('<div style="height: 1px">').insertBefore($that),
          offset = $that.offset(),
          top = offset.top - parseFloat($that.css('marginTop').replace(/auto/, 100)),
          stop = $('div.sticky.bar.stop').filter(':visible'),
@@ -771,7 +774,7 @@ $.confirm = function(message, title, options) {
       $('div#popup-loading', $popup).hide();
       var body = $('div.body', $popup).empty()
         .append($('<h3></h3>').text(title))
-        .append($('<a class="close" href="#"><i class="icon-remove-circle"></i></a>'))
+        .append($('<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>'))
         .append($('<hr/>'))
         .append($('<p class="confirm-action"></p>')
             .text(message)
@@ -793,11 +796,11 @@ $.confirm = function(message, title, options) {
       body.append($('<hr style="margin-top:1em"/>'))
         .append($('<p class="full-width"></p>')
             .append($('<span class="buttons pull-left"></span>')
-                .append($('<input type="button" class="close"/>')
+                .append($('<input type="button" class="btn btn-danger close"/>')
                     .attr('value', __('Cancel'))
                     .click(function() { hide();  D.resolve(false); })
             )).append($('<span class="buttons pull-right"></span>')
-                .append($('<input type="button"/>')
+                .append($('<input class="btn-primary" type="button"/>')
                     .attr('value', __('OK'))
                     .click(function() {  hide(); D.resolve(body.find('input').serializeArray()); })
         ))).append($('<div class="clear"></div>'));

@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><?php echo __('Collaborators'); ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <?php
 if($info && $info['msg']) {
     echo sprintf('<p id="msg_notice" style="padding-top:2px;">%s</p>', $info['msg']);
@@ -24,7 +24,7 @@ if(($users=$thread->getCollaborators())) {?>
         echo sprintf('<tr>
                         <td>
                             <label class="inline checkbox">
-                            <input type="checkbox" name="cid[]" id="c%d" value="%d" %s>
+                            <input class="form-check-input" type="checkbox" name="cid[]" id="c%d" value="%d" %s>
                             </label>
                             <a class="collaborator" href="#thread/%d/collaborators/%d/view">%s%s</a>
                             <div align="left">
@@ -62,7 +62,7 @@ if(($users=$thread->getCollaborators())) {?>
     id="msg_warning"><?php echo __('You have made changes that you need to save.'); ?></p></div>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
             <input type="button" value="<?php echo __('Done'); ?>" class="close">
         </span>
         <span class="buttons pull-right">

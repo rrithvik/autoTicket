@@ -33,7 +33,7 @@ $info = Format::htmlchars(($errors && $_POST) ? array_merge($info, $_POST) : $in
         <li><a href="#permissions"><i class="icon-lock"></i> <?php echo __('Permissions'); ?></a></li>
     </ul>
     <div id="definition" class="tab_content">
-        <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
             <thead>
                 <tr>
                     <th colspan="2">
@@ -102,7 +102,7 @@ $info = Format::htmlchars(($errors && $_POST) ? array_merge($info, $_POST) : $in
                     <td>
                         <label>
                             <?php
-                            echo sprintf('<input type="checkbox" name="perms[]" value="%s" %s />',
+                            echo sprintf('<input class="form-check-input" type="checkbox" name="perms[]" value="%s" %s />',
                             $k, (isset($setting[$k]) && $setting[$k]) ?  'checked="checked"' : ''); ?>
                             &nbsp;
                             <?php echo Format::htmlchars(__($v['title'])); ?>
@@ -118,9 +118,9 @@ $info = Format::htmlchars(($errors && $_POST) ? array_merge($info, $_POST) : $in
         <?php } ?>
     </div>
     <p class="centered">
-        <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-        <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
+        <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+        <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
+        <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
             onclick='window.location.href="?"'>
     </p>
 </form>

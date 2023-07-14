@@ -25,7 +25,7 @@ $action = isset($info['action'])
 ?>
 <div id="tickets-export">
 <h3 class="drag-handle"><?php echo Format::htmlchars($qname); ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 <?php
 if (isset($errors['err'])) { ?>
@@ -66,7 +66,7 @@ name="queue-export" id="queue-export">
   if ($queue->isSaved()) { ?>
   <div id="save-changes" class="hidden" style="padding-top:5px; border-top: 1px dotted #ddd;">
     <span><i class="icon-bell-alt" style="color:red;"></i>&nbsp;
-     <label><input type="checkbox" name='save-changes' >&nbsp;Save export preference changes</label> </span>
+     <label><input class="form-check-input" type="checkbox" name='save-changes' >&nbsp;Save export preference changes</label> </span>
   </div>
   <?php
   } ?>
@@ -84,7 +84,7 @@ name="queue-export" id="queue-export">
   <p class="full-width">
     <span class="buttons pull-left">
         <input type="reset"  id="reset"  value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" class="close"
+        <input type="button" name="cancel" class="btn btn-danger close"
         value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">

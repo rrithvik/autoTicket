@@ -203,22 +203,22 @@ if ($bks=Staff2FABackend::allRegistered() && $current = $staff->get2FABackend())
             <div class="error"><?php echo $errors['isadmin']; ?></div>
             <div class="error"><?php echo $errors['isactive']; ?></div>
             <label class="checkbox">
-            <input type="checkbox" name="islocked" value="1"
+            <input class="form-check-input" type="checkbox" name="islocked" value="1"
               <?php echo (!$staff->isactive) ? 'checked="checked"' : ''; ?> />
               <?php echo __('Locked'); ?>
             </label>
             <label class="checkbox">
-            <input type="checkbox" name="isadmin" value="1"
+            <input class="form-check-input" type="checkbox" name="isadmin" value="1"
               <?php echo ($staff->isadmin) ? 'checked="checked"' : ''; ?> />
               <?php echo __('Administrator'); ?>
             </label>
             <label class="checkbox">
-            <input type="checkbox" name="assigned_only"
+            <input class="form-check-input" type="checkbox" name="assigned_only"
               <?php echo ($staff->assigned_only) ? 'checked="checked"' : ''; ?> />
               <?php echo __('Limit ticket access to ONLY assigned tickets'); ?>
             </label>
             <label class="checkbox">
-            <input type="checkbox" name="onvacation"
+            <input class="form-check-input" type="checkbox" name="onvacation"
               <?php echo ($staff->onvacation) ? 'checked="checked"' : ''; ?> />
               <?php echo __('Vacation Mode'); ?>
             </label>
@@ -295,7 +295,7 @@ if ($bks=Staff2FABackend::allRegistered() && $current = $staff->get2FABackend())
           </td>
           <td>
             <label class="inline checkbox">
-            <input type="checkbox" name="assign_use_pri_role" <?php
+            <input class="form-check-input" type="checkbox" name="assign_use_pri_role" <?php
                 if ($staff->usePrimaryRoleOnAssignment())
                     echo 'checked="checked"';
                 ?> />
@@ -356,7 +356,7 @@ foreach ($staff->dept_access as $dept_access) {
               ?>
               <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
             </select>
-            <button type="button" class="green button">
+            <button type="button" class="btn btn-success green button">
               <?php echo __('Add'); ?>
             </button>
           </td>
@@ -400,7 +400,7 @@ foreach ($staff->dept_access as $dept_access) {
           <td>
             <label>
             <?php
-            echo sprintf('<input type="checkbox" name="perms[]" value="%s" %s />',
+            echo sprintf('<input class="form-check-input" type="checkbox" name="perms[]" value="%s" %s />',
               $k, ($staff->hasPerm($k)) ? 'checked="checked"' : '');
             ?>
             &nbsp;
@@ -448,7 +448,7 @@ foreach ($staff->teams as $TM) {
               ?>
               <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
             </select>
-            <button type="button" class="green button">
+            <button type="button" class="btn btn-success green button">
               <?php echo __('Add'); ?>
             </button>
           </td>
@@ -476,9 +476,9 @@ foreach ($staff->teams as $TM) {
 <?php Signal::send('agent.audit', $staff, $extras); ?>
 
   <p style="text-align:center;">
-      <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-      <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-      <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
+      <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+      <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+      <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
   </p>
 </form>
 

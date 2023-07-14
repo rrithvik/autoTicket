@@ -31,7 +31,7 @@ jQuery(function($) {
             tip_box = $('<div>')
                 .addClass('tip_box'),
             tip_content = $('<div>')
-                .append('<a href="#" class="tip_close"><i class="icon-remove-circle"></i></a>')
+                .append('<a class="nav-link" href="#" class="tip_close"><i class="icon-remove-circle"></i></a>')
                 .addClass('tip_content'),
             the_tip = tip_box
                 .append(tip_content.append(tip_arrow))

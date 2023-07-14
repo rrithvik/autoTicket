@@ -57,7 +57,7 @@ $extensions = array(
 
 ?>
 <h2><?php echo __('About this osTicket Installation'); ?></h2>
-<table class="list" width="100%";>
+<table class="table table-striped alist" width="100%";>
 <thead>
     <tr><th colspan="2"><?php echo __('Server Information'); ?></th></tr>
 </thead>
@@ -77,7 +77,7 @@ else {
     // Report current version (v1.9.x ?: deadbeef ?: $git)
     $cv = $tv[0] == 'v' ? $tv : $gv;
 ?>
-      <a class="green button action-button pull-right"
+      <a class="btn btn-success green button pull-right"
          href="https://osticket.com/download?cv=<?php echo $cv; ?>"><i class="icon-rocket"></i>
         <?php echo __('Upgrade'); ?></a>
 <?php if ($lv) { ?>

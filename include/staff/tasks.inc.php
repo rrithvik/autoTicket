@@ -57,6 +57,7 @@ $queue_columns = array(
 // Queue we're viewing
 $queue_key = sprintf('::Q:%s', ObjectModel::OBJECT_TYPE_TASK);
 $queue_name = $_SESSION[$queue_key] ?: '';
+$results_type=__('Tasks');
 
 switch ($queue_name) {
 case 'closed':
@@ -79,7 +80,6 @@ case 'assigned':
     $tasks->filter(array('staff_id'=>$thisstaff->getId()));
     $queue_sort_options = array('updated', 'created', 'hot', 'number');
     break;
-default:
 case 'search':
     $queue_sort_options = array('closed', 'updated', 'created', 'number', 'hot');
     // Consider basic search
@@ -92,10 +92,15 @@ case 'search':
         unset($_SESSION[$queue_key]);
         break;
     }
+    break;
     // Fall-through and show open tickets
 case 'open':
     $status='open';
     $results_type=__('Open Tasks');
+    $queue_sort_options = array('created', 'updated', 'due', 'number', 'hot');
+    break;
+default:
+    $results_type=__('Tasks');
     $queue_sort_options = array('created', 'updated', 'due', 'number', 'hot');
     break;
 }
@@ -271,48 +276,50 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
 
 
 ?>
-<!-- SEARCH FORM START -->
-<div id='basic_search'>
-  <div class="pull-right" style="height:25px">
-    <span class="valign-helper"></span>
-    <?php
-        require STAFFINC_DIR.'templates/tasks-queue-sort.tmpl.php';
-    ?>
-   </div>
-    <form action="tasks.php" method="get" onsubmit="javascript:
+
+<div class="clear"></div>
+<div style="margin-bottom:20px; padding-top:5px;">
+<div class="sticky bar opaque">
+    <div class="content">
+        <div class="pull-left flush-left">
+            <h2><a class="nav-link" href="<?php echo $refresh_url; ?>"
+                title="<?php echo __('Refresh'); ?>"><i class="icon-refresh"></i> <?php echo
+                $results_type.$showing; ?></a></h2>
+        </div>
+        <div class="pull-right flush-right">
+            <div style="display: flex">
+                <!-- SEARCH FORM START -->
+                <div style='display: flex'>
+                    <form action="tasks.php" method="get" onsubmit="javascript:
         $.pjax({
         url:$(this).attr('action') + '?' + $(this).serialize(),
         container:'#pjax-container',
         timeout: 2000
         });
         return false;">
-        <input type="hidden" name="a" value="search">
-        <input type="hidden" name="search-type" value=""/>
-        <div class="attached input">
-            <input type="text" class="basic-search" data-url="ajax.php/tasks/lookup" name="query"
-                   autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query'], true); ?>"
-                   autocomplete="off" autocorrect="off" autocapitalize="off">
-            <button type="submit" class="attached button"><i class="icon-search"></i>
-            </button>
-        </div>
-    </form>
-
-</div>
-<!-- SEARCH FORM END -->
-<div class="clear"></div>
-<div style="margin-bottom:20px; padding-top:5px;">
-<div class="sticky bar opaque">
-    <div class="content">
-        <div class="pull-left flush-left">
-            <h2><a href="<?php echo $refresh_url; ?>"
-                title="<?php echo __('Refresh'); ?>"><i class="icon-refresh"></i> <?php echo
-                $results_type.$showing; ?></a></h2>
-        </div>
-        <div class="pull-right flush-right">
+                        <input type="hidden" name="a" value="search">
+                        <input type="hidden" name="search-type" value=""/>
+                        <div class="attached input">
+                            <input type="text" class="basic-search" data-url="ajax.php/tasks/lookup" name="query"
+                                   autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query'], true); ?>"
+                                   autocomplete="off" autocorrect="off" autocapitalize="off">
+                            <button type="submit" class="btn btn-secondary button"><i class="icon-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="" style="height:25px">
+                        <?php
+                        require STAFFINC_DIR.'templates/tasks-queue-sort.tmpl.php';
+                        ?>
+                    </div>
+                </div>
+                <!-- SEARCH FORM END -->
            <?php
            if ($count)
                 echo Task::getAgentActions($thisstaff, array('status' => $status));
             ?>
+
+            </div>
         </div>
     </div>
 </div>
@@ -323,7 +330,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
  <input type="hidden" name="do" id="action" value="" >
  <input type="hidden" name="status" value="<?php echo
  Format::htmlchars($_REQUEST['status'], true); ?>" >
- <table class="list" border="0" cellspacing="1" cellpadding="2" width="940">
+ <table class="table" border="0" cellspacing="1" cellpadding="2" width="940">
     <thead>
         <tr>
             <?php if ($thisstaff->canManageTickets()) { ?>
@@ -462,7 +469,7 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
 
 <div style="display:none;" class="dialog" id="confirm-action">
     <h3><?php echo __('Please Confirm');?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" style="display:none;" id="mark_overdue-confirm">
         <?php echo __('Are you sure want to flag the selected tasks as <font color="red"><b>overdue</b></font>?');?>

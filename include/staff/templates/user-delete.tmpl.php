@@ -7,7 +7,7 @@ $info['warn'] = __('Deleted users and tickets CANNOT be recovered');
 
 ?>
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 
@@ -62,7 +62,7 @@ else { ?>
 
     <?php
     if (($num=$user->tickets->count())) {
-        echo '<div><input type="checkbox" name="deletetickets" value="1" > <strong>'
+        echo '<div><input class="form-check-input" type="checkbox" name="deletetickets" value="1" > <strong>'
             .sprintf(__('Delete %1$s %2$s %3$s and any associated attachments and data.'),
                 sprintf('<a href="tickets.php?a=search&uid=%d" target="_blank">',
                     $user->getId()),
@@ -74,8 +74,8 @@ else { ?>
     ?>
         <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close"
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger close"
                 value="<?php echo __('No, Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

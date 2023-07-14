@@ -7,9 +7,10 @@ if ($activeMenu>0 && !isset($subnav[$activeMenu-1]))
     $activeMenu=0;
 
 $info = $nav->getSubNavInfo();
+
 ?>
-<nav class="<?php echo @$info['class']; ?>" id="<?php echo $info['id']; ?>">
-  <ul id="sub_nav">
+<nav style="visibility: visible" class="<?php echo @$info['class']; ?>" id="<?php echo $info['id']; ?>">
+  <ul class="nav list-group list-group-horizontal" id="sub_nav">
 <?php
     foreach($subnav as $k=> $item) {
         if (is_callable($item)) {
@@ -36,7 +37,7 @@ $info = $nav->getSubNavInfo();
             foreach ($item['attr'] as $name => $value)
                 $attr.=  sprintf("%s='%s' ", $name, $value);
 
-        echo sprintf('<li><a class="%s" href="%s" title="%s" id="%s" %s>%s</a></li>',
+        echo sprintf('<li class="nav-item"><a class="nav-link %s" href="%s" title="%s" id="%s" %s>%s</a></li>',
                 $class, $item['href'], $item['title'], $id, $attr, $item['desc']);
     }
 ?>

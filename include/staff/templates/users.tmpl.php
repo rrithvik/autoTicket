@@ -66,7 +66,7 @@ else
 <div style="margin-top:5px;" class="pull-left"><b><?php echo $showing; ?></b></div>
 <?php if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
 <div class="pull-right flush-right" style="margin-bottom:10px;">
-    <a href="#orgs/<?php echo $org->getId(); ?>/add-user" class="green button action-button add-user"
+    <a href="#orgs/<?php echo $org->getId(); ?>/add-user" class="btn btn-success green button add-user"
         ><i class="icon-plus"></i> <?php echo __('Add User'); ?></a>
     <a href="#orgs/<?php echo $org->getId(); ?>/import-users" class="button action-button add-user">
         <i class="icon-cloud-upload icon-large"></i>
@@ -81,7 +81,7 @@ if ($num) { ?>
  <input type="hidden" name="do" value="mass_process" >
  <input type="hidden" id="id" name="id" value="<?php echo $org->getId(); ?>" >
  <input type="hidden" id="action" name="a" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <table class="table" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
@@ -166,7 +166,7 @@ if ($res && $num) { //Show options..
 
 <div style="display:none;" class="dialog" id="confirm-action">
     <h3 class="drag-handle"><?php echo __('Please Confirm'); ?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" style="display:none;" id="remove-users-confirm">
         <?php echo sprintf(__(
@@ -178,10 +178,10 @@ if ($res && $num) { //Show options..
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="btn btn-danger close">
         </span>
         <span class="buttons pull-right">
-            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">
+            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="btn btn-success confirm">
         </span>
      </p>
     <div class="clear"></div>

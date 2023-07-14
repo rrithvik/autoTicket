@@ -180,7 +180,7 @@ if ($queue->parent) { ?>
           <tbody>
             <tr>
               <td colspan="3">
-                <input type="checkbox" name="inherit-sorting" <?php
+                <input class="form-check-input" type="checkbox" name="inherit-sorting" <?php
                   if ($queue->inheritSorting()) echo 'checked="checked"'; ?>
                   onchange="javascript:$(this).closest('table').find('.if-not-inherited').toggle(!$(this).prop('checked'));" />
                 <?php echo __('Inherit sorting from the parent queue'); ?>
@@ -241,7 +241,7 @@ if ($queue->parent) { ?>
                           <option value="0" data-quick-add>&mdash; <?php
                             echo __('Add New Sort Criteria');?> &mdash;</option>
                       </select>
-                      <button type="button" class="green button"><?php
+                      <button type="button" class="btn btn-success green button"><?php
                         echo __('Add'); ?></button>
                   </td>
               </tr>
@@ -407,9 +407,9 @@ if ($queue->getConditions()) {
   </div>
 
   <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
   </p>
 
 </form>

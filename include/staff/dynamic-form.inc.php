@@ -42,7 +42,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     — <?php echo $info['title']; ?></small>
         <?php } ?>
     </h2>
-    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -113,7 +113,7 @@ if ($form && count($langs) > 1) { ?>
       </tr>
     </tbody>
     </table>
-    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <?php if ($form && $form->get('type') == 'T') {
     $uform = UserForm::objects()->one();
     ?>
@@ -293,14 +293,14 @@ if ($form && count($langs) > 1) { ?>
     </tbody>
     </table>
 <p class="centered">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="?"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="?"'>
 </p>
 
 <div style="display:none;" class="draggable dialog" id="delete-confirm">
     <h3 class="drag-handle"><i class="icon-trash"></i> <?php echo __('Remove Existing Data?'); ?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p>
     <strong><?php echo sprintf(__('You are about to delete %s fields.'),
@@ -314,7 +314,7 @@ if ($form && count($langs) > 1) { ?>
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="btn btn-danger close">
         </span>
         <span class="buttons pull-right">
             <input type="submit" value="<?php echo __('Continue'); ?>" class="confirm">

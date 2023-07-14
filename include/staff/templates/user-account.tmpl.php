@@ -7,7 +7,7 @@ if (!$info['title'])
     $info['title'] = Format::htmlchars($user->getName());
 ?>
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <div class="clear"></div>
 <hr/>
 <?php
@@ -126,16 +126,16 @@ if ($info['error']) {
             <tr>
                 <td colspan="2">
                 <?php
-                  echo sprintf('<div><input type="checkbox" name="locked-flag" %s
+                  echo sprintf('<div><input class="form-check-input" type="checkbox" name="locked-flag" %s
                        value="1"> %s</div>',
                        $account->isLocked() ?  'checked="checked"' : '',
                        __('Administratively Locked')
                        );
                   ?>
-                   <div><input type="checkbox" name="pwreset-flag" value="1" <?php
+                   <div><input class="form-check-input" type="checkbox" name="pwreset-flag" value="1" <?php
                     echo $account->isPasswdResetForced() ?
                     'checked="checked"' : ''; ?>> <?php echo __('Password Reset Required'); ?></div>
-                   <div><input type="checkbox" name="forbid-pwchange-flag" value="1" <?php
+                   <div><input class="form-check-input" type="checkbox" name="forbid-pwchange-flag" value="1" <?php
                     echo !$account->isPasswdResetEnabled() ?
                     'checked="checked"' : ''; ?>> <?php echo __('User cannot change password'); ?></div>
                 </td>
@@ -147,8 +147,8 @@ if ($info['error']) {
    <hr>
    <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close" value="<?php echo __('Cancel'); ?>">
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger close" value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
             <input type="submit"

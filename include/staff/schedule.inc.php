@@ -5,7 +5,7 @@
 </div>
 <div class="pull-right flush-right">
     <span class="action-button pull-right" data-dropdown="#schedule-dropdown-more">
-        <i class="icon-caret-down pull-right"></i>
+        <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <span ><i class="icon-cog"></i></span>
     </span>
     <div id="schedule-dropdown-more" class="action-dropdown anchor-right">
@@ -49,7 +49,7 @@
 </ul>
 <div id="schedule-tabs_container">
 <div id="schedule" class="tab_content hidden">
-   <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+   <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -84,9 +84,9 @@ if ($schedule->isBusinessHours()) {?>
 <?php
 } ?>
 <p class="centered">
-    <input type="submit" name="submit" value="<?php echo __('Save'); ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo __('Save'); ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
         onclick='window.location.href="?"'>
 </p>
 </form>

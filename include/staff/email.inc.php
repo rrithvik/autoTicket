@@ -51,7 +51,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
    } ?>
 </ul>
 <div class="tab_content" id="account">
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -176,7 +176,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                 <?php echo __('Auto-Response'); ?>
             </td>
             <td>
-                <label><input type="checkbox" name="noautoresp" value="1" <?php echo $info['noautoresp']?'checked="checked"':''; ?> >
+                <label><input class="form-check-input" type="checkbox" name="noautoresp" value="1" <?php echo $info['noautoresp']?'checked="checked"':''; ?> >
                 <?php echo sprintf(__('<strong>Disable</strong> for %s'), __('this email')); ?>
                 </label>
                 <i class="help-tip icon-question-sign" href="#auto_response"></i>
@@ -214,9 +214,9 @@ if ($email) { ?>
 <?php
 } ?>
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="emails.php"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="emails.php"'>
 </p>
 </form>
 <script type="text/javascript">

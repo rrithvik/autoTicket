@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><i class="icon-paste"></i> <?php echo __('Manage Forms'); ?></i></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/><?php echo __(
 'Sort the forms on this ticket by click and dragging on them. Use the box below the forms list to add new forms to the ticket.'
 ); ?>
@@ -79,8 +79,8 @@ foreach ($forms as $e) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="<?php
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger <?php
                 echo $user ? 'cancel' : 'close' ?>" value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

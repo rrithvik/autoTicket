@@ -78,7 +78,7 @@ class Installer extends SetupWizard {
 
         //Check table prefix underscore required at the end!
         if($vars['prefix'] && substr($vars['prefix'], -1)!='_')
-            $this->errors['prefix']=__('Bad prefix. Must have underscore (_) at the end. e.g \'ost_\'');
+            $this->errors['prefix']=__('Bad prefix. Must have underscore (_) at the end. e.g \'autot_\'');
 
         //Make sure admin username is not very predictable. XXX: feels dirty but necessary
         if(!$this->errors['username'] && in_array(strtolower($vars['username']),array('admin','admins','username','osticket')))
@@ -325,9 +325,9 @@ class Installer extends SetupWizard {
 
         //TODO: create another personalized ticket and assign to admin??
         //Log a message.
-        $msg=__("Congratulations osTicket basic installation completed!\n\nThank you for choosing osTicket!");
+        $msg=__("Congratulations autoTicket basic installation completed!\n\nThank you for choosing autoTicket!");
         $sql='INSERT INTO '.TABLE_PREFIX.'syslog SET created=NOW(), updated=NOW(), log_type="Debug" '
-            .', title="osTicket installed!"'
+            .', title="autoTicket installed!"'
             .', log='.db_input($msg)
             .', ip_address='.db_input($_SERVER['REMOTE_ADDR']);
         db_query($sql, false);

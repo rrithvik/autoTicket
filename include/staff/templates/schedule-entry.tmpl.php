@@ -6,7 +6,7 @@ if ($entry)
 <h3 class="drag-handle"><?php
     echo $entry ? $entry->getName() : __('Add New Schedule Entry');
     ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <div><em><?php echo $schedule->getName(); ?></em></div>
 <hr/>
 <?php
@@ -24,11 +24,11 @@ if ($errors['error']) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" value="<?php echo __('Cancel'); ?>" class="close">
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input class="btn btn-danger close" type="button" value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
-            <input type="submit" value="<?php echo __('Save'); ?>">
+            <input class="btn btn-primary" type="submit" value="<?php echo __('Save'); ?>">
         </span>
      </p>
 </form>

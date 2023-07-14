@@ -1,4 +1,4 @@
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -11,7 +11,7 @@
         <tr>
             <td width="160"><?php echo __('New Ticket'); ?>:</td>
             <td>
-                <input type="checkbox" name="ticket_autoresponder" <?php
+                <input class="form-check-input" type="checkbox" name="ticket_autoresponder" <?php
 echo $config['ticket_autoresponder'] ? 'checked="checked"' : ''; ?>/>
                 <?php echo __('Ticket Owner'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#new_ticket"></i>
@@ -20,7 +20,7 @@ echo $config['ticket_autoresponder'] ? 'checked="checked"' : ''; ?>/>
         <tr>
             <td width="160"><?php echo __('New Ticket by Agent'); ?>:</td>
             <td>
-                <input type="checkbox" name="ticket_notice_active" <?php
+                <input class="form-check-input" type="checkbox" name="ticket_notice_active" <?php
 echo $config['ticket_notice_active'] ? 'checked="checked"' : ''; ?>/>
                 <?php echo __('Ticket Owner'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#new_ticket_by_staff"></i>
@@ -29,7 +29,7 @@ echo $config['ticket_notice_active'] ? 'checked="checked"' : ''; ?>/>
         <tr>
             <td width="160" rowspan="2"><?php echo __('New Message'); ?>:</td>
             <td>
-                <input type="checkbox" name="message_autoresponder" <?php
+                <input class="form-check-input" type="checkbox" name="message_autoresponder" <?php
 echo $config['message_autoresponder'] ? 'checked="checked"' : ''; ?>/>
                 <?php echo __('Submitter: Send receipt confirmation'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#new_message_for_submitter"></i>
@@ -37,7 +37,7 @@ echo $config['message_autoresponder'] ? 'checked="checked"' : ''; ?>/>
         </tr>
         <tr>
             <td>
-                <input type="checkbox" name="message_autoresponder_collabs" <?php
+                <input class="form-check-input" type="checkbox" name="message_autoresponder_collabs" <?php
 echo $config['message_autoresponder_collabs'] ? 'checked="checked"' : ''; ?>/>
                 <?php echo __('Participants: Send new activity notice'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#new_message_for_participants"></i>
@@ -47,7 +47,7 @@ echo $config['message_autoresponder_collabs'] ? 'checked="checked"' : ''; ?>/>
         <tr>
             <td width="160"><?php echo __('Overlimit Notice'); ?>:</td>
             <td>
-                <input type="checkbox" name="overlimit_notice_active" <?php
+                <input class="form-check-input" type="checkbox" name="overlimit_notice_active" <?php
 echo $config['overlimit_notice_active'] ? 'checked="checked"' : ''; ?>/>
                 <?php echo __('Ticket Submitter'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#overlimit_notice"></i>

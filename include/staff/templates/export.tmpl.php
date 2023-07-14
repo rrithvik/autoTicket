@@ -4,7 +4,7 @@ if (!$info[':title'])
     $info[':title'] = __('Export');
 ?>
 <h3 class="drag-handle"><?php echo $info[':title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <div class="clear"></div>
 <hr/>
 <?php
@@ -33,7 +33,7 @@ $action = $info[':action'] ?: ('#');
     <hr>
     <p class="full-width">
         <span class="buttons pull-right">
-            <input type="button" name="cancel" class="close"
+            <input type="button" name="cancel" class="btn btn-danger close"
             value="<?php echo __('Yes, Email Me'); ?>">
         </span>
      </p>

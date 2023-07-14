@@ -67,7 +67,7 @@ if ($actions && isset($options['status'])) {
     <span
         class="action-button"
         data-dropdown="#action-dropdown-moreoptions">
-        <i class="icon-caret-down pull-right"></i>
+        <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <a class="tasks-action"
             href="#moreoptions"><i
             class="icon-reorder"></i> <?php
@@ -105,7 +105,7 @@ if ($actions && isset($options['status'])) {
         class="action-button" data-placement="bottom"
         data-dropdown="#action-dropdown-assign" data-toggle="tooltip" title=" <?php
         echo __('Assign'); ?>">
-        <i class="icon-caret-down pull-right"></i>
+        <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <a class="tasks-action" id="tasks-assign"
             href="#tasks/mass/assign"><i class="icon-user"></i></a>
     </span>

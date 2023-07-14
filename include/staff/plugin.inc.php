@@ -24,7 +24,7 @@ $info= Format::htmlchars(($errors && $_POST) ? $_POST : array(), true);
         <input type="hidden" name="do" value="update">
         <input type="hidden" name="a" value="<?php echo Format::htmlchars($_REQUEST['a']); ?>">
         <input type="hidden" name="id" value="<?php echo $plugin->getId(); ?>">
-        <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2">
@@ -89,9 +89,9 @@ $info= Format::htmlchars(($errors && $_POST) ? $_POST : array(), true);
         </tbody>
         </table>
         <p class="centered">
-        <input type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-        <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
+        <input class="btn btn-primary" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
+        <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
+        <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
             onclick='window.location.href="?"'>
         </p>
     </form>

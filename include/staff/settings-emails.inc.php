@@ -5,7 +5,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
 <form action="emailsettings.php" method="post" class="save">
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="emails" >
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -84,7 +84,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
         <tr>
             <td width="180" class="required"><?php echo __("Verify Email Addresses");?>:</td>
             <td>
-                <input type="checkbox" name="verify_email_addrs" <?php
+                <input class="form-check-input" type="checkbox" name="verify_email_addrs" <?php
                     if ($config['verify_email_addrs']) echo 'checked="checked"'; ?>>
                 <?php echo __('Verify email address domain'); ?>
                 <i class="help-tip icon-question-sign" href="#verify_email_addrs"></i>
@@ -94,11 +94,11 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             </em></th>
         <tr>
             <td width="180"><?php echo __('Email Fetching'); ?>:</td>
-            <td><input type="checkbox" name="enable_mail_polling" value=1 <?php echo $config['enable_mail_polling']? 'checked="checked"': ''; ?>>
+            <td><input class="form-check-input" type="checkbox" name="enable_mail_polling" value=1 <?php echo $config['enable_mail_polling']? 'checked="checked"': ''; ?>>
                 <?php echo __('Enable'); ?>
                 <i class="help-tip icon-question-sign" href="#email_fetching"></i>
                 &nbsp;
-                 <input type="checkbox" name="enable_auto_cron" <?php echo $config['enable_auto_cron']?'checked="checked"':''; ?>>
+                 <input class="form-check-input" type="checkbox" name="enable_auto_cron" <?php echo $config['enable_auto_cron']?'checked="checked"':''; ?>>
                 <?php echo __('Fetch on auto-cron'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#enable_autocron_fetch"></i>
             </td>
@@ -106,7 +106,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
         <tr>
             <td width="180"><?php echo __('Strip Quoted Reply');?>:</td>
             <td>
-                <input type="checkbox" name="strip_quoted_reply" <?php echo $config['strip_quoted_reply'] ? 'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="strip_quoted_reply" <?php echo $config['strip_quoted_reply'] ? 'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>
                 <i class="help-tip icon-question-sign" href="#strip_quoted_reply"></i>
                 &nbsp;<font class="error">&nbsp;<?php echo $errors['strip_quoted_reply']; ?></font>
@@ -121,14 +121,14 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
         <tr>
             <td width="180"><?php echo __('Emailed Tickets Priority'); ?>:</td>
             <td>
-                <input type="checkbox" name="use_email_priority" value="1" <?php echo $config['use_email_priority'] ?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="use_email_priority" value="1" <?php echo $config['use_email_priority'] ?'checked="checked"':''; ?>>
                 &nbsp;<?php echo __('Enable'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#emailed_tickets_priority"></i>
             </td>
         </tr>
         <tr>
             <td width="180"><?php echo __('Accept All Emails'); ?>:</td>
-            <td><input type="checkbox" name="accept_unregistered_email" <?php
+            <td><input class="form-check-input" type="checkbox" name="accept_unregistered_email" <?php
                 echo $config['accept_unregistered_email'] ? 'checked="checked"' : ''; ?>/>
                 <?php echo __('Accept email from unknown Users'); ?>
                 <i class="help-tip icon-question-sign" href="#accept_all_emails"></i>
@@ -136,7 +136,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
         </tr>
         <tr>
             <td width="180"><?php echo __('Accept Email Collaborators'); ?>:</td>
-            <td><input type="checkbox" name="add_email_collabs" <?php
+            <td><input class="form-check-input" type="checkbox" name="add_email_collabs" <?php
             echo $config['add_email_collabs'] ? 'checked="checked"' : ''; ?>/>
             <?php echo __('Automatically add collaborators from email fields'); ?>&nbsp;
             <i class="help-tip icon-question-sign" href="#accept_email_collaborators"></i>
@@ -170,7 +170,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
         <tr>
             <td width="180"><?php echo __('Attachments');?>:</td>
             <td>
-                <input type="checkbox" name="email_attachments" <?php echo $config['email_attachments']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="email_attachments" <?php echo $config['email_attachments']?'checked="checked"':''; ?>>
                 <?php echo __('Email attachments to the user'); ?>
                 <i class="help-tip icon-question-sign" href="#ticket_response_files"></i>
             </td>
@@ -178,7 +178,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
     </tbody>
 </table>
 <p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <input class="btn btn-primary button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
+    <input class="btn btn-secondary button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>

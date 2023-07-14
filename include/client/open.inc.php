@@ -117,7 +117,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
   <p class="buttons" style="text-align:center;">
         <input type="submit" value="<?php echo __('Create Ticket');?>">
         <input type="reset" name="reset" value="<?php echo __('Reset');?>">
-        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+        <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
             $('.richtext').each(function() {
                 var redactor = $(this).data('redactor');
                 if (redactor && redactor.opts.draftDelete)

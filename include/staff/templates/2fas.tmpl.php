@@ -4,7 +4,7 @@ if ($auth)
     $title = sprintf('%s %s %s', $auth->getName(), '2FA', __('Setup'));
 ?>
 <h3 class="drag-handle"><?php echo $title; ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 <?php
 if ($info['error']) {
@@ -65,8 +65,8 @@ if ($auth && $form) {
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="close" value="<?php echo __('Cancel'); ?>" class="close">
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="close" value="<?php echo __('Cancel'); ?>" class="btn btn-danger close">
         </span>
         <span class="buttons pull-right">
             <input type="submit" value="<?php echo ($state == 'verify') ?

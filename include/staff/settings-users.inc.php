@@ -14,7 +14,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
 </ul>
 <div id="users-tabs_container">
    <div id="settings" class="tab_content">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
 
         <tr>
@@ -67,7 +67,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             </th>
         </tr>
         <tr><td><?php echo __('Registration Required'); ?>:</td>
-            <td><input type="checkbox" name="clients_only" <?php
+            <td><input class="form-check-input" type="checkbox" name="clients_only" <?php
                 if ($config['clients_only'])
                     echo 'checked="checked"'; ?>/> <?php echo __(
                     'Require registration and login to create tickets'); ?>
@@ -137,7 +137,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             </td>
         </tr>
         <tr><td><?php echo __('Authentication Token'); ?>:</td>
-            <td><input type="checkbox" name="allow_auth_tokens" <?php
+            <td><input class="form-check-input" type="checkbox" name="allow_auth_tokens" <?php
                 if ($config['allow_auth_tokens'])
                     echo 'checked="checked"'; ?>/> <?php
                     echo __('Enable use of authentication tokens to auto-login users'); ?>
@@ -145,7 +145,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             </td>
         </tr>
         <tr><td><?php echo __('Client Quick Access'); ?>:</td>
-            <td><input type="checkbox" name="client_verify_email" <?php
+            <td><input class="form-check-input" type="checkbox" name="client_verify_email" <?php
                 if ($config['client_verify_email'])
                     echo 'checked="checked"'; ?>/> <?php echo __(
                 'Require email verification on "Check Ticket Status" page'); ?>
@@ -156,7 +156,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
     </table>
    </div>
    <div id="templates" class="tab_content hidden">
-    <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
 <?php
 $res = db_query('select distinct(`type`), id, notes, name, updated from '
@@ -205,8 +205,8 @@ $manage_content = function($title, $content) use ($contents) {
 </table>
 </div>
 <p style="text-align:center">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
+    <input class="btn btn-primary button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
+    <input class="btn btn-secondary button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
 </p>
 </div>
 </form>

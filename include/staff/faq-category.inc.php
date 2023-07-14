@@ -11,7 +11,7 @@ echo sprintf('<div class="pull-right flush-right">
     <a class="green action-button" href="faq.php?cid=%d&a=add">'.__('Add New FAQ').'</a>
     <span class="action-button" data-dropdown="#action-dropdown-more"
           style="/*DELME*/ vertical-align:top; margin-bottom:0">
-        <i class="icon-caret-down pull-right"></i>
+        <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <span ><i class="icon-cog"></i>'. __('More').'</span>
     </span>
     <div id="action-dropdown-more" class="action-dropdown anchor-right">

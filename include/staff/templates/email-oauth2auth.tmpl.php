@@ -17,7 +17,7 @@ $action = sprintf('#email/%d/auth/config/%s/%s',
 $addr = $account->getEmail()->email;
 ?>
 <h3><?php echo __('OAuth2 Authorization'); ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 if (isset($errors['err'])) {
@@ -48,7 +48,7 @@ if (isset($errors['err'])) {
         echo sprintf('<p id="msg_warning">%s</p>',
                 __('OAuth2 Instance is Disabled'));
         ?>
-        <table class="form_table" width="100%" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="100%" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2">
@@ -85,7 +85,7 @@ if (isset($errors['err'])) {
                         name="name"
                         disabled="disabled"
                         value="<?php echo $addr; ?>"/>&nbsp;
-                    <input type="checkbox" name="strict_matching"
+                    <input class="form-check-input" type="checkbox" name="strict_matching"
                         <?php if ($info['strict_matching']) echo 'checked="checked"'; ?>>
                     &nbsp;<?php echo __('Strict Matching'); ?>
                     <i class="help-tip icon-question-sign" href="#strict_matching"></i>
@@ -130,7 +130,7 @@ if (isset($errors['err'])) {
                 <i class="icon-trash"></i>&nbsp;<?php echo __('Delete Token'); ?>
         </a>
         <div class="clear"></div>
-        <table class="form_table" width="100%" border="0" cellspacing="0" cellpadding="2">
+        <table class="table form_table" width="100%" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2">
@@ -172,7 +172,7 @@ if (isset($errors['err'])) {
 <hr/>
 <p class="full-width">
     <span class="buttons" style="float:left">
-        <input type="button" name="cancel" class="close" value="<?php echo
+        <input type="button" name="cancel" class="btn btn-danger close" value="<?php echo
         __('Cancel'); ?>">
     </span>
     <span class="buttons" style="float:right">

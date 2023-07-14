@@ -6,7 +6,7 @@ if (isset($errors['smtp_auth'])) {
 }
 ?>
 <div>
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
         <tr>
             <th colspan="2">
@@ -17,10 +17,10 @@ if (isset($errors['smtp_auth'])) {
         </tr>
         <tr><td width="180"><?php echo __('Status');?></td>
             <td>
-                <label><input type="radio" name="smtp_active" value="1"
+                <label><input class="form-check-input" type="radio" name="smtp_active" value="1"
                 <?php echo $info['smtp_active'] ? 'checked' : ''; ?>/>&nbsp;<?php echo __('Enable');?></label>
                 &nbsp;
-                <label><input type="radio" name="smtp_active" value="0"
+                <label><input class="form-check-input" type="radio" name="smtp_active" value="0"
                 <?php echo !$info['smtp_active'] ? 'checked' : ''; ?>/>&nbsp;<?php echo __('Disable');?></label>
                 &nbsp;<font class="error"><?php echo $errors['smtp_active']; ?></font>
             </td>
@@ -71,7 +71,7 @@ if (isset($errors['smtp_auth'])) {
         <tr>
             <td><?php echo __('Header Spoofing'); ?></td>
             <td>
-                <label><input type="checkbox" name="smtp_allow_spoofing"
+                <label><input class="form-check-input" type="checkbox" name="smtp_allow_spoofing"
                 value="1" <?php echo $info['smtp_allow_spoofing'] ? 'checked="checked"' : ''; ?>>
                 <?php echo sprintf(__('Allow for %s'), __('this email')); ?></label>
                 <i class="help-tip icon-question-sign" href="#header_spoofing"></i>

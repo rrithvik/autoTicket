@@ -1,7 +1,7 @@
 <?php
 if (!$_REQUEST['mode']) { ?>
 <h3 class="drag-handle"><?php echo __('Email Recipients'); ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 } ?>
@@ -22,7 +22,7 @@ if (!$_REQUEST['mode']) {?>
 <hr>
 <p class="full-width">
     <span class="buttons pull-right">
-        <input type="button" name="cancel" class="close"
+        <input type="button" name="cancel" class="btn btn-danger close"
             value="<?php echo __('Close'); ?>">
     </span>
 </p>

@@ -16,7 +16,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 </ul>
 <div id="tasks-tabs_container">
    <div id="settings" class="tab_content">
-    <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2">
@@ -55,10 +55,11 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                         ?>><?php echo $s->name; ?></option>
     <?php } ?>
                     </select>
-                    <button class="action-button pull-right" onclick="javascript:
+                    <button class="btn btn-secondary action-button pull-right" onclick="javascript:
                     $.dialog('ajax.php/sequence/manage', 205);
                     return false;
-                    "><i class="icon-gear"></i> <?php echo __('Manage'); ?></button>
+                    "><i class="icon-gear"></i> <?php echo __('Manage'); ?>
+                    </button>
                     <i class="help-tip icon-question-sign" href="#sequence_id"></i>
                 </td>
             </tr>
@@ -74,7 +75,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                         <?php
                         } ?>
                     </select>
-                    &nbsp;<span class="error"><?php echo
+                    <span class="error"><?php echo
                     $errors['default_task_priority_id']; ?></span> <i class="help-tip icon-question-sign" href="#default_priority"></i>
                  </td>
             </tr>
@@ -104,17 +105,17 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
     </table>
    </div>
    <div id="alerts" class="tab_content" style="display:none;">
-    <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <tbody>
             <tr><th><em><b><?php echo __('New Task Alert'); ?></b>:
                 <i class="help-tip icon-question-sign" href="#task_alert"></i>
                 </em></th></tr>
             <tr>
                 <td><em><b><?php echo __('Status'); ?>:</b></em> &nbsp;
-                    <input type="radio" name="task_alert_active"  value="1"
+                    <input class="form-check-input" type="radio" name="task_alert_active"  value="1"
                     <?php echo $config['task_alert_active'] ? 'checked="checked"' : ''; ?>
                     /> <?php echo __('Enable'); ?>
-                    <input type="radio" name="task_alert_active"  value="0"
+                    <input class="form-check-input" type="radio" name="task_alert_active"  value="0"
                     <?php echo !$config['task_alert_active'] ? 'checked="checked"' : ''; ?> />
                     <?php echo __('Disable'); ?>
                     &nbsp;&nbsp;<font class="error"><?php echo $errors['task_alert_active']; ?></font></em>
@@ -122,21 +123,21 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="task_alert_admin" <?php
+                    <input class="form-check-input" type="checkbox" name="task_alert_admin" <?php
                         echo $config['task_alert_admin'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Admin Email'); ?> <em>(<?php echo $cfg->getAdminEmail(); ?>)</em>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="task_alert_dept_manager"
+                    <input class="form-check-input" type="checkbox" name="task_alert_dept_manager"
                     <?php echo $config['task_alert_dept_manager'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Manager'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="checkbox" name="task_alert_dept_members"
+                    <input class="form-check-input" type="checkbox" name="task_alert_dept_members"
                     <?php echo $config['task_alert_dept_members'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Members'); ?>
                 </td>
@@ -146,11 +147,11 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                 </em></th></tr>
             <tr>
                 <td><em><b><?php echo __('Status'); ?>:</b></em> &nbsp;
-                  <input type="radio" name="task_activity_alert_active" value="1"
+                  <input class="form-check-input" type="radio" name="task_activity_alert_active" value="1"
                   <?php echo $config['task_activity_alert_active'] ? 'checked="checked"' : ''; ?> />
                     <?php echo __('Enable'); ?>
                   &nbsp;&nbsp;
-                  <input type="radio" name="task_activity_alert_active"  value="0"
+                  <input class="form-check-input" type="radio" name="task_activity_alert_active"  value="0"
                   <?php echo !$config['task_activity_alert_active'] ? 'checked="checked"' : ''; ?> />
                     <?php echo __('Disable'); ?>
                   &nbsp;&nbsp;&nbsp;<font class="error"><?php echo $errors['task_activity_alert_active']; ?></font>
@@ -158,21 +159,21 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_activity_alert_laststaff" <?php
+                  <input class="form-check-input" type="checkbox" name="task_activity_alert_laststaff" <?php
                   echo $config['task_activity_alert_laststaff'] ? 'checked="checked"' : ''; ?>>
                   <?php echo __('Last Respondent'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_activity_alert_assigned"
+                  <input class="form-check-input" type="checkbox" name="task_activity_alert_assigned"
                   <?php echo $config['task_activity_alert_assigned'] ? 'checked="checked"' : ''; ?>>
                   <?php echo __('Assigned Agent / Team'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_activity_alert_dept_manager"
+                  <input class="form-check-input" type="checkbox" name="task_activity_alert_dept_manager"
                   <?php echo $config['task_activity_alert_dept_manager'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Manager'); ?>
                 </td>
@@ -194,7 +195,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_assignment_alert_staff" <?php echo
+                  <input class="form-check-input" type="checkbox" name="task_assignment_alert_staff" <?php echo
                   $config['task_assignment_alert_staff'] ? 'checked="checked"' : ''; ?>>
                   <?php echo __('Assigned Agent / Team'); ?>
                 </td>
@@ -218,10 +219,10 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                 </em></th></tr>
             <tr>
                 <td><em><b><?php echo __('Status'); ?>:</b></em> &nbsp;
-                <input type="radio" name="task_transfer_alert_active"  value="1"
+                <input class="form-check-input" type="radio" name="task_transfer_alert_active"  value="1"
                 <?php echo $config['task_transfer_alert_active'] ? 'checked="checked"' : ''; ?> />
                     <?php echo __('Enable'); ?>
-                <input type="radio" name="task_transfer_alert_active"  value="0"
+                <input class="form-check-input" type="radio" name="task_transfer_alert_active"  value="0"
                 <?php echo !$config['task_transfer_alert_active'] ? 'checked="checked"' : ''; ?> />
                     <?php echo __('Disable'); ?>
                   &nbsp;&nbsp;&nbsp;<font class="error"><?php
@@ -230,21 +231,21 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_transfer_alert_assigned"
+                  <input class="form-check-input" type="checkbox" name="task_transfer_alert_assigned"
                   <?php echo $config['task_transfer_alert_assigned']?'checked="checked"':''; ?>>
                     <?php echo __('Assigned Agent / Team'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_transfer_alert_dept_manager"
+                  <input class="form-check-input" type="checkbox" name="task_transfer_alert_dept_manager"
                   <?php echo $config['task_transfer_alert_dept_manager'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Manager'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_transfer_alert_dept_members"
+                  <input class="form-check-input" type="checkbox" name="task_transfer_alert_dept_members"
                   <?php echo $config['task_transfer_alert_dept_members'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Members'); ?>
                 </td>
@@ -254,30 +255,30 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                 </em></th></tr>
             <tr>
                 <td><em><b><?php echo __('Status'); ?>:</b></em> &nbsp;
-                  <input type="radio" name="task_overdue_alert_active"  value="1"
+                  <input class="form-check-input" type="radio" name="task_overdue_alert_active"  value="1"
                     <?php echo $config['task_overdue_alert_active'] ? 'checked="checked"' : ''; ?> /> <?php echo __('Enable'); ?>
-                  <input type="radio" name="task_overdue_alert_active"  value="0"
+                  <input class="form-check-input" type="radio" name="task_overdue_alert_active"  value="0"
                     <?php echo !$config['task_overdue_alert_active'] ? 'checked="checked"' : ''; ?> /> <?php echo __('Disable'); ?>
                   &nbsp;&nbsp;<font class="error"><?php echo $errors['task_overdue_alert_active']; ?></font>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_overdue_alert_assigned" <?php
+                  <input class="form-check-input" type="checkbox" name="task_overdue_alert_assigned" <?php
                     echo $config['task_overdue_alert_assigned'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Assigned Agent / Team'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_overdue_alert_dept_manager" <?php
+                  <input class="form-check-input" type="checkbox" name="task_overdue_alert_dept_manager" <?php
                     echo $config['task_overdue_alert_dept_manager'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Manager'); ?>
                 </td>
             </tr>
             <tr>
                 <td>
-                  <input type="checkbox" name="task_overdue_alert_dept_members" <?php
+                  <input class="form-check-input" type="checkbox" name="task_overdue_alert_dept_members" <?php
                     echo $config['task_overdue_alert_dept_members'] ? 'checked="checked"' : ''; ?>>
                     <?php echo __('Department Members'); ?>
                 </td>
@@ -287,8 +288,8 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
    </div>
 </div>
 <p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <input class="btn btn-primary button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
+    <input class="btn btn-secondary button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">

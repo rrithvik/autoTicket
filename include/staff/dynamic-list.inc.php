@@ -41,7 +41,7 @@ $info=Format::htmlchars(($errors && $_POST) ? array_merge($info,$_POST) : $info,
 </ul>
 <div id="list-tabs_container">
 <div id="definition" class="tab_content <?php if ($list) echo 'hidden'; ?>">
-    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -112,7 +112,7 @@ $info=Format::htmlchars(($errors && $_POST) ? array_merge($info,$_POST) : $info,
     </table>
 </div>
 <div id="properties" class="hidden tab_content">
-    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="7">
@@ -179,7 +179,7 @@ $info=Format::htmlchars(($errors && $_POST) ? array_merge($info,$_POST) : $info,
                 if (!$f->isDeletable())
                     echo '<i class="icon-ban-circle"></i>';
                 else
-                    echo sprintf('<input type="checkbox" name="delete-prop-%s">', $id);
+                    echo sprintf('<input class="form-check-input" type="checkbox" name="delete-prop-%s">', $id);
                 ?>
                 <input type="hidden" name="prop-sort-<?php echo $id; ?>"
                     value="<?php echo $f->get('sort'); ?>"/>
@@ -228,9 +228,9 @@ $info=Format::htmlchars(($errors && $_POST) ? array_merge($info,$_POST) : $info,
 <?php } ?>
 
 <p class="centered">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
         onclick='window.location.href="?"'>
 </p>
 </form>

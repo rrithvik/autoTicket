@@ -19,7 +19,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         <?php echo __('Queues'); ?></a></li>
 </ul>
 <div class="tab_content" id="settings">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -58,7 +58,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                     ?>><?php echo $s->name; ?></option>
 <?php } ?>
                 </select>
-                <button class="action-button pull-right" onclick="javascript:
+                <button class="btn btn-secondary action-button pull-right" onclick="javascript:
                 $.dialog('ajax.php/sequence/manage', 205);
                 return false;
                 "><i class="icon-gear"></i> <?php echo __('Manage'); ?></button>
@@ -67,7 +67,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         </tr>
         <tr><td width="220"><?php echo __('Top-Level Ticket Counts'); ?>:</td>
             <td>
-                <input type="checkbox" name="queue_bucket_counts" <?php echo $config['queue_bucket_counts']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="queue_bucket_counts" <?php echo $config['queue_bucket_counts']?'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#queue_bucket_counts"></i>
             </td>
         </tr>
@@ -199,7 +199,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         <tr>
             <td><?php echo __('Human Verification');?>:</td>
             <td>
-                <input type="checkbox" name="enable_captcha" <?php echo $config['enable_captcha']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="enable_captcha" <?php echo $config['enable_captcha']?'checked="checked"':''; ?>>
                 <?php echo __('Enable CAPTCHA on new web tickets.');?>
                 &nbsp;<font class="error"><?php echo $errors['enable_captcha']; ?></font>
                 &nbsp;<i class="help-tip icon-question-sign" href="#human_verification"></i>
@@ -208,21 +208,21 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         <tr>
             <td><?php echo __('Collaborator Tickets Visibility'); ?>:</td>
             <td>
-                <input type="checkbox" name="collaborator_ticket_visibility" <?php echo $config['collaborator_ticket_visibility']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="collaborator_ticket_visibility" <?php echo $config['collaborator_ticket_visibility']?'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#collaborator_ticket_visibility"></i>
             </td>
         </tr>
         <tr>
             <td><?php echo __('Claim on Response'); ?>:</td>
             <td>
-                <input type="checkbox" name="auto_claim_tickets" <?php echo $config['auto_claim_tickets']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="auto_claim_tickets" <?php echo $config['auto_claim_tickets']?'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#claim_tickets"></i>
             </td>
         </tr>
         <tr>
             <td><?php echo __('Auto-refer on Close'); ?>:</td>
             <td>
-                <input type="checkbox" name="auto_refer_closed" <?php echo $config['auto_refer_closed']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="auto_refer_closed" <?php echo $config['auto_refer_closed']?'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>&nbsp;<i class="help-tip
                 icon-question-sign" href="#auto_refer"></i>
             </td>
@@ -230,14 +230,14 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
         <tr>
             <td><?php echo __('Require Help Topic to Close'); ?>:</td>
             <td>
-                <input type="checkbox" name="require_topic_to_close" <?php echo $config['require_topic_to_close']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="require_topic_to_close" <?php echo $config['require_topic_to_close']?'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#require_topic_to_close"></i>
             </td>
         </tr>
         <tr>
             <td><?php echo __('Allow External Images'); ?>:</td>
             <td>
-                <input type="checkbox" name="allow_external_images" <?php echo $config['allow_external_images']?'checked="checked"':''; ?>>
+                <input class="form-check-input" type="checkbox" name="allow_external_images" <?php echo $config['allow_external_images']?'checked="checked"':''; ?>>
                 <?php echo __('Enable'); ?>&nbsp;<i class="help-tip icon-question-sign" href="#allow_external_images"></i>
             </td>
         </tr>
@@ -280,8 +280,8 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 </div>
 
 <p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <input class="btn btn-primary button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
+    <input class="btn btn-secondary button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">

@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 if ($info['error']) {
@@ -45,7 +45,7 @@ if ($org_id) { ?>
 <em><?php echo __(
 'Use the columns shown in the table below. To add more properties, use the Properties tab.  Only properties with `variable` defined can be imported.'); ?>
 </p>
-<table class="list"><tr>
+<table class="table"><tr>
 <?php
     $fields = array('Value', 'Abbreviation');
     $data = array(
@@ -68,18 +68,18 @@ if ($org_id) { ?>
     } ?>
 </tr></table>
 <br/>
-<input type="file" name="import"/>
+<input class="form-control" type="file" name="import"/>
 </div>
 
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close"  value="<?php
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger close"  value="<?php
             echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
-            <input type="submit" value="<?php echo __('Import Items'); ?>">
+            <input class="btn btn-primary" type="submit" value="<?php echo __('Import Items'); ?>">
         </span>
      </p>
 </form>

@@ -1,5 +1,5 @@
     <h3 class="drag-handle"><?php echo __('Field Configuration'); ?> &mdash; <?php echo $field->get('label') ?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <form method="post" action="#form/field-config/<?php
             echo $field->get('id'); ?>">
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="span6">
-    <input type="checkbox" name="flags[]" value="<?php
+    <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_ENABLED; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_ENABLED)) echo 'checked="checked"';
             if ($field->hasFlag(DynamicFormField::FLAG_MASK_DISABLE)) echo ' disabled="disabled"';
@@ -34,14 +34,14 @@
         </div>
     </div>
     <div class="span3">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_CLIENT_VIEW; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_CLIENT_VIEW)) echo 'checked="checked"';
             if ($field->isPrivacyForced()) echo ' disabled="disabled"';
         ?>> <?php echo __('For EndUsers'); ?><br/>
     </div>
     <div class="span3">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_AGENT_VIEW; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_AGENT_VIEW)) echo 'checked="checked"';
             if ($field->isPrivacyForced()) echo ' disabled="disabled"';
@@ -59,14 +59,14 @@
         </div>
     </div>
     <div class="span3">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_CLIENT_REQUIRED; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_CLIENT_REQUIRED)) echo 'checked="checked"';
             if ($field->isRequirementForced()) echo ' disabled="disabled"';
         ?>> <?php echo __('For EndUsers'); ?><br/>
     </div>
     <div class="span3">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_AGENT_REQUIRED; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_AGENT_REQUIRED)) echo 'checked="checked"';
             if ($field->isRequirementForced()) echo ' disabled="disabled"';
@@ -83,13 +83,13 @@
     </div>
 
     <div class="span3">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_CLIENT_EDIT; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_CLIENT_EDIT)) echo 'checked="checked"';
         ?>> <?php echo __('For EndUsers'); ?><br/>
     </div>
     <div class="span3">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_AGENT_EDIT; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_AGENT_EDIT)) echo 'checked="checked"';
         ?>> <?php echo __('For Agents'); ?><br/>
@@ -107,7 +107,7 @@
         </div>
     </div>
     <div class="span6">
-        <input type="checkbox" name="flags[]" value="<?php
+        <input class="form-check-input" type="checkbox" name="flags[]" value="<?php
             echo DynamicFormField::FLAG_CLOSE_REQUIRED; ?>" <?php
             if ($field->hasFlag(DynamicFormField::FLAG_CLOSE_REQUIRED)) echo 'checked="checked"';
         ?>> <?php echo __('Require entry to close a thread'); ?><br/>
@@ -170,11 +170,11 @@
         <hr>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="reset" value="<?php echo __('Reset'); ?>">
-                <input type="button" value="<?php echo __('Cancel'); ?>" class="close">
+                <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+                <input class="btn btn-danger close" type="button" value="<?php echo __('Cancel'); ?>">
             </span>
             <span class="buttons pull-right">
-                <input type="submit" value="<?php echo __('Save'); ?>">
+                <input class="btn btn-primary" type="submit" value="<?php echo __('Save'); ?>">
             </span>
          </p>
     </form>

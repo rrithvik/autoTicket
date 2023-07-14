@@ -65,7 +65,7 @@ if ($_POST)
         <h2><?php echo __('Open a New Ticket');?></h2>
     </div>
 </div>
- <table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
     <!-- This looks empty - but beware, with fixed table layout, the user
          agent will usually only consult the cells in the first row to
@@ -435,14 +435,14 @@ print $response_form->getField('attachments')->render();
                     <?php
                     $info['signature']=$info['signature']?$info['signature']:$thisstaff->getDefaultSignatureType();
                     ?>
-                    <label><input type="radio" name="signature" value="none" checked="checked"> <?php echo __('None');?></label>
+                    <label><input class="form-check-input" type="radio" name="signature" value="none" checked="checked"> <?php echo __('None');?></label>
                     <?php
                     if($thisstaff->getSignature()) { ?>
-                        <label><input type="radio" name="signature" value="mine"
+                        <label><input class="form-check-input" type="radio" name="signature" value="mine"
                             <?php echo ($info['signature']=='mine')?'checked="checked"':''; ?>> <?php echo __('My Signature');?></label>
                     <?php
                     } ?>
-                    <label><input type="radio" name="signature" value="dept"
+                    <label><input class="form-check-input" type="radio" name="signature" value="dept"
                         <?php echo ($info['signature']=='dept')?'checked="checked"':''; ?>> <?php echo sprintf(__('Department Signature (%s)'), __('if set')); ?></label>
                 </td>
              </tr>
@@ -473,9 +473,9 @@ print $response_form->getField('attachments')->render();
     </tbody>
 </table>
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo _P('action-button', 'Open');?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="javascript:
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo _P('action-button', 'Open');?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="javascript:
         $(this.form).find('textarea.richtext')
           .redactor('plugin.draft.deleteDraft');
         window.location.href='tickets.php'; " />

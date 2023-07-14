@@ -80,7 +80,7 @@ TicketForm::ensureDynamicDataView();
     <div class="pull-right flush-right">
         <?php
         if ($user) { ?>
-            <a class="green button action-button" href="tickets.php?a=open&uid=<?php echo $user->getId(); ?>">
+            <a class="btn btn-success green button" href="tickets.php?a=open&uid=<?php echo $user->getId(); ?>">
                 <i class="icon-plus"></i> <?php print __('Create New Ticket'); ?></a>
         <?php
         } ?>
@@ -94,7 +94,7 @@ if ($total) { ?>
 <?php csrf_token(); ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" name="do" id="action" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="2" width="940">
+ <table class="table" border="0" cellspacing="1" cellpadding="2" width="940">
     <thead>
         <tr>
             <?php

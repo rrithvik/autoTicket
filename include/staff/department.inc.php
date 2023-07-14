@@ -43,7 +43,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
       <i class="icon-user"></i> <?php echo __('Access'); ?></a></li>
 </ul>
 <div id="settings" class="tab_content">
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -113,11 +113,11 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <label>
-                <input type="radio" name="ispublic" value="1" <?php echo $info['ispublic']?'checked="checked"':''; ?>><strong><?php echo __('Public');?></strong>
+                <input class="form-check-input" type="radio" name="ispublic" value="1" <?php echo $info['ispublic']?'checked="checked"':''; ?>><strong><?php echo __('Public');?></strong>
                 </label>
                 &nbsp;
                 <label>
-                <input type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>><strong><?php echo __('Private');?></strong> <?php echo mb_convert_case(__('(internal)'), MB_CASE_TITLE);?>
+                <input class="form-check-input" type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>><strong><?php echo __('Private');?></strong> <?php echo mb_convert_case(__('(internal)'), MB_CASE_TITLE);?>
                 </label>
                 &nbsp;<i class="help-tip icon-question-sign" href="#type"></i>
                 &nbsp;<span class="error"><?php echo $errors['ispublic']; ?></span>
@@ -202,7 +202,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td><?php echo __('Claim on Response'); ?>:</td>
             <td>
                 <label>
-                <input type="checkbox" name="disable_auto_claim" <?php echo
+                <input class="form-check-input" type="checkbox" name="disable_auto_claim" <?php echo
                  $info['disable_auto_claim'] ? 'checked="checked"' : ''; ?>>
                 <?php echo sprintf('<strong>%s</strong> %s',
                         __('Disable'),
@@ -217,7 +217,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td><?php echo __('Reopen Auto Assignment'); ?>:</td>
             <td>
                 <label>
-                <input type="checkbox" name="disable_reopen_auto_assign" <?php echo
+                <input class="form-check-input" type="checkbox" name="disable_reopen_auto_assign" <?php echo
                  $info['disable_reopen_auto_assign'] ? 'checked="checked"' : ''; ?>>
                 <?php echo sprintf('<strong>%s</strong> %s',
                         __('Disable'),
@@ -287,7 +287,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <label>
-                <input type="checkbox" name="ticket_auto_response" value="0" <?php echo !$info['ticket_auto_response']?'checked="checked"':''; ?> >
+                <input class="form-check-input" type="checkbox" name="ticket_auto_response" value="0" <?php echo !$info['ticket_auto_response']?'checked="checked"':''; ?> >
 
                 <?php echo sprintf(__('<strong>Disable</strong> for %s'), __('this department')); ?>
                 </label>
@@ -300,7 +300,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <label>
-                <input type="checkbox" name="message_auto_response" value="0" <?php echo !$info['message_auto_response']?'checked="checked"':''; ?> >
+                <input class="form-check-input" type="checkbox" name="message_auto_response" value="0" <?php echo !$info['message_auto_response']?'checked="checked"':''; ?> >
                 <?php echo sprintf(__('<strong>Disable</strong> for %s'), __('this department')); ?>
                 </label>
                 <i class="help-tip icon-question-sign" href="#new_message"></i>
@@ -468,9 +468,9 @@ foreach ($dept->getMembers() as $member) {
 </div>
 
 <p style="text-align:center">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>"
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>"
         onclick='window.location.href="?"'>
 </p>
 </form>

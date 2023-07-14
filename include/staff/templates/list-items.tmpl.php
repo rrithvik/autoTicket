@@ -19,7 +19,7 @@
     <div class="pull-right">
 <?php
 if ($list->allowAdd()) { ?>
-        <a class="green button action-button field-config"
+        <a class="btn btn-success green button field-config"
             href="#list/<?php
             echo $list->getId(); ?>/item/add">
             <i class="icon-plus-sign"></i>
@@ -37,8 +37,8 @@ if ($list->allowAdd()) { ?>
     }
 } ?>
         <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
-            <i class="icon-caret-down pull-right"></i>
-            <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
+            <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
+            <i class="icon-cog"></i> <?php echo __('More');?></span>
         </span>
         <div id="action-dropdown-more" class="action-dropdown anchor-right">
             <ul>
@@ -64,7 +64,7 @@ if ($list->allowAdd()) { ?>
 $prop_fields = ($list) ? $list->getSummaryFields() : array();
 ?>
 
-    <table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th width="28" nowrap></th>

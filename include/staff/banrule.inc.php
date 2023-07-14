@@ -28,7 +28,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     <h2><?php echo $title; ?>
     <i class="help-tip icon-question-sign" href="#ban_list"></i>
     </h2>
- <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+ <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -42,8 +42,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <?php echo __('Ban Status'); ?>:
             </td>
             <td>
-                <input type="radio" name="isactive" value="1" <?php echo $info['isactive']?'checked="checked"':''; ?>><strong><?php echo __('Active');?></strong>
-                <input type="radio" name="isactive" value="0" <?php echo !$info['isactive']?'checked="checked"':''; ?>><?php echo __('Disabled');?>
+                <input class="form-check-input" type="radio" name="isactive" value="1" <?php echo $info['isactive']?'checked="checked"':''; ?>><strong><?php echo __('Active');?></strong>
+                <input class="form-check-input" type="radio" name="isactive" value="0" <?php echo !$info['isactive']?'checked="checked"':''; ?>><?php echo __('Disabled');?>
                 &nbsp;<span class="error">*&nbsp;</span>
             </td>
         </tr>
@@ -70,8 +70,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </tbody>
 </table>
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="banlist.php"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="banlist.php"'>
 </p>
 </form>

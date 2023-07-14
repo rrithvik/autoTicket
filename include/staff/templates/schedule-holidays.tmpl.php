@@ -6,7 +6,7 @@ $schedules = HolidaysSchedule::getSchedules();
 //    ->order_by('name')
 ?>
 <div>
-<table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead><tr><th><em><?php
         echo __('Check all Holiday Schedules applicable to this schedule');
         ?></em></th></tr></thead>
@@ -16,7 +16,7 @@ $schedules = HolidaysSchedule::getSchedules();
             $id = $schedule->getId(); ?>
             <tr id="schedule--<?php echo $id; ?>">
                 <td>
-                    <input type="checkbox" name="holidays[]"
+                    <input class="form-check-input" type="checkbox" name="holidays[]"
                         value="<?php echo $id; ?>"
                         <?php echo in_array($id, $holidays) ?
                         'checked="checked"' : ''; ?>

@@ -6,7 +6,7 @@ if ($queue->parent) { ?>
   <tbody>
     <tr>
       <td colspan="3">
-        <input type="checkbox" name="inherit-columns" <?php
+        <input class="form-check-input" type="checkbox" name="inherit-columns" <?php
           if ($hidden_cols) echo 'checked="checked"'; ?>
           onchange="javascript:$(this).closest('table').find('.if-not-inherited').toggle(!$(this).prop('checked'));" />
         <?php echo __('Inherit columns from the parent queue'); ?>
@@ -18,7 +18,7 @@ if ($queue->parent) { ?>
   <tbody>
     <tr>
       <td colspan="3">
-        <input type="checkbox" name="inherit-columns" <?php
+        <input class="form-check-input" type="checkbox" name="inherit-columns" <?php
           if ($queue->useStandardColumns()) echo 'checked="checked"';
           if ($queue instanceof SavedSearch && $queue->__new__) echo 'disabled="disabled"'; ?>
           onchange="javascript:$(this).closest('table').find('.if-not-inherited').toggle(!$(this).prop('checked'));
@@ -86,7 +86,7 @@ $hidden_cols = $queue->inheritColumns() || $queue->useStandardColumns();
           <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
 <?php } ?>
         </select>
-        <button type="button" class="green button">
+        <button type="button" class="btn btn-success green button">
           <?php echo __('Add'); ?>
         </button>
       </td>

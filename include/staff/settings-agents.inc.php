@@ -14,7 +14,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
     </ul>
     <div id="agents-tabs_container">
         <div id="settings" class="tab_content">
-            <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+            <table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
                 <tbody>
                     <tr>
                         <th colspan="2">
@@ -38,7 +38,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Agent Identity Masking'); ?>:</td>
                         <td>
-                            <input type="checkbox" name="hide_staff_name" <?php echo $config['hide_staff_name']?'checked="checked"':''; ?>>
+                            <input class="form-check-input" type="checkbox" name="hide_staff_name" <?php echo $config['hide_staff_name']?'checked="checked"':''; ?>>
                             <?php echo __("Hide agent's name on responses."); ?>
                             <i class="help-tip icon-question-sign" href="#staff_identity_masking"></i>
                         </td>
@@ -71,7 +71,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Disable Agent Collaborators'); ?>:</td>
                         <td>
-                            <input type="checkbox" name="disable_agent_collabs"
+                            <input class="form-check-input" type="checkbox" name="disable_agent_collabs"
                                 <?php echo $config['disable_agent_collabs']?'checked="checked"':''; ?>>
                             <?php echo __('Enable'); ?>&nbsp;<i class="help-tip icon-question-sign"
                                 href="#disable_agent_collabs"></i>
@@ -106,7 +106,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Allow Password Resets'); ?>:</td>
                         <td>
-                            <input type="checkbox" name="allow_pw_reset" <?php echo $config['allow_pw_reset']?'checked="checked"':''; ?>>
+                            <input class="form-check-input" type="checkbox" name="allow_pw_reset" <?php echo $config['allow_pw_reset']?'checked="checked"':''; ?>>
                             &nbsp;<i class="help-tip icon-question-sign" href="#allow_password_resets"></i>
                         </td>
                     </tr>
@@ -123,7 +123,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Multifactor Authentication'); ?>:</td>
                         <td>
-                            <input type="checkbox" name="require_agent_2fa" <?php
+                            <input class="form-check-input" type="checkbox" name="require_agent_2fa" <?php
                             echo $config['require_agent_2fa'] ? 'checked="checked"' : ''; ?>>
                             &nbsp;
                             <?php
@@ -164,7 +164,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Bind Agent Session to IP'); ?>:</td>
                         <td>
-                            <input type="checkbox" name="staff_ip_binding" <?php echo $config['staff_ip_binding']?'checked="checked"':''; ?>>
+                            <input class="form-check-input" type="checkbox" name="staff_ip_binding" <?php echo $config['staff_ip_binding']?'checked="checked"':''; ?>>
                             <i class="help-tip icon-question-sign" href="#bind_staff_session_to_ip"></i>
                         </td>
                     </tr>
@@ -172,7 +172,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
             </table>
         </div>
         <div id="templates" class="tab_content hidden">
-            <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+            <table class="table form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
                 <tbody>
                     <?php
                         $res = db_query('select distinct(`type`), id, notes, name, updated from '
@@ -229,8 +229,8 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
             </table>
         </div>
     <p style="text-align:center">
-        <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-        <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
+        <input class="btn btn-primary button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
+        <input class="btn btn-secondary button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
     </p>
     </div>
 </form>

@@ -10,7 +10,7 @@ if ($info['search'] === false)
 ?>
 <div id="the-lookup-form">
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <div><p id="msg_info"><i class="icon-info-sign"></i>&nbsp; <?php echo $msg_info; ?></p></div>
 <?php
@@ -57,7 +57,7 @@ if ($info['error']) {
 <hr>
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button" name="cancel" class="close"  value="<?php echo __('Cancel'); ?>">
+        <input type="button" name="cancel" class="btn btn-danger close"  value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">
         <input type="submit" value="<?php echo __('Continue'); ?>">
@@ -75,8 +75,8 @@ if ($info['error']) {
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="<?php echo $org ? 'cancel' : 'close' ?>"
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger <?php echo $org ? 'cancel' : 'close' ?>"
                 value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

@@ -7,7 +7,7 @@ $gmtime = Misc::gmtime();
 <form action="settings.php?t=system" method="post" class="save">
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="system" >
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table thead-light form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -21,8 +21,8 @@ $gmtime = Misc::gmtime();
             <td width="220" class="required"><?php echo __('Helpdesk Status');?>:</td>
             <td>
                 <span>
-                <label><input type="radio" name="isonline"  value="1"   <?php echo $config['isonline']?'checked="checked"':''; ?> />&nbsp;<b><?php echo __('Online'); ?></b>&nbsp;</label>
-                <label><input type="radio" name="isonline"  value="0"   <?php echo !$config['isonline']?'checked="checked"':''; ?> />&nbsp;<b><?php echo __('Offline'); ?></b></label>
+                <label><input class="form-check-input" type="radio" name="isonline"  value="1"   <?php echo $config['isonline']?'checked="checked"':''; ?> />&nbsp;<b><?php echo __('Online'); ?></b>&nbsp;</label>
+                <label><input class="form-check-input" type="radio" name="isonline"  value="0"   <?php echo !$config['isonline']?'checked="checked"':''; ?> />&nbsp;<b><?php echo __('Offline'); ?></b></label>
                 &nbsp;<font class="error"><?php echo $config['isoffline']?'osTicket '.__('Offline'):''; ?></font>
                 <i class="help-tip icon-question-sign" href="#helpdesk_status"></i>
                 </span>
@@ -64,7 +64,7 @@ $gmtime = Misc::gmtime();
         <tr>
             <td><?php echo __('Force HTTPS'); ?>:</td>
             <td>
-                <input type="checkbox" name="force_https" <?php
+                <input class="form-check-input" type="checkbox" name="force_https" <?php
                 echo $config['force_https'] ? 'checked="checked"' : ''; ?>>
                 <?php echo __('Force all requests through HTTPS.'); ?>
                 <font class="error"><?php echo $errors['force_https']; ?></font>
@@ -126,7 +126,7 @@ $gmtime = Misc::gmtime();
         <tr>
             <td><?php echo __('Show Avatars'); ?>:</td>
             <td>
-                <input type="checkbox" name="enable_avatars" <?php
+                <input class="form-check-input" type="checkbox" name="enable_avatars" <?php
                 echo $config['enable_avatars'] ? 'checked="checked"' : ''; ?>>
                 <?php echo __('Show Avatars on thread view.'); ?>
                 <i class="help-tip icon-question-sign" href="#enable_avatars"></i>
@@ -135,7 +135,7 @@ $gmtime = Misc::gmtime();
         <tr>
             <td><?php echo __('Enable Rich Text'); ?>:</td>
             <td>
-                <input type="checkbox" name="enable_richtext" <?php
+                <input class="form-check-input" type="checkbox" name="enable_richtext" <?php
                 echo $config['enable_richtext'] ? 'checked="checked"' : ''; ?>>
                 <?php echo __('Enable html in thread entries and email correspondence.'); ?>
                 <i class="help-tip icon-question-sign" href="#enable_richtext"></i>
@@ -437,7 +437,7 @@ $gmtime = Misc::gmtime();
         <tr>
             <td width="180"><?php echo __('Login required');?>:</td>
             <td>
-                <input type="checkbox" name="files_req_auth" <?php
+                <input class="form-check-input" type="checkbox" name="files_req_auth" <?php
                     if ($config['files_req_auth']) echo 'checked="checked"';
                     ?> />
                 <?php echo __('Require login to view any attachments'); ?>
@@ -447,8 +447,8 @@ $gmtime = Misc::gmtime();
     </tbody>
 </table>
 <p style="text-align:center;">
-    <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <input class="button btn btn-primary" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
+    <input class="button btn btn-secondary" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">

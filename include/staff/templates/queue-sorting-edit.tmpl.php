@@ -9,7 +9,7 @@ $advanced = in_array('extra', $sort::getMeta()->getFieldNames());
 ?>
 <h3 class="drag-handle"><?php echo __('Manage Sort Options'); ?> &mdash;
     <?php echo $sort->get('name') ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 
 <form method="post" action="#tickets/search/sort/edit/<?php
@@ -42,11 +42,11 @@ include 'queue-sorting.tmpl.php';
 <hr>
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="reset" value="<?php echo __('Reset'); ?>">
-        <input type="button" value="<?php echo __('Cancel'); ?>" class="close">
+        <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+        <input class="btn btn-danger close" type="button" value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">
-        <input type="submit" value="<?php echo __('Save'); ?>">
+        <input class="btn btn-primary" type="submit" value="<?php echo __('Save'); ?>">
     </span>
  </p>
 

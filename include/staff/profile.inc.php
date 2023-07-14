@@ -112,7 +112,7 @@ if ($avatar->isChangeable()) { ?>
               class="staff-username typeahead"
               name="username" disabled value="<?php echo Format::htmlchars($staff->username); ?>" />
 <?php if (!$bk || $bk->supportsPasswordChange()) { ?>
-            <button type="button" id="change-pw-button" class="action-button" onclick="javascript:
+            <button id="change-pw-button" class="btn btn-secondary button action-button" onclick="javascript:
             $.dialog('ajax.php/staff/'+<?php echo $staff->getId(); ?>+'/change-password', 201);">
               <i class="icon-refresh"></i> <?php echo __('Change Password'); ?>
             </button>
@@ -154,7 +154,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
              <?php } ?>
             </select>
             &nbsp;
-            <button type="button" id="config2fa-button" class="action-button" onclick="javascript:
+            <button class="btn btn-secondary button" id="config2fa-button" class="action-button" onclick="javascript:
             $.dialog('ajax.php/staff/'+<?php echo $staff->getId();
                     ?>+'/2fa/configure', 201);">
               <i class="icon-gear"></i> <?php echo __('Configure Options'); ?>
@@ -176,7 +176,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
         <tr>
           <td colspan="2">
             <label class="checkbox">
-            <input type="checkbox" name="onvacation"
+            <input class="form-check-input" type="checkbox" name="onvacation"
               <?php echo ($staff->onvacation) ? 'checked="checked"' : ''; ?> />
               <?php echo __('Vacation Mode'); ?>
             </label>
@@ -493,10 +493,10 @@ if (($bks=Staff2FABackend::allRegistered())) {
   </div>
 
   <p style="text-align:center;">
-    <button class="button action-button" type="submit" name="submit" ><i class="icon-save"></i> <?php echo __('Save Changes'); ?></button>
-    <button class="button action-button" type="reset"  name="reset"><i class="icon-undo"></i>
+    <button class="btn btn-primary button action-button" type="submit" name="submit" ><i class="icon-save"></i> <?php echo __('Save Changes'); ?></button>
+    <button class="btn btn-secondary button action-button" type="reset"  name="reset"><i class="icon-undo"></i>
         <?php echo __('Reset');?></button>
-    <button class="red button action-button" type="button" name="cancel" onclick="window.history.go(-1);"><i class="icon-remove-circle"></i> <?php echo __('Cancel');?></button>
+    <button class="btn btn-danger red button action-button" type="button" name="cancel" onclick="window.history.go(-1);"><i class="icon-remove-circle"></i> <?php echo __('Cancel');?></button>
   </p>
     <div class="clear"></div>
 </form>

@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><?php echo __('Raw Email Headers'); ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 
 <pre style="max-height: 300px; overflow-y: scroll">
@@ -9,7 +9,7 @@
 <hr>
 <p class="full-width">
     <span class="buttons pull-right">
-        <input type="button" name="cancel" class="close"
+        <input type="button" name="cancel" class="btn btn-danger close"
             value="<?php echo __('Close'); ?>">
     </span>
 </p>

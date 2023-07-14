@@ -40,7 +40,7 @@ require_once('setup.inc.php');
 </div>
 <div id="t9">
 <b><?php echo __('MySQL Table Prefix');?></b>
-<p><?php echo __('osTicket requires table prefix in order to avoid possible table conflicts in a shared database.');?></p>
+<p><?php echo __('autoTicket requires table prefix in order to avoid possible table conflicts in a shared database.');?></p>
 </div>
 <div id="t10">
 <b><?php echo __('MySQL Hostname');?></b>
@@ -48,7 +48,7 @@ require_once('setup.inc.php');
 </div>
 <div id="t11">
 <b><?php echo __('MySQL Database');?></b>
-<p><?php echo __('Name of the database osTicket will use.');?></p>
+<p><?php echo __('Name of the database autoTicket will use.');?></p>
 </div>
 <div id="t12">
 <b><?php echo __('MySQL Username');?></b> 

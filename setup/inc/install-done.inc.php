@@ -5,7 +5,7 @@ $url=URL;
     <div id="main">
         <h1 style="color:green;"><?php echo __('Congratulations!');?></h1>
         <div id="intro">
-        <p><?php echo __('Your osTicket installation has been completed successfully. Your next step is to fully configure your new support ticket system for use, but before you get to it please take a minute to cleanup.');?></p>
+        <p><?php echo __('Your autoTicket installation has been completed successfully. Your next step is to fully configure your new support ticket system for use, but before you get to it please take a minute to cleanup.');?></p>
 
         <h2><?php echo __('Config file permission');?>:</h2>
         <?php echo __('Change permission of ost-config.php to remove write access as shown below.');?>
@@ -20,7 +20,7 @@ $url=URL;
         <table border="0" cellspacing="0" cellpadding="5" width="580" id="links">
             <tr>
                     <td width="50%">
-                        <strong><?php echo __('Your osTicket URL');?>:</strong><Br>
+                        <strong><?php echo __('Your autoTicket URL');?>:</strong><Br>
                         <a href="<?php echo $url; ?>"><?php echo $url; ?></a>
                     </td>
                     <td width="50%">
@@ -45,5 +45,5 @@ $url=URL;
             <h3><?php echo __("What's Next?");?></h3>
             <p><b><?php echo __('Post-Install Setup');?></b>: <?php echo sprintf(__('You can now log in to %1$s Admin Panel %2$s with the username and password you created during the install process. After a successful log in, you can proceed with post-install setup.'), '<a href="../scp/admin.php" target="_blank">','</a>'); echo sprintf(__('For complete and upto date guide see %1$s osTicket wiki %2$s'), '<a href="https://docs.osticket.com/en/latest/Getting%20Started/Post-Installation.html" target="_blank">', '</a>');?></p>
 
-            <p><b><?php echo __('Commercial Support Available');?></b>: <?php echo __("Don't let technical problems impact your osTicket implementation. Get guidance and hands-on expertise to address unique challenges and make sure your osTicket runs smoothly, efficiently, and securely.");?> <a target="_blank" href="https://osticket.com/support"><?php echo __('Learn More!');?></a></p>
+            <p><b><?php echo __('Commercial Support Available');?></b>: <?php echo __("Don't let technical problems impact your autoTicket implementation. Get guidance and hands-on expertise to address unique challenges and make sure your autoTicket runs smoothly, efficiently, and securely.");?> <a target="_blank" href="https://osticket.com/support"><?php echo __('Learn More!');?></a></p>
    </div>

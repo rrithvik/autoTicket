@@ -146,7 +146,7 @@ if ($task->isOverdue())
             <span
                 class="action-button"
                 data-dropdown="#action-dropdown-task-options">
-                <i class="icon-caret-down pull-right"></i>
+                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <a class="task-action"
                     href="#task-options"><i
                     class="icon-reorder"></i> <?php
@@ -203,7 +203,7 @@ if ($task->isOverdue())
                 <span
                     class="action-button"
                     data-dropdown="#action-dropdown-tasks-status">
-                    <i class="icon-caret-down pull-right"></i>
+                    <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                     <a class="tasks-status-action"
                         href="#statuses"
                         data-placement="bottom"
@@ -245,7 +245,7 @@ if ($task->isOverdue())
                     data-toggle="tooltip"
                     title=" <?php echo $task->isAssigned() ? __('Reassign') : __('Assign'); ?>"
                     >
-                    <i class="icon-caret-down pull-right"></i>
+                    <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                     <a class="task-action" id="task-assign"
                         data-redirect="tasks.php"
                         href="#tasks/<?php echo $task->getId(); ?>/assign"><i class="icon-user"></i></a>

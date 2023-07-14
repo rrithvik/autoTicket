@@ -49,32 +49,33 @@ else
                 <h2><?php echo __('Email Template Sets'); ?></h2>
             </div>
             <div class="pull-right flush-right">
-                <a href="templates.php?a=add" class="green button action-button"><i class="icon-plus-sign"></i> <?php echo __('Add New Template Set'); ?></a>
-                <span class="action-button" data-dropdown="#action-dropdown-more">
-                    <i class="icon-caret-down pull-right"></i>
-                    <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
-                </span>
-                <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                    <ul id="actions">
+         <div style="display: flex">
+                <a href="templates.php?a=add" class="btn btn-success green button"><i class="icon-plus-sign"></i> <?php echo __('Add New Template Set'); ?></a>
+    <div class="dropdown anchor-right">
+                    <span class="btn btn-secondary">                    <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
+                    <i class="icon-cog"></i> <?php echo __('More');?></span>
+                                            <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
+
                         <li>
-                            <a class="confirm" data-name="enable" href="templates.php?a=enable">
+                            <a class="nav-link confirm" data-name="enable" href="templates.php?a=enable">
                                 <i class="icon-ok-sign icon-fixed-width"></i>
                                 <?php echo __( 'Enable'); ?>
                             </a>
                         </li>
                         <li>
-                            <a class="confirm" data-name="disable" href="templates.php?a=disable">
+                            <a class="nav-link confirm" data-name="disable" href="templates.php?a=disable">
                                 <i class="icon-ban-circle icon-fixed-width"></i>
                                 <?php echo __( 'Disable'); ?>
                             </a>
                         </li>
                         <li class="danger">
-                            <a class="confirm" data-name="delete" href="templates.php?a=delete">
+                            <a class="nav-link confirm" data-name="delete" href="templates.php?a=delete">
                                 <i class="icon-trash icon-fixed-width"></i>
                                 <?php echo __( 'Delete'); ?>
                             </a>
                         </li>
                     </ul>
+                </div>
                 </div>
             </div>
         </div>
@@ -83,7 +84,7 @@ else
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="mass_process" >
 <input type="hidden" id="action" name="a" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <table class="table" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
@@ -150,7 +151,7 @@ endif;
 
 <div style="display:none;" class="dialog" id="confirm-action">
     <h3><?php echo __('Please Confirm');?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" style="display:none;" id="enable-confirm">
         <?php echo sprintf(__('Are you sure you want to <b>enable</b> %s?'),

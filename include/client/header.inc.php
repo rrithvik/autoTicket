@@ -49,6 +49,7 @@ if (osTicket::is_ie())
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css">
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/table.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css">
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-32x32.png" sizes="32x32" />
@@ -151,14 +152,14 @@ if (($all_langs = Internationalization::getConfiguredSystemLanguages())
         <div class="clear"></div>
         <?php
         if($nav){ ?>
-        <ul id="nav" class="flush-left">
+        <nav class="">
             <?php
             if($nav && ($navs=$nav->getNavLinks()) && is_array($navs)){
                 foreach($navs as $name =>$nav) {
                     echo sprintf('<li><a class="%s %s" href="%s">%s</a></li>%s',$nav['active']?'active':'',$name,(ROOT_PATH.$nav['href']),$nav['desc'],"\n");
                 }
             } ?>
-        </ul>
+        </nav>
         <?php
         }else{ ?>
          <hr>

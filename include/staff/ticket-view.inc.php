@@ -74,7 +74,7 @@ if($ticket->isOverdue())
                     || $role->hasPerm(Ticket::PERM_EDIT)
                     || ($dept && $dept->isManager($thisstaff))) { ?>
             <span class="action-button pull-right" data-placement="bottom" data-dropdown="#action-dropdown-more" data-toggle="tooltip" title="<?php echo __('More');?>">
-                <i class="icon-caret-down pull-right"></i>
+                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <span ><i class="icon-cog"></i></span>
             </span>
             <?php
@@ -85,7 +85,7 @@ if($ticket->isOverdue())
             <?php
             } ?>
             <span class="action-button pull-right" data-placement="bottom" data-dropdown="#action-dropdown-print" data-toggle="tooltip" title="<?php echo __('Print'); ?>">
-                <i class="icon-caret-down pull-right"></i>
+                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <a id="ticket-print" aria-label="<?php echo __('Print'); ?>" href="tickets.php?id=<?php echo $ticket->getId(); ?>&a=print"><i class="icon-print"></i></a>
             </span>
             <div id="action-dropdown-print" class="action-dropdown anchor-right">
@@ -122,7 +122,7 @@ if($ticket->isOverdue())
                 data-toggle="tooltip"
                 title=" <?php echo $ticket->isAssigned() ? __('Assign') : __('Reassign'); ?>"
                 >
-                <i class="icon-caret-down pull-right"></i>
+                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <a class="ticket-action" id="ticket-assign"
                     data-redirect="tickets.php"
                     href="#tickets/<?php echo $ticket->getId(); ?>/assign"><i class="icon-user"></i></a>
@@ -356,7 +356,7 @@ if($ticket->isOverdue())
                     <?php
                     if ($role->hasPerm(Ticket::PERM_TRANSFER)) {?>
                       <td>
-                          <a class="ticket-action" data-placement="bottom" data-toggle="tooltip" title="<?php echo __('Transfer'); ?>"
+                          <a class="ticket-action" data-placement="bottom" data-toggle="tooltip" title="<?php echo __('aTransfer'); ?>"
                             data-redirect="tickets.php?id=<?php echo $ticket->getId(); ?>"
                             href="#tickets/<?php echo $ticket->getId(); ?>/transfer"
                             onclick="javascript:
@@ -916,7 +916,7 @@ if ($errors['err'] && isset($_POST['a'])) {
                             data-toggle="tooltip"
                             title="<?php echo __('Manage Collaborators'); ?>"
                             >
-                            <i class="icon-caret-down pull-right"></i>
+                            <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                             <a class="ticket-action" id="collabs-button"
                                 data-redirect="tickets.php?id=<?php echo
                                 $ticket->getId(); ?>"
@@ -1071,16 +1071,16 @@ if ($errors['err'] && isset($_POST['a'])) {
                     <?php
                     $info['signature']=$info['signature']?$info['signature']:$thisstaff->getDefaultSignatureType();
                     ?>
-                    <label><input type="radio" name="signature" value="none" checked="checked"> <?php echo __('None');?></label>
+                    <label><input class="form-check-input" type="radio" name="signature" value="none" checked="checked"> <?php echo __('None');?></label>
                     <?php
                     if($thisstaff->getSignature()) {?>
-                    <label><input type="radio" name="signature" value="mine"
+                    <label><input class="form-check-input" type="radio" name="signature" value="mine"
                         <?php echo ($info['signature']=='mine')?'checked="checked"':''; ?>> <?php echo __('My Signature');?></label>
                     <?php
                     } ?>
                     <?php
                     if($dept && $dept->canAppendSignature()) { ?>
-                    <label><input type="radio" name="signature" value="dept"
+                    <label><input class="form-check-input" type="radio" name="signature" value="dept"
                         <?php echo ($info['signature']=='dept')?'checked="checked"':''; ?>>
                         <?php echo sprintf(__('Department Signature (%s)'), Format::htmlchars($dept->getName())); ?></label>
                     <?php
@@ -1226,7 +1226,7 @@ if ($errors['err'] && isset($_POST['a'])) {
 </div>
 <div style="display:none;" class="dialog" id="print-options">
     <h3><?php echo __('Ticket Print Options');?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <form action="tickets.php?id=<?php echo $ticket->getId(); ?>"
         method="post" id="print-form" name="print-form" target="_blank">
@@ -1262,7 +1262,7 @@ if ($errors['err'] && isset($_POST['a'])) {
         <p class="full-width">
             <span class="buttons pull-left">
                 <input type="reset" value="<?php echo __('Reset');?>">
-                <input type="button" value="<?php echo __('Cancel');?>" class="close">
+                <input type="button" value="<?php echo __('Cancel');?>" class="btn btn-danger close">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('Print');?>">
@@ -1273,7 +1273,7 @@ if ($errors['err'] && isset($_POST['a'])) {
 </div>
 <div style="display:none;" class="dialog" id="confirm-action">
     <h3><?php echo __('Please Confirm');?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" style="display:none;" id="claim-confirm">
         <?php echo sprintf(__('Are you sure you want to <b>claim</b> (self assign) %s?'), __('this ticket'));?>
@@ -1319,7 +1319,7 @@ if ($errors['err'] && isset($_POST['a'])) {
         <hr style="margin-top:1em"/>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="button" value="<?php echo __('Cancel');?>" class="close">
+                <input type="button" value="<?php echo __('Cancel');?>" class="btn btn-danger close">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('OK');?>">

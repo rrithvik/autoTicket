@@ -1,5 +1,5 @@
 <h3><?php echo __('Basic Authentication'); ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 $action = sprintf('#email/%d/auth/config/%s/%s',
@@ -19,11 +19,11 @@ if (isset($errors['err'])) {
 <hr/>
 <p class="full-width">
     <span class="buttons" style="float:left">
-        <input type="button" name="cancel" class="close" value="<?php echo
+        <input type="button" name="cancel" class="btn btn-danger close" value="<?php echo
         __('Cancel'); ?>">
     </span>
     <span class="buttons" style="float:right">
-        <input type="submit" value="<?php echo __('Save'); ?>">
+        <input class="btn btn-primary" type="submit" value="<?php echo __('Save'); ?>">
     </span>
 </p>
 </form>

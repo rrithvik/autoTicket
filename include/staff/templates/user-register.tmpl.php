@@ -10,7 +10,7 @@ if (!$_POST) {
 
 ?>
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <div class="clear"></div>
 <hr/>
 <?php
@@ -113,11 +113,11 @@ echo sprintf(__(
                     <?php echo __('Password Change'); ?>:
                 </td>
                 <td colspan=2>
-                    <input type="checkbox" name="pwreset-flag" value="1" <?php
+                    <input class="form-check-input" type="checkbox" name="pwreset-flag" value="1" <?php
                         echo $info['pwreset-flag'] ?  'checked="checked"' : ''; ?>>
                         <?php echo __('Require password change on login'); ?>
                     <br/>
-                    <input type="checkbox" name="forbid-pwreset-flag" value="1" <?php
+                    <input class="form-check-input" type="checkbox" name="forbid-pwreset-flag" value="1" <?php
                         echo $info['forbid-pwreset-flag'] ?  'checked="checked"' : ''; ?>>
                         <?php echo __('User cannot change password'); ?>
                 </td>
@@ -142,8 +142,8 @@ echo sprintf(__(
         <hr>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="reset" value="<?php echo __('Reset'); ?>">
-                <input type="button" name="cancel" class="close" value="<?php echo __('Cancel'); ?>">
+                <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+                <input type="button" name="cancel" class="btn btn-danger close" value="<?php echo __('Cancel'); ?>">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('Create Account'); ?>">

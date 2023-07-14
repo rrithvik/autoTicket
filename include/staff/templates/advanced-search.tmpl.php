@@ -22,7 +22,7 @@ $qname = $search->getName() ?:  __('Advanced Ticket Search');
 ?>
 <div id="advanced-search" class="advanced-search">
 <h3 class="drag-handle"><?php echo Format::htmlchars($qname); ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 <?php
 $info['error'] = $info['error'] ?: $errors['err'];
@@ -158,12 +158,12 @@ if ($search->isSaved()) { ?>
     <span class="buttons pull-right">
       <?php
       if (!$search instanceof AdhocSearch) { ?>
-      <button class="save button" type="submit" name="save" value="save"
+      <button class="btn btn-success save button" type="submit" name="save" value="save"
         id="do_save"><i class="icon-save"></i>
         <?php echo __('Save'); ?></button>
       <?php
       } else { ?>
-      <button class="button" type="submit" name="submit" value="search"
+      <button class="btn btn-primary button" type="submit" name="submit" value="search"
         id="do_search"><i class="icon-search"></i>
         <?php echo __('Search'); ?></button>
       <?php

@@ -8,7 +8,7 @@
 <form method="post" action="?">
     <?php echo csrf_token(); ?>
     <input type="hidden" name="do" value="install"/>
-<table class="list" width="100%"><tbody>
+<table class="table" width="100%"><tbody>
 <?php
 
 $installed = $ost->plugins->allInstalled();
@@ -23,7 +23,7 @@ foreach ($ost->plugins->allInfos() as $info) {
         <tr><td>
             <?php
             if ($isCompatible) {?>
-            <button class="button action-button" type="submit" name="install_path"
+            <button class="btn btn-secondary button action-button" type="submit" name="install_path"
             value="<?php echo $info['install_path'];
             ?>"><?php echo __('Install'); ?></button>
             <?php

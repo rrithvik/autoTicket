@@ -73,8 +73,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <?php echo __('Type');?>:
             </td>
             <td>
-                <input type="radio" name="ispublic" value="1" <?php echo $info['ispublic']?'checked="checked"':''; ?>> <?php echo __('Public'); ?>
-                <input type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>> <?php echo __('Private/Internal'); ?>
+                <input class="form-check-input" type="radio" name="ispublic" value="1" <?php echo $info['ispublic']?'checked="checked"':''; ?>> <?php echo __('Public'); ?>
+                <input class="form-check-input" type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>> <?php echo __('Private/Internal'); ?>
                 &nbsp;<span class="error">*&nbsp;<?php echo $errors['ispublic']; ?></span> <i class="help-tip icon-question-sign" href="#type"></i>
             </td>
         </tr>
@@ -154,10 +154,10 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <label>
-                <input type="radio" name="custom-numbers" value="0" <?php echo !$info['custom-numbers']?'checked="checked"':''; ?>
+                <input class="form-check-input" type="radio" name="custom-numbers" value="0" <?php echo !$info['custom-numbers']?'checked="checked"':''; ?>
                     onchange="javascript:$('#custom-numbers').hide();"> <?php echo __('System Default'); ?>
                 </label>&nbsp;<label>
-                <input type="radio" name="custom-numbers" value="1" <?php echo $info['custom-numbers']?'checked="checked"':''; ?>
+                <input class="form-check-input" type="radio" name="custom-numbers" value="1" <?php echo $info['custom-numbers']?'checked="checked"':''; ?>
                     onchange="javascript:$('#custom-numbers').show(200);"> <?php echo __('Custom'); ?>
                 </label>&nbsp; <i class="help-tip icon-question-sign" href="#custom_numbers"></i>
             </td>
@@ -196,7 +196,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                     ?>><?php echo $s->name; ?></option>
 <?php } ?>
                 </select>
-                <button class="action-button pull-right" onclick="javascript:
+                <button class="btn btn-secondary action-button pull-right" onclick="javascript:
                 $.dialog('ajax.php/sequence/manage', 205);
                 return false;
                 "><i class="icon-gear"></i> <?php echo __('Manage'); ?></button>
@@ -339,7 +339,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <?php echo __('Auto-Response'); ?>:
             </td>
             <td>
-                <input type="checkbox" name="noautoresp" value="1" <?php echo $info['noautoresp']?'checked="checked"':''; ?> >
+                <input class="form-check-input" type="checkbox" name="noautoresp" value="1" <?php echo $info['noautoresp']?'checked="checked"':''; ?> >
                     <?php echo __('<strong>Disable</strong> new ticket auto-response'); ?>
                     <i class="help-tip icon-question-sign" href="#ticket_auto_response"></i>
             </td>
@@ -386,7 +386,7 @@ foreach ($forms as $F) {
     <?php
         foreach ($F->getDynamicFields() as $f) { ?>
         <tr>
-            <td><input type="checkbox" name="fields[]" value="<?php
+            <td><input class="form-check-input" type="checkbox" name="fields[]" value="<?php
                 echo $f->get('id'); ?>" <?php
                 if (!$f->_disabled) echo 'checked="checked"'; ?>/></td>
             <td><?php echo $f->get('label'); ?></td>
@@ -423,9 +423,9 @@ foreach ($forms as $F) {
 </div>
 
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="helptopics.php"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo $submit_text; ?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="helptopics.php"'>
 </p>
 </form>
 <script type="text/javascript">

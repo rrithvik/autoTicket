@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><i class="icon-wrench"></i> <?php echo __('Manage Sequences'); ?></i></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/><?php echo __(
 'Sequences are used to generate sequential numbers. Various sequences can be
 used to generate sequences for different purposes.'); ?>
@@ -24,7 +24,7 @@ foreach ($sequences as $e) {
             <span class="current"><?php echo $e->current(); ?></span>
         </div>
         <div class="button-group">
-            <div class="manage"><a href="#"><i class="icon-cog"></i></a></div>
+            <div class="manage"><a class="nav-link" href="#"><i class="icon-cog"></i></a></div>
             <div class="delete"><?php if (!$e->hasFlag(Sequence::FLAG_INTERNAL)) { ?>
                 <a href="#"><i class="icon-trash"></i></a><?php } ?></div>
         </div>
@@ -66,7 +66,7 @@ foreach ($sequences as $e) {
 </div>
 
 <hr/>
-<button onclick="javascript:
+<button class="btn btn-secondary" onclick="javascript:
   var id = ++$.uid, base = 'seq[new-'+id+']';
   var clone = $('.row-item#template').clone()
     .appendTo($('#sequences'))

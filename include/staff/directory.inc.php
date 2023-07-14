@@ -80,25 +80,6 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
 
 ?>
 
-<div id="basic_search">
-    <div style="min-height:25px;">
-    <form action="directory.php" method="GET" name="filter">
-       <input type="text" name="q" value="<?php echo Format::htmlchars($_REQUEST['q']); ?>" >
-        <select name="did" id="did">
-             <option value="0">&mdash; <?php echo __('All Departments');?> &mdash;</option>
-             <?php
-                foreach ($thisstaff->getDepartmentNames() as $id=>$name) {
-                    $sel=($_REQUEST['did'] && $_REQUEST['did']==$id)?'selected="selected"':'';
-                    echo sprintf('<option value="%d" %s>%s</option>',$id,$sel,$name);
-                }
-             ?>
-        </select>
-        &nbsp;&nbsp;
-        <input type="submit" name="submit" value="<?php echo __('Filter');?>"/>
-        &nbsp;<i class="help-tip icon-question-sign" href="#apply_filtering_criteria"></i>
-    </form>
- </div>
-</div>
 <div class="clear"></div>
 <div style="margin-bottom:20px; padding-top:5px;">
     <div class="pull-left flush-left">
@@ -106,6 +87,26 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
             &nbsp;<i class="help-tip icon-question-sign" href="#staff_members"></i>
         </h2>
     </div>
+    <div class="pull-right flush-right" >
+        <div style="display: flex">
+            <form class="input-group" action="directory.php" method="GET" name="filter">
+                <input class="form-control d-inline-block" type="text" name="q" value="<?php echo Format::htmlchars($_REQUEST['q']); ?>" >
+                <select class="form-select d-inline-block" name="did" id="did">
+                    <option value="0">&mdash; <?php echo __('All Departments');?> &mdash;</option>
+                    <?php
+                    foreach ($thisstaff->getDepartmentNames() as $id=>$name) {
+                        $sel=($_REQUEST['did'] && $_REQUEST['did']==$id)?'selected="selected"':'';
+                        echo sprintf('<option value="%d" %s>%s</option>',$id,$sel,$name);
+                    }
+                    ?>
+                </select>
+                &nbsp;&nbsp;
+                <input class="btn btn-primary" type="submit" name="submit" value="<?php echo __('Filter');?>"/>
+                &nbsp;<i class="help-tip icon-question-sign" href="#apply_filtering_criteria"></i>
+            </form>
+        </div>
+    </div>
+
 </div>
     <?php
     if ($agents->exists(true))
@@ -113,7 +114,7 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
     else
         $showing=__('No agents found!');
     ?>
-<table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+<table class="table" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="20%"><a <?php echo $name_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=name"><?php echo __('Name');?></a></th>

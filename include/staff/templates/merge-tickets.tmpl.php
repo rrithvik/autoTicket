@@ -12,7 +12,7 @@
     $title = strpos($_SERVER['PATH_INFO'], 'link') !== false ? 'link' : 'merge';
 ?>
 <h3 class="drag-handle"><i class="<?php echo $title == 'link' ? 'icon-link' : 'icon-code-fork' ?>"></i> <?php echo sprintf(__('%s Tickets'), ucfirst($title)); ?></i></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/><?php echo sprintf(__(
 'Choose which Tickets to %s. The Ticket on top will be the Parent Ticket. Sort the order of the Tickets by clicking and dragging them.'
 ), ($title == 'merge' ? __('merge into this one') : __('link')));
@@ -73,7 +73,7 @@ foreach ($tickets as $t) {
         $showCollaborators ? $nbsp.$showCollaborators : $nbsp.$iconLarge);
     if ($mergeType == 'visual') { ?>
     <div class="button-group">
-    <div class="delete"><a href="#" onclick="javascript:
+    <div class="delete"><a class="nav-link" href="#" onclick="javascript:
         var value = <?php echo $ticket_id; ?>;
         $('#ticket-entries').append($('<input/>').attr({name:'dtids[]', type:'hidden'}).val(value))
         $(this).closest('li.row-item').remove();$('#delete-warning').show();">
@@ -255,7 +255,7 @@ id="msg_warning"><?php echo __('Are you sure you want to delete the child ticket
 
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button" name="cancel" class="<?php
+        <input type="button" name="cancel" class="btn btn-danger <?php
             echo $user ? 'cancel' : 'close' ?>" value="<?php echo __('Cancel'); ?>">
     </span>
     <?php if (!$info['error']) { ?>

@@ -5,21 +5,21 @@
             <h2><?php echo __('Roles'); ?></h2>
         </div>
         <div class="pull-right flush-right">
-            <a href="roles.php?a=add" class="green button action-button"><i class="icon-plus-sign"></i> <?php
+      <div style="display: flex">
+            <a href="roles.php?a=add" class="btn btn-success green button"><i class="icon-plus-sign"></i> <?php
 echo __('Add New Role'); ?></a>
-            <span class="action-button" data-dropdown="#action-dropdown-more">
-                <i class="icon-caret-down pull-right"></i>
-                <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
-            </span>
-            <div id="action-dropdown-more" class="action-dropdown anchor-right">
-                <ul id="actions">
-                    <li><a class="confirm" data-name="enable" href="roles.php?a=enable">
+<div class="dropdown anchor-right">
+                    <span class="btn btn-secondary">                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
+                <i class="icon-cog"></i> <?php echo __('More');?></span>
+                                        <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
+
+                    <li><a class="nav-link confirm" data-name="enable" href="roles.php?a=enable">
                         <i class="icon-ok-sign icon-fixed-width"></i>
                         <?php echo __('Enable'); ?></a></li>
-                    <li><a class="confirm" data-name="disable" href="roles.php?a=disable">
+                    <li><a class="nav-link confirm" data-name="disable" href="roles.php?a=disable">
                         <i class="icon-ban-circle icon-fixed-width"></i>
                         <?php echo __('Disable'); ?></a></li>
-                    <li class="danger"><a class="confirm" data-name="delete" href="roles.php?a=delete">
+                    <li class="danger"><a class="nav-link confirm" data-name="delete" href="roles.php?a=delete">
                         <i class="icon-trash icon-fixed-width"></i>
                         <?php echo __('Delete'); ?></a></li>
                 </ul>
@@ -38,7 +38,7 @@ $showing=$pageNav->showing().' '._N('role', 'roles', $count);
 csrf_token(); ?>
 <input type="hidden" name="do" value="mass_process" >
 <input type="hidden" id="action" name="a" value="" >
-<table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+<table class="table" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
@@ -103,7 +103,7 @@ if ($count) //Show options..
 
 <div style="display:none;" class="dialog" id="confirm-action">
     <h3><?php echo __('Please Confirm'); ?></h3>
-    <a class="close" href=""><i class="icon-remove-circle"></i></a>
+    <a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
     <hr/>
     <p class="confirm-action" style="display:none;" id="enable-confirm">
         <?php echo sprintf(__('Are you sure want to <b>enable</b> %s?'),
@@ -123,10 +123,10 @@ if ($count) //Show options..
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="btn btn-danger close">
         </span>
         <span class="buttons pull-right">
-            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">
+            <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="btn btn-success confirm">
         </span>
     </p>
     <div class="clear"></div>

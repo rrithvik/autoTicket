@@ -5,7 +5,7 @@ if (!$info['title'])
     $info['title'] = Format::htmlchars($org->getName());
 ?>
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 if ($info['error']) {
@@ -80,7 +80,7 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
                     <?php echo __('Auto-Assignment'); ?>:
                 </td>
                 <td>
-                    <input type="checkbox" name="assign-am-flag" value="1" <?php echo $info['assign-am-flag']?'checked="checked"':''; ?>>
+                    <input class="form-check-input" type="checkbox" name="assign-am-flag" value="1" <?php echo $info['assign-am-flag']?'checked="checked"':''; ?>>
                     <?php echo __(
                     'Assign tickets from this organization to the <em>Account Manager</em>'); ?>
             </tr>
@@ -126,7 +126,7 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
                     <?php echo __('Primary Contacts'); ?>:
                 </td>
                 <td>
-                    <input type="checkbox" name="collab-pc-flag" value="1" <?php echo $info['collab-pc-flag']?'checked="checked"':''; ?>>
+                    <input class="form-check-input" type="checkbox" name="collab-pc-flag" value="1" <?php echo $info['collab-pc-flag']?'checked="checked"':''; ?>>
                     <?php echo __('Add to all tickets from this organization'); ?>
                 </td>
             </tr>
@@ -135,7 +135,7 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
                     <?php echo __('Organization Members'); ?>:
                 </td>
                 <td>
-                    <input type="checkbox" name="collab-all-flag" value="1" <?php echo $info['collab-all-flag']?'checked="checked"':''; ?>>
+                    <input class="form-check-input" type="checkbox" name="collab-all-flag" value="1" <?php echo $info['collab-all-flag']?'checked="checked"':''; ?>>
                     <?php echo __('Add to all tickets from this organization'); ?>
                 </td>
             </tr>
@@ -164,8 +164,8 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
 <hr>
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="reset" value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" class="<?php
+        <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+        <input type="button" name="cancel" class="btn btn-danger <?php
 echo $account ? 'cancel' : 'close'; ?>"  value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">

@@ -31,7 +31,7 @@ $showing = $pageNav->showing().' '._N('task', 'tasks', $count);
     <?php
     if ($role && $role->hasPerm(Task::PERM_CREATE)) { ?>
         <a
-        class="green button action-button ticket-task-action"
+        class="btn btn-success green button ticket-task-action"
         data-url="tickets.php?id=<?php echo $ticket->getId(); ?>#tasks"
         data-dialog-config='{"size":"large"}'
         href="#tickets/<?php
@@ -62,7 +62,7 @@ if ($count) { ?>
 <?php csrf_token(); ?>
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" name="do" id="action" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="2" width="940">
+ <table class="table" border="0" cellspacing="1" cellpadding="2" width="940">
     <thead>
         <tr>
             <?php

@@ -1,6 +1,6 @@
 <div id="the-lookup-form">
 <h3 class="drag-handle"><?php echo $info['title']; ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <hr/>
 <?php
 if (!isset($info['lookup']) || $info['lookup'] !== false) { ?>
@@ -69,7 +69,7 @@ if ($user) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" name="cancel" class="close"  value="<?php
+            <input type="button" name="cancel" class="btn btn-danger close"  value="<?php
             echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
@@ -89,11 +89,11 @@ if ($user) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="<?php echo $user ?  'cancel' : 'close' ?>"  value="<?php echo __('Cancel'); ?>">
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger <?php echo $user ?  'cancel' : 'close' ?>"  value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
-            <input type="submit" value="<?php echo __('Add User'); ?>">
+            <input class="btn btn-primary" type="submit" value="<?php echo __('Add User'); ?>">
         </span>
      </p>
 </form>
@@ -102,7 +102,7 @@ else { ?>
     <hr/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" name="cancel" class="<?php echo $user ?  'cancel' : 'close' ?>"  value="<?php echo __('Cancel'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger <?php echo $user ?  'cancel' : 'close' ?>"  value="<?php echo __('Cancel'); ?>">
         </span>
      </p>
 <?php } ?>

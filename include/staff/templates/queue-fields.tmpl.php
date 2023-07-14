@@ -5,7 +5,7 @@ if ($queue->parent) { ?>
   <tbody>
     <tr>
       <td colspan="3">
-        <input type="checkbox" name="inherit-exports" <?php
+        <input class="form-check-input" type="checkbox" name="inherit-exports" <?php
           if ($queue->inheritExport()) echo 'checked="checked"'; ?>
           onchange="javascript:$(this).closest('table').find('.if-not-inherited').toggle(!$(this).prop('checked'));" />
         <?php echo __('Inherit export fields from the parent queue'); ?>
@@ -20,7 +20,7 @@ if ($queue->parent) { ?>
   <tbody>
     <tr>
       <td colspan="3">
-        <input type="checkbox" name="inherit-exports" <?php
+        <input class="form-check-input" type="checkbox" name="inherit-exports" <?php
           if (count($queue->exports) == 0) echo 'checked="checked"';
           if ($queue instanceof SavedSearch) echo 'disabled="disabled"'; ?>
           onchange="javascript:$(this).closest('table').find('.if-not-inherited').toggle(!$(this).prop('checked'));" />
@@ -74,7 +74,7 @@ $hidden_cols = $queue->inheritExport();
     <?php }
     } ?>
     </select>
-    <button type="button" class="green button">
+    <button type="button" class="btn btn-success green button">
           <?php echo __('Add'); ?>
     </button>
     </td></tr>

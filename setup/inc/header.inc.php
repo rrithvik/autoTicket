@@ -20,6 +20,7 @@ if (osTicket::is_ie())
     <link rel="stylesheet" href="css/wizard.css">
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/flags.css">
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/table.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/bootstrap.min.css">
 </head>
 <body>
     <div id="wizard">

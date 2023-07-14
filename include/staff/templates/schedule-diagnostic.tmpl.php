@@ -4,7 +4,7 @@ $action = "#schedule/{$schedule->getId()}/diagnostic";
 <h3 class="drag-handle"><?php
     echo __('Timeline Diagnostics');
     ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <div><em><?php echo $schedule->getName(); ?></em></div>
 <hr/>
 <form method="post" action="<?php echo $action; ?>">
@@ -39,7 +39,7 @@ $action = "#schedule/{$schedule->getId()}/diagnostic";
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
             <input type="button" value="<?php echo __('Done'); ?>" class="close">
         </span>
         <span class="buttons pull-right">

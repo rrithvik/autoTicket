@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><?php echo $title ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <div class="clear"></div>
 <hr/>
 <?php if (isset($errors['err'])) { ?>
@@ -13,7 +13,7 @@
   <p class="full-width">
     <span class="buttons pull-left">
       <input type="reset" value="<?php echo __('Reset'); ?>" />
-      <input type="button" name="cancel" class="close"
+      <input type="button" name="cancel" class="btn btn-danger close"
         value="<?php echo __('Cancel'); ?>" />
     </span>
     <span class="buttons pull-right">

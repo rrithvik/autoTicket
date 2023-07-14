@@ -1,5 +1,5 @@
 <h3 class="drag-handle"><?php echo __('Manage Content'); ?> &mdash; <?php echo Format::htmlchars($content->getName()); ?></h3>
-<a class="close" href=""><i class="icon-remove-circle"></i></a>
+<a class="nav-link close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 
 <?php if ($errors['err']) { ?>
@@ -71,8 +71,8 @@ echo $content->getNotes(); ?></div>
     <hr class="clear"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="<?php
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger <?php
                 echo $user ? 'cancel' : 'close'; ?>" value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

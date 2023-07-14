@@ -20,7 +20,7 @@ if ($_POST)
             <h2><?php echo sprintf(__('Update Ticket #%s'),$ticket->getNumber());?></h2>
         </div>
     </div>
-    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+    <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
         <tbody>
             <tr>
                 <th colspan="2">
@@ -151,13 +151,13 @@ if ($_POST)
         </tr>
     </tbody>
 </table>
-<table class="form_table dynamic-forms" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table dynamic-forms" width="940" border="0" cellspacing="0" cellpadding="2">
         <?php if ($forms)
             foreach ($forms as $form) {
                 $form->render(array('staff'=>true,'mode'=>'edit','width'=>160,'entry'=>$form));
         } ?>
 </table>
-<table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
         <tr>
             <th colspan="2">
@@ -174,9 +174,9 @@ if ($_POST)
     </tbody>
 </table>
 <p style="text-align:center;">
-    <input type="submit" name="submit" value="<?php echo __('Save');?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="tickets.php?id=<?php echo $ticket->getId(); ?>"'>
+    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo __('Save');?>">
+    <input class="btn btn-secondary" type="reset"  name="reset"  value="<?php echo __('Reset');?>">
+    <input class="btn btn-danger" type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="tickets.php?id=<?php echo $ticket->getId(); ?>"'>
 </p>
 </form>
 <div style="display:none;" class="dialog draggable" id="user-lookup">

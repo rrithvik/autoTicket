@@ -10,7 +10,7 @@ if (($team = $ticket->getTeam()))
 $form = ReleaseForm::instantiate($_POST);
 ?>
 <h3 class="drag-handle"><?php echo $info[':title'] ?:  __('Release Confirmation'); ?></h3>
-<b><a class="close" href="#"><i class="icon-remove-circle"></i></a></b>
+<b><a class="nav-link close" href=""><i class="icon-remove-circle"></i></a></b>
 <div class="clear"></div>
 <hr/>
 <?php
@@ -44,8 +44,8 @@ if ($info['error']) {
                     <label class="inline checkbox">
                         <?php echo sprintf(
                             ($isStaff = $assignee instanceof Staff)
-                                ? '<input type="checkbox" name="sid[]" id="s%d" value="%d">'
-                                : '<input type="checkbox" name="tid[]" id="t%d" value="%d">',
+                                ? '<input class="form-check-input" type="checkbox" name="sid[]" id="s%d" value="%d">'
+                                : '<input class="form-check-input" type="checkbox" name="tid[]" id="t%d" value="%d">',
                             $assignee->getId(),
                             $assignee->getId()); ?>
                     </label>
@@ -76,8 +76,8 @@ if ($info['error']) {
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close"
+            <input class="btn btn-secondary" type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="button" name="cancel" class="btn btn-danger close"
                 value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

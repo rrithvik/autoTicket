@@ -28,7 +28,7 @@
 <?php
     foreach ($form->getFields() as $f) { ?>
     <tr>
-        <td><input type="checkbox" name="fields[]" value="<?php
+        <td><input class="form-check-input" type="checkbox" name="fields[]" value="<?php
             echo $f->get('id'); ?>" <?php
             if ($f->isEnabled()) echo 'checked="checked"'; ?>/></td>
         <td><?php echo $f->get('label'); ?></td>
