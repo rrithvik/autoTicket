@@ -31,7 +31,7 @@ else {
   <input type="hidden" name="do" value="<?php echo $action; ?>">
   <input type="hidden" name="a" value="<?php echo Format::htmlchars($_REQUEST['a']); ?>">
   <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
-  <h2><a href="settings.php?t=tickets#queues"><?php echo __('Ticket Queues'); ?></a>
+  <h2><a class="nav-link" href="settings.php?t=tickets#queues"><?php echo __('Ticket Queues'); ?></a>
       <i class="icon-caret-right" style="color:rgba(0,0,0,.3);"></i> <?php echo $title; ?>
       <?php if (isset($queue->id)) { ?><small>
       — <?php echo $queue->getFullName(); ?></small>

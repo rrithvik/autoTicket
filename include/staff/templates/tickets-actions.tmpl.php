@@ -28,7 +28,7 @@
 
     // Mass Delete
     if ($agent->hasPerm(Ticket::PERM_DELETE, false)) { ?>
-        <a style="margin-bottom:auto; transform: scale(1.5);" class="red button action-button tickets-action" id="tickets-delete" data-placement="bottom"
+        <a style="margin-bottom:auto; transform: scale(1.5);" class="btn btn-danger button action-button tickets-action" id="tickets-delete" data-placement="bottom"
            data-toggle="tooltip" title="<?php echo __('Delete'); ?>"
            href="#tickets/mass/delete"><i class="icon-trash"></i></a>
         &nbsp;&nbsp;&nbsp;&nbsp;<?php

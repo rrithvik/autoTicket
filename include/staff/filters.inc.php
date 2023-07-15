@@ -63,7 +63,7 @@ else
                 <i class="icon-cog"></i> <?php echo __('More'); ?></span>
                         <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
 
-                            <!--            <div id="action-dropdown-more" class="action-dropdown anchor-right">-->
+                            <!--            <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">-->
                             <!--                                        <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
 -->
                             <li>

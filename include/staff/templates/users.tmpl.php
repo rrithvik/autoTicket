@@ -71,7 +71,7 @@ else
     <a href="#orgs/<?php echo $org->getId(); ?>/import-users" class="button action-button add-user">
         <i class="icon-cloud-upload icon-large"></i>
     <?php echo __('Import'); ?></a>
-    <button id="actions" class="red button action-button" type="submit" name="remove-users"><i class="icon-trash"></i> <?php echo __('Remove'); ?></button>
+    <button id="actions" class="btn btn-danger button action-button" type="submit" name="remove-users"><i class="icon-trash"></i> <?php echo __('Remove'); ?></button>
 </div>
 <?php } ?>
 <div class="clear"></div>

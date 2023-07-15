@@ -123,7 +123,7 @@ if (isset($errors['err'])) {
                      __('Expired Access Token gets auto-refreshed on use'));
         }
         ?>
-        <a class="red button action-button pull-right" style="margin-bottom:8px;"
+        <a class="btn btn-danger button action-button pull-right" style="margin-bottom:8px;"
             id="token-delete" data-toggle="tooltip"
             href="<?php echo sprintf('#email/%d/auth/config/%s/delete', $email->getId(), $type); ?>"
             title="Delete" data-original-title="Delete">

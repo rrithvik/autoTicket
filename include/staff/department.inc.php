@@ -394,7 +394,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
                     '<a class="no-pjax" href="departments.php?id=%d&a=export"</a>',
                     $dept->getId());
                     ?>
-              <span class="action-button pull-right" data-placement="bottom" data-toggle="tooltip" title="<?php echo __('Export');?>">
+              <span class="btn btn-secondary action-button pull-right" data-placement="bottom" data-toggle="tooltip" title="<?php echo __('Export');?>">
                   <i class="icon-download-alt icon-fixed-width"></i>
               </span>
             </td>

@@ -1298,7 +1298,7 @@ implements TemplateVariable {
                 $size=sprintf('<em>(%s)</em>', Format::file_size($att->file->size));
 
             $str .= sprintf(
-                '<a class="Icon file no-pjax" href="%s" target="%s">%s</a>%s&nbsp;%s',
+                '<a class="nav-link Icon file no-pjax" href="%s" target="%s">%s</a>%s&nbsp;%s',
                 $att->file->getDownloadUrl(), $target,
                 Format::htmlchars($att->file->name), $size, $separator);
         }

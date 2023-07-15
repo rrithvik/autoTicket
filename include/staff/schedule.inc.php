@@ -4,11 +4,11 @@
 </h2>
 </div>
 <div class="pull-right flush-right">
-    <span class="action-button pull-right" data-dropdown="#schedule-dropdown-more">
+    <span class="btn btn-secondary action-button pull-right" data-dropdown="#schedule-dropdown-more">
         <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <span ><i class="icon-cog"></i></span>
     </span>
-    <div id="schedule-dropdown-more" class="action-dropdown anchor-right">
+    <div id="schedule-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
         <ul id="schedule-actions">
             <li><a class="schedule-action"
             href="#schedule/<?php echo $schedule->getId(); ?>/clone">

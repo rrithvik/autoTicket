@@ -29,7 +29,7 @@ if ($user && $cfg->isAvatarsEnabled())
         <span class="muted-button pull-right" data-dropdown="#entry-action-more-<?php echo $entry->getId(); ?>">
             <i class="icon-caret-down"></i>
         </span>
-        <div id="entry-action-more-<?php echo $entry->getId(); ?>" class="action-dropdown anchor-right">
+        <div id="entry-action-more-<?php echo $entry->getId(); ?>" class="dropdown-menu action-dropdown anchor-right">
             <ul class="title">
 <?php       foreach ($actions as $group => $list) {
                 foreach ($list as $id => $action) { ?>

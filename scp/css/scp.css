@@ -390,24 +390,26 @@ a time {
     margin-top: 0; /* remove the gap so it doesn't close */
 }
 
-
+div[class^="action-dropdown-"] li{
+    display: inline-block;
+}
 ul.nav {
-    position: relative;
+    /*position: relative;*/
 }
 
 li.dropdown{
     position: static;
 }
 
-.dropdown-menu > li {
-    display: inline-block;
-    border: 0;
-    border-right: 1px rgba(0, 0, 0, 0.2);
-}
+/*.dropdown-menu > li {*/
+/*    display: inline-block;*/
+/*    border: 0;*/
+/*    border-right: 1px rgba(0, 0, 0, 0.2);*/
+/*}*/
 
 .dropdown-menu li {
     border: 0;
-    border-right: 1px rgba(0, 0, 0, 0.2);
+    border-right: 0 rgba(0, 0, 0, 0.2);
 }
 .dropdown-menu a img {
     border: none;

@@ -74,7 +74,7 @@ if ($actions && isset($options['status'])) {
             echo $more; ?></a>
     </span>
     <div id="action-dropdown-moreoptions"
-        class="action-dropdown anchor-right">
+        class="dropdown-menu action-dropdown anchor-right">
         <ul>
     <?php foreach ($actions as $a => $action) { ?>
             <li <?php
@@ -109,15 +109,15 @@ if ($actions && isset($options['status'])) {
         <a class="tasks-action" id="tasks-assign"
             href="#tasks/mass/assign"><i class="icon-user"></i></a>
     </span>
-    <div id="action-dropdown-assign" class="action-dropdown anchor-right">
+    <div id="action-dropdown-assign" class="dropdown-menu action-dropdown anchor-right">
       <ul>
-         <li><a class="no-pjax tasks-action"
+         <li><a class="nav-link no-pjax tasks-action"
             href="#tasks/mass/claim"><i
             class="icon-chevron-sign-down"></i> <?php echo __('Claim'); ?></a>
-         <li><a class="no-pjax tasks-action"
+         <li><a class="nav-link no-pjax tasks-action"
             href="#tasks/mass/assign/agents"><i
             class="icon-user"></i> <?php echo __('Agent'); ?></a>
-         <li><a class="no-pjax tasks-action"
+         <li><a class="nav-link no-pjax tasks-action"
             href="#tasks/mass/assign/teams"><i
             class="icon-group"></i> <?php echo __('Team'); ?></a>
       </ul>
@@ -138,7 +138,7 @@ if ($actions && isset($options['status'])) {
 
     // Mass Delete
     if ($agent->hasPerm(Task::PERM_DELETE, false)) {?>
-    <span class="red button action-button">
+    <span class="btn btn-danger button action-button">
      <a class="tasks-action" id="tasks-delete" data-placement="bottom"
         data-toggle="tooltip" title="<?php echo __('Delete'); ?>"
         href="#tasks/mass/delete"><i class="icon-trash"></i></a>

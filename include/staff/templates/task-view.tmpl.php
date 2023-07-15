@@ -153,7 +153,7 @@ if ($task->isOverdue())
                     echo __('Actions'); ?></a>
             </span>
             <div id="action-dropdown-task-options"
-                class="action-dropdown anchor-right">
+                class="dropdown-menu action-dropdown anchor-right">
                 <ul>
 
                     <?php
@@ -212,7 +212,7 @@ if ($task->isOverdue())
                         class="icon-flag"></i></a>
                 </span>
                 <div id="action-dropdown-tasks-status"
-                    class="action-dropdown anchor-right">
+                    class="dropdown-menu action-dropdown anchor-right">
                     <ul>
                         <?php
                         if ($task->isClosed()) { ?>
@@ -250,7 +250,7 @@ if ($task->isOverdue())
                         data-redirect="tasks.php"
                         href="#tasks/<?php echo $task->getId(); ?>/assign"><i class="icon-user"></i></a>
                 </span>
-                <div id="action-dropdown-assign" class="action-dropdown anchor-right">
+                <div id="action-dropdown-assign" class="dropdown-menu action-dropdown anchor-right">
                   <ul>
                     <?php
                     // Agent can claim team assigned ticket
@@ -258,17 +258,17 @@ if ($task->isOverdue())
                             && (!$dept->assignMembersOnly()
                                 || $dept->isMember($thisstaff))
                             ) { ?>
-                     <li><a class="no-pjax task-action"
+                     <li><a class="nav-link no-pjax task-action"
                         data-redirect="tasks.php"
                         href="#tasks/<?php echo $task->getId(); ?>/claim"><i
                         class="icon-chevron-sign-down"></i> <?php echo __('Claim'); ?></a>
                     <?php
                     } ?>
-                     <li><a class="no-pjax task-action"
+                     <li><a class="nav-link no-pjax task-action"
                         data-redirect="tasks.php"
                         href="#tasks/<?php echo $task->getId(); ?>/assign/agents"><i
                         class="icon-user"></i> <?php echo __('Agent'); ?></a>
-                     <li><a class="no-pjax task-action"
+                     <li><a class="nav-link no-pjax task-action"
                         data-redirect="tasks.php"
                         href="#tasks/<?php echo $task->getId(); ?>/assign/teams"><i
                         class="icon-group"></i> <?php echo __('Team'); ?></a>

@@ -5,22 +5,23 @@ if(!defined('OSTSCPINC') || !$thisstaff || !is_object($org)) die('Invalid path')
 <table width="940" cellpadding="2" cellspacing="0" border="0">
     <tr>
         <td width="50%" class="has_bottom_border">
-             <h2><a href="orgs.php?id=<?php echo $org->getId(); ?>"
+             <h2><a class="nav-link" href="orgs.php?id=<?php echo $org->getId(); ?>"
              title="Reload"><i class="icon-refresh"></i> <?php echo $org->getName(); ?></a></h2>
         </td>
         <td width="50%" class="right_align has_bottom_border">
+            <div style="display: flex">
 <?php if ($thisstaff->hasPerm(Organization::PERM_DELETE)) { ?>
-            <a id="org-delete" class="red button action-button org-action"
+            <a id="org-delete" style="width: fit-content" class="btn btn-danger button action-button org-action"
             href="#orgs/<?php echo $org->getId(); ?>/delete"><i class="icon-trash"></i>
-            <?php echo __('Delete Organization'); ?></a>
+            <?php echo __('Delete Org'); ?></a>
 <?php } ?>
 <?php if ($thisstaff->hasPerm(Organization::PERM_EDIT)) { ?>
-<div class="dropdown anchor-right">
+<div class="dropdown anchor-right" data-dropdown="#action-dropdown-more">
                     <span class="btn btn-secondary">                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <i class="icon-cog"></i> <?php echo __('More'); ?></span>
             </span>
 <?php } ?>
-            <div id="action-dropdown-more" class="action-dropdown anchor-right">
+            <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
               <ul>
 <?php if ($thisstaff->hasPerm(Organization::PERM_EDIT)) { ?>
                 <li><a href="#ajax.php/orgs/<?php echo $org->getId();
@@ -31,6 +32,8 @@ if(!defined('OSTSCPINC') || !$thisstaff || !is_object($org)) die('Invalid path')
                     <?php echo __('Manage Forms'); ?></a></li>
 <?php } ?>
               </ul>
+            </div>
+</div>
             </div>
         </td>
     </tr>

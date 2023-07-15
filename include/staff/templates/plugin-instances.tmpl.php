@@ -10,11 +10,11 @@ $modal = $plugin->useModalConfig();
     <div class="pull-right">
         <?php
         if ($instances) { ?>
-        <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
+        <span class="btn btn-secondary action-button pull-right" data-dropdown="#action-dropdown-more">
             <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
             <span ><i class="icon-cog"></i>&nbsp;<?php echo __('More');?></span>
         </span>
-        <div id="action-dropdown-more" class="action-dropdown anchor-right">
+        <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
             <ul>
                 <li><a class="instances-action" href="#disable">
                     <i class="icon-ban-circle icon-fixed-width"></i>
@@ -37,7 +37,7 @@ $modal = $plugin->useModalConfig();
              <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
              <span><i class="icon-plus-sign">&nbsp;<?php echo __('Add New Instance'); ?></i></span>
           </span>
-          <div id="action-dropdown-add" class="action-dropdown anchor-right">
+          <div id="action-dropdown-add" class="dropdown-menu action-dropdown anchor-right">
             <ul>
                 <?php
                 foreach ($newInstanceOptions as $opt) { ?>

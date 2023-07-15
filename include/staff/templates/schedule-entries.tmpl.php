@@ -16,11 +16,11 @@ $entries = $schedule->getEntries()
     </a>
     <?php
     if ($count) { ?>
-    <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
+    <span class="btn btn-secondary action-button pull-right" data-dropdown="#action-dropdown-more">
         <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <i class="icon-cog"></i> <?php echo __('Actions');?></span>
     </span>
-    <div id="action-dropdown-more" class="action-dropdown anchor-right">
+    <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
         <ul>
             <li class="danger"><a class="entries-action"
             href="#schedule/<?php echo $schedule->getId(); ?>/delete-entries">

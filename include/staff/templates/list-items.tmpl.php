@@ -36,11 +36,11 @@ if ($list->allowAdd()) { ?>
 <?php
     }
 } ?>
-        <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
+        <span class="btn btn-secondary action-button pull-right" data-dropdown="#action-dropdown-more">
             <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
             <i class="icon-cog"></i> <?php echo __('More');?></span>
         </span>
-        <div id="action-dropdown-more" class="action-dropdown anchor-right">
+        <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
             <ul>
                 <li><a class="items-action" href="#list/<?php echo $list->getId(); ?>/disable">
                     <i class="icon-ban-circle icon-fixed-width"></i>

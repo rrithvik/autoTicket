@@ -54,7 +54,7 @@ $action = $info[':action'] ?: ('#');
             value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
-            <input type="submit" class="red button" value="<?php
+            <input type="submit" class="btn btn-danger button" value="<?php
             echo $info[':confirm'] ?: __('Yes, Do it!'); ?>">
         </span>
      </p>

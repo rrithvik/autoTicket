@@ -759,7 +759,7 @@ abstract class ExternalStaffAuthenticationBackend
                 __('Sign in with'),
                 $this->getServiceName());
         ?>
-        <a class="external-sign-in" title="<?php echo $service; ?>"
+        <a class="nav-link external-sign-in" title="<?php echo $service; ?>"
                 href="login.php?do=ext&amp;bk=<?php echo
                 urlencode($this->getBkId()); ?>">
 <?php if (static::$sign_in_image_url) { ?>
@@ -968,7 +968,7 @@ abstract class ExternalUserAuthenticationBackend
                 $this->getServiceName());
 
         ?>
-        <a class="external-sign-in" title="<?php echo $service; ?>"
+        <a class="nav-link external-sign-in" title="<?php echo $service; ?>"
                 href="login.php?do=ext&amp;bk=<?php echo
                 urlencode($this->getBkId()); ?>">
 <?php if (static::$sign_in_image_url) { ?>

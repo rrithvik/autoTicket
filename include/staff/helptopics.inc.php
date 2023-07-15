@@ -31,7 +31,7 @@ $order_by = 'sort';
                         <i class="icon-cog"></i><?php echo __(' More'); ?></span>
                         <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
 
-                            <!--                <div id="action-dropdown-more" class="action-dropdown anchor-right">-->
+                            <!--                <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">-->
                             <!--                    <ul class="nav" id="actions">-->
                             <li class="dropdown-item">
                                 <a class="nav-link confirm" data-name="enable" href="helptopics.php?a=enable">

@@ -8,19 +8,19 @@ $extras = new ArrayObject();
 <table width="940" cellpadding="2" cellspacing="0" border="0">
     <tr>
         <td width="50%" class="has_bottom_border">
-             <h2><a href="users.php?id=<?php echo $user->getId(); ?>"
+             <h2><a class="nav-link" href="users.php?id=<?php echo $user->getId(); ?>"
              title="Reload"><i class="icon-refresh"></i> <?php echo Format::htmlchars($user->getName()); ?></a></h2>
         </td>
         <td width="50%" class="right_align has_bottom_border">
 <?php if (($account && $account->isConfirmed())
     || $thisstaff->hasPerm(User::PERM_EDIT)) { ?>
-            <span class="action-button pull-right" data-dropdown="#action-dropdown-more">
+            <span class="btn btn-secondary action-button pull-right" data-dropdown="#action-dropdown-more">
                 <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
                 <span><i class="icon-cog"></i> <?php echo __('More'); ?></span>
             </span>
 <?php }
     if ($thisstaff->hasPerm(User::PERM_DELETE)) { ?>
-            <a id="user-delete" class="red button action-button pull-right user-action"
+            <a id="user-delete" class="btn btn-danger button action-button pull-right user-action"
             href="#users/<?php echo $user->getId(); ?>/delete"><i class="icon-trash"></i>
             <?php echo __('Delete User'); ?></a>
 <?php } ?>
@@ -38,7 +38,7 @@ $extras = new ArrayObject();
             <?php
             } ?>
 <?php } ?>
-            <div id="action-dropdown-more" class="action-dropdown anchor-right">
+            <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
               <ul>
                 <?php
                 if ($account) {
