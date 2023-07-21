@@ -64,8 +64,10 @@ if ($agent->hasPerm(Task::PERM_DELETE, false)) {
 if ($actions && isset($options['status'])) {
     $more = $options['morelabel'] ?: __('More');
     ?>
+<div class="dropdown anchor-right">
+
     <span
-        class="action-button"
+        class="btn btn-secondary action-button"
         data-dropdown="#action-dropdown-moreoptions">
         <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
         <a class="tasks-action"
@@ -97,12 +99,15 @@ if ($actions && isset($options['status'])) {
         } ?>
         </ul>
     </div>
+</div>
  <?php
  } else {
     // Mass Claim/Assignment
     if ($agent->hasPerm(Task::PERM_ASSIGN, false)) {?>
+<div class="dropdown anchor-right">
+
     <span
-        class="action-button" data-placement="bottom"
+        class="btn btn-secondary action-button" data-placement="bottom"
         data-dropdown="#action-dropdown-assign" data-toggle="tooltip" title=" <?php
         echo __('Assign'); ?>">
         <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
@@ -122,6 +127,7 @@ if ($actions && isset($options['status'])) {
             class="icon-group"></i> <?php echo __('Team'); ?></a>
       </ul>
     </div>
+</div>
     <?php
     }
 
@@ -138,7 +144,7 @@ if ($actions && isset($options['status'])) {
 
     // Mass Delete
     if ($agent->hasPerm(Task::PERM_DELETE, false)) {?>
-    <span class="btn btn-danger button action-button">
+    <span class="button action-button">
      <a class="tasks-action" id="tasks-delete" data-placement="bottom"
         data-toggle="tooltip" title="<?php echo __('Delete'); ?>"
         href="#tasks/mass/delete"><i class="icon-trash"></i></a>

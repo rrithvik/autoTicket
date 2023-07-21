@@ -110,11 +110,11 @@ class StaffNav
                     break;
                 case 'tasks':
                     $subnav[] = array('desc' => __('Tasks'), 'href' => 'tasks.php', 'iconclass' => 'Ticket');
-                    $subnav[] = array('desc' => __('Completed').' ('.number_format($stats['closed']).')',
-                        'title'=>__('Completed Tasks'),
-                        'href'=>'tasks.php?status=closed',
-                        'iconclass'=>'answeredTickets');
-                    $subnav[] = array('desc' => __('New Task'), 'title' => __('Open a New Task'), 'href' => '#tasks/add', 'iconclass' => 'newTicket new-task', 'id' => 'new-task');
+//                    $subnav[] = array('desc' => __('Completed').' ('.number_format($stats['closed']).')',
+//                        'title'=>__('Completed Tasks'),
+//                        'href'=>'tasks.php?status=closed',
+//                        'iconclass'=>'answeredTickets');
+//                    $subnav[] = array('desc' => __('New Task'), 'title' => __('Open a New Task'), 'href' => '#tasks/add', 'iconclass' => 'newTicket new-task', 'id' => 'new-task');
                     break;
                 case 'dashboard':
                     $subnav[] = array('desc' => __('Dashboard'), 'href' => 'dashboard.php', 'iconclass' => 'logs');
