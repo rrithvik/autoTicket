@@ -390,9 +390,9 @@ a time {
     margin-top: 0; /* remove the gap so it doesn't close */
 }
 
-div[class^="action-dropdown-"] li{
-    display: inline-block;
-}
+/*div[class^="action-dropdown-"] li{*/
+/*    display: inline-block;*/
+/*}*/
 ul.nav {
     /*position: relative;*/
 }

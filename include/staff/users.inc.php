@@ -104,29 +104,29 @@ $users->order_by($order . $order_column);
                     <i class="icon-cog"></i> <?php echo __('More'); ?></span>
                             <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
                                 <?php if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
-                                    <li><a href="#add-to-org" class="users-action">
+                                    <li><a href="#add-to-org" class="nav-link users-action">
                                             <i class="icon-group icon-fixed-width"></i>
                                             <?php echo __('Add to Organization'); ?></a></li>
                                     <?php
                                 }
                                 if ('disabled' != $cfg->getClientRegistrationMode()) { ?>
-                                    <li><a class="users-action" href="#reset">
+                                    <li><a class="nav-link users-action" href="#reset">
                                             <i class="icon-envelope icon-fixed-width"></i>
                                             <?php echo __('Send Password Reset Email'); ?></a></li>
                                     <?php if ($thisstaff->hasPerm(User::PERM_MANAGE)) { ?>
-                                        <li><a class="users-action" href="#register">
+                                        <li><a class="nav-link users-action" href="#register">
                                                 <i class="icon-smile icon-fixed-width"></i>
                                                 <?php echo __('Register'); ?></a></li>
-                                        <li><a class="users-action" href="#lock">
+                                        <li><a class="nav-link users-action" href="#lock">
                                                 <i class="icon-lock icon-fixed-width"></i>
                                                 <?php echo __('Lock'); ?></a></li>
-                                        <li><a class="users-action" href="#unlock">
+                                        <li><a class="nav-link users-action" href="#unlock">
                                                 <i class="icon-unlock icon-fixed-width"></i>
                                                 <?php echo __('Unlock'); ?></a></li>
                                     <?php }
                                 } # end of registration-enabled
                                 if ($thisstaff->hasPerm(User::PERM_DELETE)) { ?>
-                                    <li class="danger"><a class="users-action" href="#delete">
+                                    <li class="danger"><a class="nav-link users-action" href="#delete">
                                             <i class="icon-trash icon-fixed-width"></i>
                                             <?php echo __('Delete'); ?></a></li>
                                 <?php } ?>
