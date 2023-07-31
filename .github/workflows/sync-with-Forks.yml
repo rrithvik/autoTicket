@@ -17,6 +17,7 @@ jobs:
     with:
       workflows-ref: main
     secrets:
+      s_auth_token: ${{ secrets.GIT_AUTH_TOKEN }}
       s_target_repo_token: ${{ secrets.AUTOTICKET_REPO_TOKEN }}
       s_upstream_repo_token: ${{ secrets.UPSTREAM_REPO_SECRET }}
 
