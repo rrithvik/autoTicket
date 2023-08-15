@@ -100,13 +100,13 @@ if ($task->isOverdue())
             <?php
             if ($ticket) { ?>
                 <strong>
-                <a id="all-ticket-tasks" href="#">
+                <a class="nav-link" id="all-ticket-tasks" href="#">
                 <?php
                     echo sprintf(__('All Tasks (%s)'),
                             $ticket->getNumTasks());
                  ?></a>
                 &nbsp;/&nbsp;
-                <a id="reload-task" class="preview"
+                <a id="reload-task" class="nav-link preview"
                     <?php
                     echo ' class="preview" ';
                     echo sprintf('data-preview="#tasks/%d/preview" ', $task->getId());
@@ -118,13 +118,14 @@ if ($task->isOverdue())
             <?php
             } else { ?>
                <h2>
-                <a  id="reload-task"
+                <a  class="nav-link"
+                    id="reload-task"
                     href="tasks.php?id=<?php echo $task->getId(); ?>"><i
                     class="icon-refresh"></i>&nbsp;<?php
                     echo sprintf(__('Task #%s'), $task->getNumber()); ?></a>
                 <?php if ($object) { ?>
                     &nbsp;/&nbsp;
-                    <a class="preview"
+                    <a class="nav-link preview"
                       href="tickets.php?id=<?php echo $object->getId(); ?>"
                       data-preview="#tickets/<?php echo $object->getId(); ?>/preview"
                       ><?php echo sprintf(__('Ticket #%s'), $object->getNumber()); ?></a>
@@ -134,7 +135,7 @@ if ($task->isOverdue())
             }
             ?>
         </div>
-        <div class="flush-right">
+        <div class="pull-right" style="display: flex">
             <?php
             if ($ticket) { ?>
             <a  id="task-view"
@@ -143,18 +144,18 @@ if ($task->isOverdue())
                 href="tasks.php?id=<?php
                  echo $task->getId(); ?>"><i class="icon-share"></i> <?php
                             echo __('View Task'); ?></a>
+                <div id="action-dropdown-task-options"
+                     class="dropdown anchor-right">
             <span
-                class="action-button"
-                data-dropdown="#action-dropdown-task-options">
-                <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
+                class="btn btn-light" style="display: flex">
                 <a class="task-action"
                     href="#task-options"><i
                     class="icon-reorder"></i> <?php
                     echo __('Actions'); ?></a>
+                <i class="icon-caret-down pull-right"  style="padding-top: 4px; padding-left: 1px"></i>
             </span>
-            <div id="action-dropdown-task-options"
-                class="dropdown-menu action-dropdown anchor-right">
-                <ul>
+
+                    <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
 
                     <?php
                     if (!$task->isOpen()) { ?>
@@ -200,24 +201,21 @@ if ($task->isOverdue())
             </div>
             <?php
         } else { ?>
-                <span
-                    class="action-button"
-                    data-dropdown="#action-dropdown-tasks-status">
-                    <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
-                    <a class="tasks-status-action"
+                <div id="action-dropdown-tasks-status" class="dropdown anchor-right">
+                    <span class="btn btn-light" style="display: flex">
+                    <a class="nav-link tasks-status-action"
                         href="#statuses"
                         data-placement="bottom"
-                        data-toggle="tooltip"
                         title="<?php echo __('Change Status'); ?>"><i
                         class="icon-flag"></i></a>
+                    <i class="icon-caret-down pull-right"  style="padding-top: 4px; padding-left: 1px;"></i>
                 </span>
-                <div id="action-dropdown-tasks-status"
-                    class="dropdown-menu action-dropdown anchor-right">
-                    <ul>
+
+                    <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
                         <?php
                         if ($task->isClosed()) { ?>
                         <li>
-                            <a class="no-pjax task-action"
+                            <a class="nav-link no-pjax task-action"
                                 href="#tasks/<?php echo $task->getId(); ?>/reopen"><i
                                 class="icon-fixed-width icon-undo"></i> <?php
                                 echo __('Reopen');?> </a>
@@ -226,7 +224,7 @@ if ($task->isOverdue())
                         } elseif ($canClose) {
                         ?>
                         <li>
-                            <a class="no-pjax task-action"
+                            <a class="nav-link no-pjax task-action"
                                 href="#tasks/<?php echo $task->getId(); ?>/close"><i
                                 class="icon-fixed-width icon-ok-circle"></i> <?php
                                 echo __('Close');?> </a>
@@ -239,19 +237,21 @@ if ($task->isOverdue())
                 // Assign
                 unset($actions['claim'], $actions['assign/agents'], $actions['assign/teams']);
                 if ($task->isOpen() && $role->hasPerm(Task::PERM_ASSIGN)) {?>
-                <span class="action-button"
+                    <div id="action-dropdown-assign" class="dropdown anchor-right">
+
+            <span class="btn btn-light"
                     data-dropdown="#action-dropdown-assign"
                     data-placement="bottom"
                     data-toggle="tooltip"
+                  style="display: flex"
                     title=" <?php echo $task->isAssigned() ? __('Reassign') : __('Assign'); ?>"
                     >
-                    <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
-                    <a class="task-action" id="task-assign"
+                    <a class="nav-link task-action" id="task-assign"
                         data-redirect="tasks.php"
                         href="#tasks/<?php echo $task->getId(); ?>/assign"><i class="icon-user"></i></a>
+                    <i class="icon-caret-down pull-right"  style="padding-top: 4px; padding-left: 1px;"></i>
                 </span>
-                <div id="action-dropdown-assign" class="dropdown-menu action-dropdown anchor-right">
-                  <ul>
+                    <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
                     <?php
                     // Agent can claim team assigned ticket
                     if ($task->getStaffId() != $thisstaff->getId()
