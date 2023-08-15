@@ -116,10 +116,10 @@ if (osTicket::is_ie())
                     <?php echo __('Guest User'); ?> | <?php
                 }
                 if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
-                    <a href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a><?php
+                    <a class="btn btn-outline-danger" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a><?php
                 }
                 elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
-                    <a href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
+                    <a class="btn btn-outline-primary" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
 <?php
                 }
             } ?>
@@ -152,13 +152,15 @@ if (($all_langs = Internationalization::getConfiguredSystemLanguages())
         <div class="clear"></div>
         <?php
         if($nav){ ?>
-        <nav class="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav me-auto">
             <?php
             if($nav && ($navs=$nav->getNavLinks()) && is_array($navs)){
                 foreach($navs as $name =>$nav) {
-                    echo sprintf('<li><a class="%s %s" href="%s">%s</a></li>%s',$nav['active']?'active':'',$name,(ROOT_PATH.$nav['href']),$nav['desc'],"\n");
+                    echo sprintf('<li class="nav-item %s"><a class="nav-link %s" href="%s">%s</a></li>%s',$nav['active']?'active':'',$name,(ROOT_PATH.$nav['href']),$nav['desc'],"\n");
                 }
             } ?>
+            </ul>
         </nav>
         <?php
         }else{ ?>
