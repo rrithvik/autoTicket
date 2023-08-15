@@ -29,7 +29,7 @@ if ($content) {
         <input id="passwd" placeholder="<?php echo __('Password'); ?>" type="password" name="lpasswd" size="30" value="<?php echo $passwd; ?>" class="nowarn"></td>
     </div>
     <p>
-        <input class="btn btn-outline-primary" type="submit" value="<?php echo __('Sign In'); ?>">
+        <input class="btn" type="submit" value="<?php echo __('Sign In'); ?>">
 <?php if ($suggest_pwreset) { ?>
         <a style="padding-top:4px;display:inline-block;" href="pwreset.php"><?php echo __('Forgot My Password'); ?></a>
 <?php } ?>
@@ -56,7 +56,7 @@ if ($cfg && $cfg->isClientRegistrationEnabled()) {
 <?php } ?>
     <div>
     <b><?php echo __("I'm an agent"); ?></b> —
-    <a href="<?php echo ROOT_PATH; ?>scp/"><?php echo __('Sign in Here'); ?></a>
+    <a href="<?php echo ROOT_PATH; ?>scp/"><?php echo __('sign in here'); ?></a>
     </div>
     </div>
 </div>

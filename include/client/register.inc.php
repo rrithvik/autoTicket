@@ -92,8 +92,8 @@ $info = Format::htmlchars(($errors && $_POST)?$_POST:$info);
 </table>
 <hr>
 <p style="text-align: center;">
-    <input class="btn btn-primary" type="submit" value="<?php echo __('Register'); ?>"/>
-    <input class="btn btn-danger" type="button" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+    <input type="submit" value="<?php echo __('Register'); ?>"/>
+    <input type="button" value="<?php echo __('Cancel'); ?>" onclick="javascript:
         window.location.href='index.php';"/>
 </p>
 </form>
