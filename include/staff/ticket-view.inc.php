@@ -73,13 +73,14 @@ if ($ticket->isOverdue())
                 if ($thisstaff->hasPerm(Email::PERM_BANLIST)
                     || $role->hasPerm(Ticket::PERM_EDIT)
                     || ($dept && $dept->isManager($thisstaff))) { ?>
-                        <div class="anchor-right">
-                    <span class="dropdown btn btn-secondary action-button pull-right" data-placement="bottom" data-dropdown="#action-dropdown-more"
+                    <div class="anchor-right">
+                    <span class="dropdown btn btn-secondary action-button pull-right" data-placement="bottom"
+                          data-dropdown="#action-dropdown-more"
                           data-toggle="tooltip" title="<?php echo __('More'); ?>">
                 <i class="icon-caret-down pull-right" style="padding-top: 4px"></i>
                 <span><i class="icon-cog"></i></span>
             </span>
-                        </div>
+                    </div>
                     <?php
                 }
 
@@ -765,10 +766,10 @@ foreach (DynamicFormEntry::forTicket($ticket->getId()) as $form) {
 <?php
 $tcount = $ticket->getThreadEntries($types) ? $ticket->getThreadEntries($types)->count() : 0;
 ?>
-<ul class="tabs clean threads" id="ticket_tabs">
-    <li class="active"><a id="ticket-thread-tab" href="#ticket_thread"><?php
+<ul class="nav tabs clean threads" id="ticket_tabs">
+    <li class="nav-item active" style="padding-left: 20px"><a id="ticket-thread-tab" href="#ticket_thread"><?php
             echo sprintf(__('Ticket Thread (%d)'), $tcount); ?></a></li>
-    <li><a id="ticket-tasks-tab" href="#tasks"
+    <li class="nav-item" style="padding-left: 20px"><a id="ticket-tasks-tab" href="#tasks"
            data-url="<?php
            echo sprintf('#tickets/%d/tasks', $ticket->getId()); ?>"><?php
             echo __('Tasks');
@@ -777,7 +778,7 @@ $tcount = $ticket->getThreadEntries($types) ? $ticket->getThreadEntries($types)-
             ?></a></li>
     <?php
     if ((count($children) != 0 || $ticket->isChild())) { ?>
-        <li><a href="#relations" id="ticket-relations-tab"
+        <li class="nav-item" style="padding-left: 20px"><a href="#relations" id="ticket-relations-tab"
                data-url="<?php
                echo sprintf('#tickets/%d/relations', $ticket->getId()); ?>"
             ><?php echo __('Related Tickets');
@@ -819,16 +820,16 @@ $tcount = $ticket->getThreadEntries($types) ? $ticket->getThreadEntries($types)-
 
         <div class="sticky bar stop actions" id="response_options"
         >
-            <ul class="tabs" id="response-tabs">
+            <ul class="nav tabs" id="response-tabs">
                 <?php
                 if ($role->hasPerm(Ticket::PERM_REPLY) && !($blockReply)) { ?>
-                    <li class="active <?php
+                    <li  style="padding-left: 20px" class="nav-item active <?php
                     echo isset($errors['reply']) ? 'error' : ''; ?>"><a
                                 href="#reply" id="post-reply-tab"><?php echo __('Post Reply'); ?></a></li>
                     <?php
                 }
                 if (!($blockReply)) { ?>
-                    <li><a href="#note" <?php
+                    <li class="nav-item" style="padding-left: 20px"><a href="#note" <?php
                         echo isset($errors['postnote']) ? 'class="error"' : ''; ?>
                            id="post-note-tab"><?php echo __('Post Internal Note'); ?></a></li>
                     <?php
@@ -964,7 +965,8 @@ $tcount = $ticket->getThreadEntries($types) ? $ticket->getThreadEntries($types)-
                                     </div>
                                     <?php
                                     if ($role->hasPerm(Ticket::PERM_REPLY) && $thread && $ticket->getId() == $thread->getObjectId()) { ?>
-                                        <div id="action-dropdown-collaborators" class="dropdown-menu action-dropdown anchor-right">
+                                        <div id="action-dropdown-collaborators"
+                                             class="dropdown-menu action-dropdown anchor-right">
                                             <ul>
                                                 <li><a class="manage-collaborators"
                                                        href="#thread/<?php echo

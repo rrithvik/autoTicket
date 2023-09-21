@@ -36,16 +36,16 @@ if ($info['error']) {
     } ?>
 
 <div class="clear"></div>
-<ul class="tabs" id="user_tabs" style="margin-top:5px">
-    <li class="active"><a href="#info-tab"
+<ul class="nav tabs" id="user_tabs" style="margin-top:5px">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#info-tab"
         ><i class="icon-info-sign"></i>&nbsp;<?php echo __('User'); ?></a></li>
 <?php if ($org) { ?>
-    <li><a href="#org-tab"
+    <li class="nav-item" style="padding-left: 20px"><a href="#org-tab"
         ><i class="icon-fixed-width icon-building"></i>&nbsp;<?php echo __('Organization'); ?></a></li>
 <?php }
     $ext_id = "U".$user->getId();
     $notes = QuickNote::forUser($user, $org)->all(); ?>
-    <li><a href="#notes-tab"
+    <li class="nav-item" style="padding-left: 20px"><a href="#notes-tab"
         ><i class="icon-fixed-width icon-pushpin"></i>&nbsp;<?php echo __('Notes'); ?></a></li>
 </ul>
 

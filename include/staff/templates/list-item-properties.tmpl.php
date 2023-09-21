@@ -9,12 +9,12 @@
 <hr/>
 
 <?php if ($hasProperties) { ?>
-<ul class="tabs" id="item_tabs">
-    <li class="active">
+<ul class="nav tabs" id="item_tabs">
+    <li class="nav-item active" style="padding-left: 20px">
         <a href="#value"><i class="icon-reorder"></i>
         <?php echo __('Value'); ?></a>
     </li>
-    <li><a href="#item-properties"><i class="icon-asterisk"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#item-properties"><i class="icon-asterisk"></i>
         <?php echo __('Item Properties'); ?></a>
     </li>
 </ul>

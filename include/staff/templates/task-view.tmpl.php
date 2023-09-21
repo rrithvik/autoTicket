@@ -555,11 +555,11 @@ else
     $action = 'tasks.php?id='.$task->getId();
 ?>
 <div id="task_response_options" class="<?php echo $ticket ? 'ticket_task_actions' : ''; ?> sticky bar stop actions">
-    <ul class="tabs">
+    <ul class="nav tabs">
         <?php
         if ($role->hasPerm(TaskModel::PERM_REPLY)) { ?>
-        <li class="active"><a href="#task_reply"><?php echo __('Post Update');?></a></li>
-        <li><a href="#task_note"><?php echo __('Post Internal Note');?></a></li>
+        <li class="active nav-item" style="padding-left: 20px"><a href="#task_reply"><?php echo __('Post Update');?></a></li>
+        <li class="nav-item" style="padding-left: 20px"><a href="#task_note"><?php echo __('Post Internal Note');?></a></li>
         <?php
         }?>
     </ul>

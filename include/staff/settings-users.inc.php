@@ -6,10 +6,10 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
 <form action="settings.php?t=users" method="post" class="save">
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="users" >
-<ul class="tabs" id="users-tabs">
-    <li class="active"><a href="#settings">
+<ul class="nav tabs" id="users-tabs">
+    <li style="padding-left: 20px" class="nav-itemactive"><a href="#settings">
         <i class="icon-asterisk"></i> <?php echo __('Settings'); ?></a></li>
-    <li><a href="#templates">
+    <li class="nav-item" style="padding-left: 20px"><a href="#templates">
         <i class="icon-file-text"></i> <?php echo __('Templates'); ?></a></li>
 </ul>
 <div id="users-tabs_container">

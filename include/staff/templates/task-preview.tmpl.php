@@ -20,14 +20,14 @@ elseif($msg)
 elseif($warn)
     echo sprintf('<div id="msg_warning">%s</div>',$warn);
 
-echo '<ul class="tabs" id="task-preview">';
+echo '<ul class="nav tabs" id="task-preview">';
 
 echo '
-        <li class="active"><a href="#summary"
+        <li class="nav-item active" style="padding-left: 20px"><a href="#summary"
             ><i class="icon-list-alt"></i>&nbsp;'.__('Task Summary').'</a></li>';
 if ($task->getThread()->getNumCollaborators()) {
     echo sprintf('
-        <li><a id="collab_tab" href="#collab"
+        <li class="nav-item" style="padding-left: 20px"><a id="collab_tab" href="#collab"
             ><i class="icon-fixed-width icon-group
             faded"></i>&nbsp;'.__('Collaborators (%d)').'</a></li>',
             $task->getThread()->getNumCollaborators());

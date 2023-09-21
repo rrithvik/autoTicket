@@ -17,10 +17,10 @@ if ($info['error']) {
     echo sprintf('<p id="msg_notice">%s</p>', $info['msg']);
 } ?>
 <form method="post" class="user" action="#users/<?php echo $user->getId(); ?>/manage" >
-<ul class="tabs" id="user-account-tabs">
-    <li <?php echo !$access? 'class="active"' : ''; ?>><a href="#user-account"
+<ul class="nav tabs" id="user-account-tabs">
+    <li style="padding-left: 20px" <?php echo !$access? 'class="nav-item active"' : ''; ?>><a href="#user-account"
         ><i class="icon-user"></i>&nbsp;<?php echo __('User Information'); ?></a></li>
-    <li <?php echo $access? 'class="active"' : ''; ?>><a href="#user-access"
+    <li style="padding-left: 20px" <?php echo $access? 'class="nav-item active"' : ''; ?>><a href="#user-access"
         ><i class="icon-fixed-width icon-lock faded"></i>&nbsp;<?php echo __('Manage Access'); ?></a></li>
 </ul>
 

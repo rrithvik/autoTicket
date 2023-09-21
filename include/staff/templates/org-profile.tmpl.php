@@ -13,10 +13,10 @@ if ($info['error']) {
 } elseif ($info['msg']) {
     echo sprintf('<p id="msg_notice">%s</p>', $info['msg']);
 } ?>
-<ul class="tabs" id="orgprofile">
-    <li class="active"><a href="#profile"
+<ul class="nav tabs" id="orgprofile">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#profile"
         ><i class="icon-edit"></i>&nbsp;<?php echo __('Fields'); ?></a></li>
-    <li><a href="#contact-settings"
+    <li class="nav-item" style="padding-left: 20px"><a href="#contact-settings"
         ><i class="icon-fixed-width icon-cogs faded"></i>&nbsp;<?php
         echo __('Settings'); ?></a></li>
 </ul>

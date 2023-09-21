@@ -30,19 +30,19 @@ elseif($msg)
 elseif($warn)
     echo sprintf('<div id="msg_warning">%s</div>',$warn);
 
-echo '<ul class="tabs" id="ticket-preview">';
+echo '<ul class="nav tabs" id="ticket-preview">';
 
 echo '
-        <li class="active"><a id="preview_tab" href="#preview"
+        <li class="nav-item active" style="padding-left: 20px"><a id="preview_tab" href="#preview"
             ><i class="icon-list-alt"></i>&nbsp;'.__('Ticket Summary').'</a></li>';
 if ($thread && $thread->getNumCollaborators()) {
 echo sprintf('
-        <li><a id="collab_tab" href="#collab"
+        <li class="nav-item" style="padding-left: 20px"><a id="collab_tab" href="#collab"
             ><i class="icon-fixed-width icon-group
             faded"></i>&nbsp;'.__('Collaborators (%d)').'</a></li>',
             $thread->getNumCollaborators());
 }
-echo '<li><a id="thread_tab" href="#threadPreview"
+echo '<li class="nav-item" style="padding-left: 20px"><a id="thread_tab" href="#threadPreview"
             ><i class="icon-fixed-width icon-list
             faded"></i>&nbsp;'.__('Thread Preview').'</a></li>';
 
