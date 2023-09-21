@@ -10,10 +10,10 @@ if ($info['error']) {
 } elseif ($info['msg']) {
     echo sprintf('<p id="msg_notice">%s</p>', $info['msg']);
 } ?>
-<ul class="tabs" id="user-import-tabs">
-    <li class="active"><a href="#copy-paste"
+<ul class="nav tabs" id="user-import-tabs">
+    <li  style="padding-left: 20px" class="nav-item active"><a href="#copy-paste"
         ><i class="icon-edit"></i>&nbsp;<?php echo __('Copy Paste'); ?></a></li>
-    <li><a href="#upload"
+    <li class="nav-item" style="padding-left: 20px"><a href="#upload"
         ><i class="icon-fixed-width icon-cloud-upload"></i>&nbsp;<?php echo __('Upload'); ?></a></li>
 </ul>
 <form action="<?php echo $info['action']; ?>" method="post" enctype="multipart/form-data"

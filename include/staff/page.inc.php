@@ -114,19 +114,19 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     </tbody>
 </table>
 <div style="margin-top: 10px">
-  <ul class="tabs clean">
-    <li class="active"><a href="#page-content"><?php echo __('Page Content'); ?></a></li>
-    <li><a href="#notes"><?php echo __('Internal Notes'); ?></a></li>
+  <ul class="nav tabs clean">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#page-content"><?php echo __('Page Content'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#notes"><?php echo __('Internal Notes'); ?></a></li>
   </ul>
   <div class="tab_content active" id="page-content">
 
 <?php
 $langs = Internationalization::getConfiguredSystemLanguages();
 if ($page && count($langs) > 1) { ?>
-    <ul class="tabs alt clean" id="translations">
-       <li class="empty"><i class="icon-globe" title="This content is translatable"></i></li>
+    <ul class="nav tabs alt clean" id="translations">
+       <li class="nav-item empty" style="padding-left: 20px"><i class="icon-globe" title="This content is translatable"></i></li>
 <?php foreach ($langs as $tag=>$nfo) { ?>
-       <li class="<?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
+       <li  style="padding-left: 20px" class="nav-item <?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
          ?>"><a href="#translation-<?php echo $tag; ?>" title="<?php
          echo Internationalization::getLanguageDescription($tag);
          ?>"><span class="flag flag-<?php echo strtolower($nfo['flag']); ?>"></span>

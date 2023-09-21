@@ -12,8 +12,8 @@
 
 <?php
 if (count($langs) > 1) { ?>
-    <ul class="tabs alt clean" id="content-trans">
-    <li class="empty"><i class="icon-globe" title="<?php echo __('This content is translatable'); ?>"></i></li>
+    <ul class="nav tabs alt clean" id="content-trans">
+    <li class="nav-item" style="padding-left: 20px"><i class="icon-globe" title="<?php echo __('This content is translatable'); ?>"></i></li>
 <?php foreach ($langs as $tag=>$nfo) { ?>
     <li class="<?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
         ?>"><a href="#translation-<?php echo $tag; ?>" title="<?php

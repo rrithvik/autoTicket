@@ -3,9 +3,9 @@
     <hr/>
     <form method="post" action="#form/field-config/<?php
             echo $field->get('id'); ?>">
-<ul class="tabs" id="fieldtabs">
-    <li class="active"><a href="#config"><i class="icon-cogs"></i> <?php echo __('Field Setup'); ?></a></li>
-    <li><a href="#visibility"><i class="icon-beaker"></i> <?php echo __('Settings'); ?></a></li>
+<ul class="nav tabs" id="fieldtabs">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#config"><i class="icon-cogs"></i> <?php echo __('Field Setup'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#visibility"><i class="icon-beaker"></i> <?php echo __('Settings'); ?></a></li>
 </ul>
 
 <div class="hidden tab_content" id="visibility">

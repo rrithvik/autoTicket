@@ -8,10 +8,10 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="tasks" >
 
-<ul class="tabs" id="tasks-tabs">
-    <li class="active"><a href="#settings">
+<ul class="nav tabs" id="tasks-tabs">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#settings">
         <i class="icon-asterisk"></i> <?php echo __('Settings'); ?></a></li>
-    <li><a href="#alerts">
+    <li class="nav-item" style="padding-left: 20px"><a href="#alerts">
         <i class="icon-bell-alt"></i> <?php echo __('Alerts &amp; Notices'); ?></a></li>
 </ul>
 <div id="tasks-tabs_container">

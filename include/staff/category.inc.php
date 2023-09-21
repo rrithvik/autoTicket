@@ -62,9 +62,9 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
 
 <div style="margin-top:20px"></div>
 
-<ul class="tabs clean" style="margin-top:9px;">
-    <li class="active"><a href="#info"><?php echo __('Category Information'); ?></a></li>
-    <li><a href="#notes"><?php echo __('Internal Notes'); ?></a></li>
+<ul class="nav tabs clean" style="margin-top:9px;">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#info"><?php echo __('Category Information'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#notes"><?php echo __('Internal Notes'); ?></a></li>
 </ul>
 
 <div class="tab_content" id="info">

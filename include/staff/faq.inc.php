@@ -116,9 +116,9 @@ if ($topics = $thisstaff->getTopicNames()) {
 
 <div style="margin-top:20px"></div>
 
-<ul class="tabs clean" style="margin-top:9px;">
-    <li class="active"><a href="#article"><?php echo __('Article Content'); ?></a></li>
-    <li><a href="#attachments"><?php echo __('Attachments') . sprintf(' (%d)',
+<ul class="nav tabs clean" style="margin-top:9px;">
+    <li class="nav-item active"><a href="#article" style="padding-left: 20px"><?php echo __('Article Content'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#attachments"><?php echo __('Attachments') . sprintf(' (%d)',
         $faq ? count($faq->attachments->getSeparates('')) : 0); ?></a></li>
     <li><a href="#notes"><?php echo __('Internal Notes'); ?></a></li>
 </ul>
@@ -131,12 +131,12 @@ if ($topics = $thisstaff->getTopicNames()) {
 <?php
 $langs = Internationalization::getConfiguredSystemLanguages();
 if ($faq && count($langs) > 1) { ?>
-    <ul class="tabs alt clean" id="trans" style="margin-top:10px;">
-        <li class="empty"><i class="icon-globe" title="This content is translatable"></i></li>
+    <ul class="nav tabs alt clean" id="trans" style="margin-top:10px;">
+        <li class="nav-item empty" style="padding-left: 20px"><i class="icon-globe" title="This content is translatable"></i></li>
 <?php foreach ($langs as $tag=>$i) {
     list($lang, $locale) = explode('_', $tag);
  ?>
-    <li class="<?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
+    <li  style="padding-left: 20px" class="nav-item<?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
         ?>"><a href="#lang-<?php echo $tag; ?>" title="<?php
         echo Internationalization::getLanguageDescription($tag);
     ?>"><span class="flag flag-<?php echo strtolower($i['flag'] ?: $locale ?: $lang); ?>"></span>
@@ -218,10 +218,10 @@ echo $attrs; ?>><?php echo $draft ?: $answer;
     <div class="error"><?php echo $errors['files']; ?></div>
     <div style="margin-top:15px"></div>
 
-    <ul class="tabs alt clean">
-        <li class="empty"><i class="icon-globe" title="This content is translatable"></i></li>
+    <ul class="nav tabs alt clean">
+        <li class="nav-item empty" style="padding-left: 20px"><i class="icon-globe" title="This content is translatable"></i></li>
 <?php foreach ($langs as $lang=>$i) { ?>
-        <li class="<?php if ($i['code'] == $cfg->getPrimaryLanguage()) echo 'active';
+        <li  style="padding-left: 20px" class="nav-item <?php if ($i['code'] == $cfg->getPrimaryLanguage()) echo 'active';
 ?>"><a href="#attachments-<?php echo $i['code']; ?>">
     <span class="flag flag-<?php echo $i['flag']; ?>"></span>
     </a></li>

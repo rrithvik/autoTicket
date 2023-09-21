@@ -20,9 +20,9 @@ if ($email && $_REQUEST['a'] != 'add'){
 $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
 ?>
 <h2  style="margin:0 0 10px 2px;"><?php
-    echo sprintf('<a href="emails.php">%s</a>',   __('Emails'));
+    echo sprintf('<a class="nav-link" href="emails.php">%s</a>',   __('Emails'));
     if ($email) {
-        echo sprintf('<small> &mdash; <a href="emails.php?id=%d">%s</a></small>',
+        echo sprintf('<small> <a href="emails.php?id=%d">%s</a></small>',
         $email->getId(),
         Format::htmlchars($email->getAddress()));
     } else
@@ -35,15 +35,15 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
  <input type="hidden" name="do" value="<?php echo $action; ?>">
  <input type="hidden" name="a" value="<?php echo Format::htmlchars($_REQUEST['a']); ?>">
  <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
- <ul class="tabs">
-    <li class="active"><a id="account_tab" href="#account"
+ <ul class="nav tabs">
+    <li class="nav-item active" style="padding-left: 20px"><a id="account_tab" href="#account"
         ><i class="icon-envelope"></i>&nbsp <?php echo __('Account'); ?></a></li>
    <?php
    if ($email) { ?>
-    <li><a id="mailbox_tab" href="#mailbox"
+    <li class="nav-item" style="padding-left: 20px"><a id="mailbox_tab" href="#mailbox"
         ><i class="icon-inbox"></i>&nbsp;<?php echo __('Remote Mailbox');
         ?></a></li>
-    <li><a id="smtp_tab" href="#smtp"
+    <li class="nav-item" style="padding-left: 20px"><a id="smtp_tab" href="#smtp"
         ><i class="icon-reply-all"></i>&nbsp;<?php echo sprintf('%s (%s)',
                 __('Outgoing'), __('SMTP'));
         ?></a></li>
