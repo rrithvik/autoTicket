@@ -11,7 +11,7 @@ $pages = Page::getPages();
 
 <input type="hidden" name="t" value="pages" >
 
-<ul class="clean tabs">
+<ul class="nav clean tabs">
     <li class="active"><a href="#basic-information"><i class="icon-asterisk"></i>
         <?php echo __('Basic Information'); ?></a></li>
     <li><a href="#site-pages"><i class="icon-file"></i>

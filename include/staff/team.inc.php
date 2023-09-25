@@ -35,10 +35,10 @@ $info = $team->getInfo();
     <i class="help-tip icon-question-sign" href="#teams"></i>
 </h2>
 <br>
-<ul class="clean tabs">
-    <li class="active"><a href="#team">
+<ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#team">
         <i class="icon-file"></i> <?php echo __('Team'); ?></a></li>
-    <li><a href="#members">
+    <li class="nav-item" style="padding-left: 20px"><a href="#members">
         <i class="icon-group"></i> <?php echo __('Members'); ?></a></li>
 </ul>
 

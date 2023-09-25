@@ -28,9 +28,9 @@ $info = Format::htmlchars(($errors && $_POST) ? array_merge($info, $_POST) : $in
     — <?php echo $info['name']; ?></small>
         <?php } ?>
     </h2>
-    <ul class="clean tabs">
-        <li class="active"><a href="#definition"><i class="icon-file"></i> <?php echo __('Definition'); ?></a></li>
-        <li><a href="#permissions"><i class="icon-lock"></i> <?php echo __('Permissions'); ?></a></li>
+    <ul class="nav clean tabs">
+        <li class="nav-item active"><a href="#definition"><i class="icon-file"></i> <?php echo __('Definition'); ?></a></li>
+        <li class="nav-item" style="padding-left: 20px"><a href="#permissions"><i class="icon-lock"></i> <?php echo __('Permissions'); ?></a></li>
     </ul>
     <div id="definition" class="tab_content">
         <table class="table form_table" width="940" border="0" cellspacing="0" cellpadding="2">
@@ -82,11 +82,11 @@ $info = Format::htmlchars(($errors && $_POST) ? array_merge($info, $_POST) : $in
                     $buckets[$g][$k] = $v;
             }
         } ?>
-        <ul class="alt tabs">
+        <ul class="nav alt tabs">
             <?php
                 $first = true;
                 foreach ($buckets as $g => $perms) { ?>
-                    <li <?php if ($first) { echo 'class="active"'; $first=false; } ?>>
+                    <li style="padding-left: 20px" <?php if ($first) { echo 'class="nav-item active"'; $first=false; } ?>>
                         <a href="#<?php echo Format::slugify($g); ?>"><?php echo Format::htmlchars(__($g));?></a>
                     </li>
             <?php } ?>

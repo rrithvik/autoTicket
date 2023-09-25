@@ -23,7 +23,7 @@ elseif($warn)
 echo '<ul class="nav tabs" id="task-preview">';
 
 echo '
-        <li class="nav-item active" style="padding-left: 20px"><a href="#summary"
+        <li class="nav-item active"><a href="#summary"
             ><i class="icon-list-alt"></i>&nbsp;'.__('Task Summary').'</a></li>';
 if ($task->getThread()->getNumCollaborators()) {
     echo sprintf('

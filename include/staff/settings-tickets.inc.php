@@ -8,14 +8,14 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="tickets" >
 
-<ul class="clean tabs">
-    <li class="active"><a href="#settings"><i class="icon-asterisk"></i>
+<ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#settings"><i class="icon-asterisk"></i>
         <?php echo __('Settings'); ?></a></li>
-    <li><a href="#autoresp"><i class="icon-mail-reply-all"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#autoresp"><i class="icon-mail-reply-all"></i>
         <?php echo __('Autoresponder'); ?></a></li>
-    <li><a href="#alerts"><i class="icon-bell-alt"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#alerts"><i class="icon-bell-alt"></i>
         <?php echo __('Alerts and Notices'); ?></a></li>
-    <li><a href="#queues"><i class="icon-table"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#queues"><i class="icon-table"></i>
         <?php echo __('Queues'); ?></a></li>
 </ul>
 <div class="tab_content" id="settings">

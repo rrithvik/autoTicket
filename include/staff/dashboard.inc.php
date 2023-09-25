@@ -68,12 +68,12 @@ $plots = $report->getPlotData();
         echo __($range[0] . ' - ' . $range[1] . ' (' . Format::timezone($timezone) . ')');
         ?>
 
-    <ul class="clean tabs">
+    <ul class="nav clean tabs">
         <?php
         $first = true;
         $groups = $report->enumTabularGroups();
         foreach ($groups as $g => $desc) { ?>
-            <li class="<?php echo $first ? 'active' : ''; ?>"><a href="#<?php echo Format::slugify($g); ?>"
+            <li class="nav-item <?php echo $first ? 'active' : ''; ?>" style="padding-left: 20px"><a href="#<?php echo Format::slugify($g); ?>"
                 ><?php echo Format::htmlchars($desc); ?></a></li>
             <?php
             $first = false;

@@ -33,7 +33,7 @@ elseif($warn)
 echo '<ul class="nav tabs" id="ticket-preview">';
 
 echo '
-        <li class="nav-item active" style="padding-left: 20px"><a id="preview_tab" href="#preview"
+        <li class="nav-item active"><a id="preview_tab" href="#preview"
             ><i class="icon-list-alt"></i>&nbsp;'.__('Ticket Summary').'</a></li>';
 if ($thread && $thread->getNumCollaborators()) {
 echo sprintf('

@@ -11,7 +11,7 @@ if ($info['error']) {
     echo sprintf('<p id="msg_notice">%s</p>', $info['msg']);
 } ?>
 <ul class="nav tabs" id="user-import-tabs">
-    <li  style="padding-left: 20px" class="nav-item active"><a href="#copy-paste"
+    <li class="nav-item active"><a href="#copy-paste"
         ><i class="icon-edit"></i>&nbsp;<?php echo __('Copy Paste'); ?></a></li>
     <li class="nav-item" style="padding-left: 20px"><a href="#upload"
         ><i class="icon-fixed-width icon-cloud-upload"></i>&nbsp;<?php echo __('Upload'); ?></a></li>

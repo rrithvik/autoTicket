@@ -28,15 +28,15 @@ if (isset($errors['err'])) {
     echo sprintf('<p id="msg_notice">%s</p>', $sys['msg']);
 } ?>
 <form method="post" action="<?php echo $action; ?>">
-<ul class="clean tabs" id="oauth-tabs">
-    <li class="active"><a href="#info">
+<ul class="nav clean tabs" id="oauth-tabs">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#info">
         <i class="icon-info-sign"></i> <?php echo __('Info'); ?></a></li>
-    <li><a href="#idp">
+    <li class="nav-item" style="padding-left: 20px"><a href="#idp">
         <i class="icon-cog"></i> <?php echo sprintf('%s %s',
                 'IdP', __('Config')); ?></a></li>
     <?php
     if ($token) { ?>
-    <li><a href="#token">
+    <li class="nav-item" style="padding-left: 20px"><a href="#token">
         <i class="icon-key"></i> <?php echo __('Token'); ?></a></li>
     <?php
     } ?>

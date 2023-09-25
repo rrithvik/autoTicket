@@ -558,7 +558,7 @@ else
     <ul class="nav tabs">
         <?php
         if ($role->hasPerm(TaskModel::PERM_REPLY)) { ?>
-        <li class="active nav-item" style="padding-left: 20px"><a href="#task_reply"><?php echo __('Post Update');?></a></li>
+        <li class="active nav-item"><a href="#task_reply"><?php echo __('Post Update');?></a></li>
         <li class="nav-item" style="padding-left: 20px"><a href="#task_note"><?php echo __('Post Internal Note');?></a></li>
         <?php
         }?>

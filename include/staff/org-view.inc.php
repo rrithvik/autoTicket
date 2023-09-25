@@ -78,12 +78,12 @@ if(!defined('OSTSCPINC') || !$thisstaff || !is_object($org)) die('Invalid path')
 </table>
 <br>
 <div class="clear"></div>
-<ul class="clean tabs" id="orgtabs">
-    <li class="active"><a href="#users"><i
+<ul class="nav clean tabs" id="orgtabs">
+    <li class="nav-item active"><a href="#users"><i
     class="icon-user"></i>&nbsp;<?php echo __('Users'); ?></a></li>
-    <li><a href="#tickets"><i
+    <li class="nav-item" style="padding-left: 20px"><a href="#tickets"><i
     class="icon-list-alt"></i>&nbsp;<?php echo __('Tickets'); ?></a></li>
-    <li><a href="#notes"><i
+    <li class="nav-item" style="padding-left: 20px"><a href="#notes"><i
     class="icon-pushpin"></i>&nbsp;<?php echo __('Notes'); ?></a></li>
 </ul>
 <div id="orgtabs_container">

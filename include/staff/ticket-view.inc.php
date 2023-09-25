@@ -767,7 +767,7 @@ foreach (DynamicFormEntry::forTicket($ticket->getId()) as $form) {
 $tcount = $ticket->getThreadEntries($types) ? $ticket->getThreadEntries($types)->count() : 0;
 ?>
 <ul class="nav tabs clean threads" id="ticket_tabs">
-    <li class="nav-item active" style="padding-left: 20px"><a id="ticket-thread-tab" href="#ticket_thread"><?php
+    <li class="nav-item active"><a id="ticket-thread-tab" href="#ticket_thread"><?php
             echo sprintf(__('Ticket Thread (%d)'), $tcount); ?></a></li>
     <li class="nav-item" style="padding-left: 20px"><a id="ticket-tasks-tab" href="#tasks"
            data-url="<?php
@@ -823,7 +823,7 @@ $tcount = $ticket->getThreadEntries($types) ? $ticket->getThreadEntries($types)-
             <ul class="nav tabs" id="response-tabs">
                 <?php
                 if ($role->hasPerm(Ticket::PERM_REPLY) && !($blockReply)) { ?>
-                    <li  style="padding-left: 20px" class="nav-item active <?php
+                    <li style="padding-right: 20px" class="nav-item active <?php
                     echo isset($errors['reply']) ? 'error' : ''; ?>"><a
                                 href="#reply" id="post-reply-tab"><?php echo __('Post Reply'); ?></a></li>
                     <?php

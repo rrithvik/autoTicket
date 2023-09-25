@@ -112,10 +112,10 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </tr>
         </tbody>
     </table>
-    <ul class="clean tabs" style="margin-top:20px;" id="filter-tabs">
-        <li class="active"><a href="#filter_rules"><i class="icon-filter"></i> <?php echo __('Filter Rules'); ?></a></li>
-        <li><a href="#filter_actions"><i class="icon-bolt"></i> <?php echo __('Filter Actions'); ?></a></li>
-        <li><a href="#internal_notes"><i class="icon-file-text-alt"></i> <?php echo __('Internal Notes'); ?></a></li>
+    <ul class="nav clean tabs" style="margin-top:20px;" id="filter-tabs">
+        <li class="nav-item active" style="padding-left: 20px"><a href="#filter_rules"><i class="icon-filter"></i> <?php echo __('Filter Rules'); ?></a></li>
+        <li class="nav-item" style="padding-left: 20px"><a href="#filter_actions"><i class="icon-bolt"></i> <?php echo __('Filter Actions'); ?></a></li>
+        <li class="nav-item" style="padding-left: 20px"><a href="#internal_notes"><i class="icon-file-text-alt"></i> <?php echo __('Internal Notes'); ?></a></li>
     </ul>
     <!-- ====================== FILTER RULES ========================== -->
     <div class="tab_content" id="filter_rules">
