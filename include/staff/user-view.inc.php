@@ -144,10 +144,10 @@ if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
 </table>
 <br>
 <div class="clear"></div>
-<ul class="clean tabs" id="user-view-tabs">
-    <li class="active"><a href="#tickets"><i
+<ul class="nav clean tabs" id="user-view-tabs">
+    <li class="nav-item active"><a href="#tickets"><i
     class="icon-list-alt"></i>&nbsp;<?php echo __('Tickets'); ?></a></li>
-    <li><a href="#notes"><i
+    <li class="nav-item" style="padding-left: 20px"><a href="#notes"><i
     class="icon-pushpin"></i>&nbsp;<?php echo __('Notes'); ?></a></li>
     <?php Signal::send('usertab.audit', $user, $extras); ?>
 </ul>

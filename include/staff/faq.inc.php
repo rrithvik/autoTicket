@@ -136,7 +136,7 @@ if ($faq && count($langs) > 1) { ?>
 <?php foreach ($langs as $tag=>$i) {
     list($lang, $locale) = explode('_', $tag);
  ?>
-    <li  style="padding-left: 20px" class="nav-item<?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
+    <li style="padding-left: 20px" class="nav-item <?php if ($tag == $cfg->getPrimaryLanguage()) echo "active";
         ?>"><a href="#lang-<?php echo $tag; ?>" title="<?php
         echo Internationalization::getLanguageDescription($tag);
     ?>"><span class="flag flag-<?php echo strtolower($i['flag'] ?: $locale ?: $lang); ?>"></span>

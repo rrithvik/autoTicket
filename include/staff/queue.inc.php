@@ -38,18 +38,18 @@ else {
       <?php } ?>
   </h2>
 
-  <ul class="clean tabs">
-    <li class="active"><a href="#criteria"><i class="icon-filter"></i>
+  <ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#criteria"><i class="icon-filter"></i>
       <?php echo __('Criteria'); ?></a></li>
-    <li><a href="#columns"><i class="icon-columns"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#columns"><i class="icon-columns"></i>
       <?php echo __('Columns'); ?></a></li>
-    <li><a href="#sorting-tab"><i class="icon-sort-by-attributes"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#sorting-tab"><i class="icon-sort-by-attributes"></i>
       <?php echo __('Sort'); ?></a></li>
-    <li><a href="#conditions-tab"><i class="icon-exclamation-sign"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#conditions-tab"><i class="icon-exclamation-sign"></i>
       <?php echo __('Conditions'); ?></a></li>
-    <li><a href="#export-columns"><i class="icon-download"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#export-columns"><i class="icon-download"></i>
       <?php echo __('Export'); ?></a></li>
-    <li><a href="#preview-tab"><i class="icon-eye-open"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#preview-tab"><i class="icon-eye-open"></i>
       <?php echo __('Preview'); ?></a></li>
   </ul>
 

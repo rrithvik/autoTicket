@@ -37,7 +37,7 @@ if ($info['error']) {
 
 <div class="clear"></div>
 <ul class="nav tabs" id="user_tabs" style="margin-top:5px">
-    <li class="nav-item active" style="padding-left: 20px"><a href="#info-tab"
+    <li class="nav-item active"><a href="#info-tab"
         ><i class="icon-info-sign"></i>&nbsp;<?php echo __('User'); ?></a></li>
 <?php if ($org) { ?>
     <li class="nav-item" style="padding-left: 20px"><a href="#org-tab"

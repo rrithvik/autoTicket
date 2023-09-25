@@ -7,7 +7,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
 <?php csrf_token(); ?>
 <input type="hidden" name="t" value="users" >
 <ul class="nav tabs" id="users-tabs">
-    <li style="padding-left: 20px" class="nav-itemactive"><a href="#settings">
+    <li style="padding-left: 20px" class="nav-item active"><a href="#settings">
         <i class="icon-asterisk"></i> <?php echo __('Settings'); ?></a></li>
     <li class="nav-item" style="padding-left: 20px"><a href="#templates">
         <i class="icon-file-text"></i> <?php echo __('Templates'); ?></a></li>

@@ -62,12 +62,12 @@ foreach ($queues as $id => $name) {
    </div>
 <?php
 } ?>
-<ul class="clean tabs">
-    <li class="active"><a href="#criteria"><i class="icon-search"></i> <?php echo __('Criteria'); ?></a></li>
-    <li><a href="#columns"><i class="icon-columns"></i> <?php echo __('Columns'); ?></a></li>
+<ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#criteria"><i class="icon-search"></i> <?php echo __('Criteria'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#columns"><i class="icon-columns"></i> <?php echo __('Columns'); ?></a></li>
     <?php
     if ($search->isSaved()) { ?>
-    <li><a href="#settings"><i class="icon-cog"></i> <?php echo __('Settings'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#settings"><i class="icon-cog"></i> <?php echo __('Settings'); ?></a></li>
     <?php
     } ?>
 </ul>

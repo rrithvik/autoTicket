@@ -30,10 +30,10 @@
     <?php csrf_token(); ?>
     <input type="hidden" name="do" value="update">
     <input type="hidden" name="id" value="<?php echo $schedule->getId(); ?>">
-<ul class="clean tabs" id="schedule-tabs">
-    <li><a href="#schedule">
+<ul class="nav clean tabs" id="schedule-tabs">
+    <li class="nav-item" style="padding-left: 20px"><a href="#schedule">
         <i class="icon-cog"></i> <?php echo __('Schedule'); ?></a></li>
-    <li class="active"><a href="#entries">
+    <li  class="nav-item active" style="padding-left: 20px"><a href="#entries">
         <i class="icon-calendar"></i> <?php echo sprintf('%s (%d)',
                 __('Entries'),
                 $schedule->getNumEntries()); ?></a></li>

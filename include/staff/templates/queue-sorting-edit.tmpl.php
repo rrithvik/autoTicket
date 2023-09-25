@@ -16,10 +16,10 @@ $advanced = in_array('extra', $sort::getMeta()->getFieldNames());
     echo $sortid; ?>">
 
 <?php if ($advanced) { ?>
-  <ul class="clean tabs">
-    <li class="active"><a href="#fields"><i class="icon-columns"></i>
+  <ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#fields"><i class="icon-columns"></i>
       <?php echo __('Fields'); ?></a></li>
-    <li><a href="#advanced"><i class="icon-cog"></i>
+    <li class="nav-item" style="padding-left: 20px"><a href="#advanced"><i class="icon-cog"></i>
       <?php echo __('Advanced'); ?></a></li>
   </ul>
 

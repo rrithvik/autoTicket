@@ -29,14 +29,14 @@ $info=Format::htmlchars(($errors && $_POST) ? array_merge($info,$_POST) : $info,
         — <?php echo $info['name']; ?></small>
         <?php } ?>
     </h2>
-<ul class="clean tabs" id="list-tabs">
-    <li <?php if (!$list) echo 'class="active"'; ?>><a href="#definition">
+<ul class="nav clean tabs" id="list-tabs">
+    <li <?php if (!$list) echo 'class="nav-item active"'; ?>><a href="#definition">
         <i class="icon-plus"></i> <?php echo __('Definition'); ?></a></li>
 <?php if ($list) { ?>
-    <li class="active"><a href="#items">
+    <li class="nav-item active" style="padding-left: 20px"><a href="#items">
         <i class="icon-list"></i> <?php echo sprintf(__('Items (%d)'), $list->getItems()->count()); ?></a></li>
 <?php } ?>
-    <li><a href="#properties">
+    <li class="nav-item" style="padding-left: 20px"><a href="#properties">
         <i class="icon-asterisk"></i> <?php echo __('Properties'); ?></a></li>
 </ul>
 <div id="list-tabs_container">

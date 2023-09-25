@@ -7,15 +7,15 @@ $pageNav->setURL('plugins.php?id='.$plugin->getId().'&a=instances');
 $modal = $plugin->useModalConfig();
 ?>
 <div style="margin: 5px 0">
-    <div class="pull-right">
+    <div class="content anchor-right pull-right">
         <?php
         if ($instances) { ?>
+        <div class="dropdown">
         <span class="btn btn-secondary action-button pull-right" data-dropdown="#action-dropdown-more">
             <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
-            <span ><i class="icon-cog"></i>&nbsp;<?php echo __('More');?></span>
+            <i class="icon-cog"></i>&nbsp;<?php echo __('More');?>
         </span>
-        <div id="action-dropdown-more" class="dropdown-menu action-dropdown anchor-right">
-            <ul>
+            <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-more">
                 <li><a class="instances-action" href="#disable">
                     <i class="icon-ban-circle icon-fixed-width"></i>
                     <?php echo __('Disable'); ?></a></li>
@@ -32,13 +32,12 @@ $modal = $plugin->useModalConfig();
         $newInstanceOptions = $plugin->getNewInstanceOptions();
         if ($newInstanceOptions) {
         ?>
-          <span class="btn btn-success green button pull-right"
-           data-dropdown="#action-dropdown-add">
+                <div class="dropdown">
+          <span class="btn btn-success green button pull-right">
              <i class="icon-caret-down pull-right"  style="padding-top: 4px"></i>
-             <span><i class="icon-plus-sign">&nbsp;<?php echo __('Add New Instance'); ?></i></span>
+             <i class="icon-plus-sign">&nbsp;<?php echo __('Add New Instance'); ?></i>
           </span>
-          <div id="action-dropdown-add" class="dropdown-menu action-dropdown anchor-right">
-            <ul>
+            <ul class="dropdown-menu" id="actions" data-dropdown="#action-dropdown-addf">
                 <?php
                 foreach ($newInstanceOptions as $opt) { ?>
                 <li><a class="<?php echo $opt['class']; ?>"

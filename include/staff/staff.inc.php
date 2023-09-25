@@ -51,11 +51,11 @@ $extras = new ArrayObject();
       <?php } ?>
 </h2>
 
-  <ul class="clean tabs">
-    <li class="active"><a href="#account"><i class="icon-user"></i> <?php echo __('Account'); ?></a></li>
-    <li><a href="#access"><?php echo __('Access'); ?></a></li>
-    <li><a href="#permissions"><?php echo __('Permissions'); ?></a></li>
-    <li><a href="#teams"><?php echo __('Teams'); ?></a></li>
+  <ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#account"><i class="icon-user"></i> <?php echo __('Account'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#access"><?php echo __('Access'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#permissions"><?php echo __('Permissions'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#teams"><?php echo __('Teams'); ?></a></li>
     <?php Signal::send('agenttab.audit', $staff, $extras); ?>
   </ul>
 
@@ -380,11 +380,11 @@ foreach ($staff->dept_access as $dept_access) {
         }
     }
 ?>
-    <ul class="alt tabs">
+    <ul class="nav alt tabs">
 <?php
     $first = true;
     foreach ($permissions as $g => $perms) { ?>
-      <li <?php if ($first) { echo 'class="active"'; $first=false; } ?>>
+      <li style="padding-left: 20px" <?php if ($first) { echo 'class="nav-item active"'; $first=false; } ?>>
         <a href="#<?php echo Format::slugify($g); ?>"><?php echo Format::htmlchars(__($g));?></a>
       </li>
 <?php } ?>

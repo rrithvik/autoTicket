@@ -7,10 +7,10 @@ if(!defined('OSTSTAFFINC') || !$staff || !$thisstaff) die('Access Denied');
  <input type="hidden" name="do" value="update">
  <input type="hidden" name="id" value="<?php echo $staff->getId(); ?>">
 <h2><?php echo __('My Account Profile');?></h2>
-  <ul class="clean tabs">
-    <li class="active"><a href="#account"><i class="icon-user"></i> <?php echo __('Account'); ?></a></li>
-    <li><a href="#preferences"><?php echo __('Preferences'); ?></a></li>
-    <li><a href="#signature"><?php echo __('Signature'); ?></a></li>
+  <ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#account"><i class="icon-user"></i> <?php echo __('Account'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#preferences"><?php echo __('Preferences'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#signature"><?php echo __('Signature'); ?></a></li>
   </ul>
 
   <div class="tab_content" id="account">

@@ -4851,13 +4851,13 @@ class TabbedBoxChoicesWidget extends BoxChoicesWidget {
         if ($tabs) {
             ?>
             <div>
-            <ul class="alt tabs">
+            <ul class="nav alt tabs">
 <?php       $i = 0;
             foreach ($tabs as $label => $group) {
                 $active = $i++ == 0; ?>
-                <li <?php if ($active) echo 'class="active"';
+                <li <?php if ($active) echo 'class="nav-item active"';
                   ?>><a href="#<?php echo sprintf('%s-%s', $this->name, Format::slugify($label));
-                  ?>"><?php echo Format::htmlchars($label); ?></a></li>
+                  ?>" style="padding-left: 20px"><?php echo Format::htmlchars($label); ?></a></li>
 <?php       } ?>
             </ul>
 <?php       $i = 0;

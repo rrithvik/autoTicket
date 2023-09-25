@@ -29,10 +29,10 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
 <?php } ?>
  <i class="help-tip icon-question-sign" href="#help_topic_information"></i></h2>
 
-<ul class="clean tabs" id="topic-tabs">
-    <li class="active"><a href="#info"><i class="icon-info-sign"></i> <?php echo __('Help Topic Information'); ?></a></li>
-    <li><a href="#routing"><i class="icon-ticket"></i> <?php echo __('New ticket options'); ?></a></li>
-    <li><a href="#forms"><i class="icon-paste"></i> <?php echo __('Forms'); ?></a></li>
+<ul class="nav clean tabs" id="topic-tabs">
+    <li class="nav active"><a href="#info"><i class="icon-info-sign"></i> <?php echo __('Help Topic Information'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#routing"><i class="icon-ticket"></i> <?php echo __('New ticket options'); ?></a></li>
+    <li class="nav-item" style="padding-left: 20px"><a href="#forms"><i class="icon-paste"></i> <?php echo __('Forms'); ?></a></li>
 </ul>
 
 <form action="helptopics.php?<?php echo Http::build_query($qs); ?>" method="post" class="save">

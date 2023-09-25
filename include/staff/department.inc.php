@@ -36,10 +36,10 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
     — <?php echo $info['name']; ?></small>
     <?php } ?>
 </h2>
-<ul class="clean tabs">
-    <li class="active"><a href="#settings">
+<ul class="nav clean tabs">
+    <li class="nav-item active"><a href="#settings">
         <i class="icon-file"></i> <?php echo __('Settings'); ?></a></li>
-    <li><a href="#access">
+    <li class="nav-item" style="padding-left: 20px"><a href="#access">
       <i class="icon-user"></i> <?php echo __('Access'); ?></a></li>
 </ul>
 <div id="settings" class="tab_content">

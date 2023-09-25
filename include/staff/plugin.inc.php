@@ -10,10 +10,10 @@ $info= Format::htmlchars(($errors && $_POST) ? $_POST : array(), true);
         $plugin->getStatus()
         );?>
 </h2>
-<ul class="clean tabs" id="plugin-tabs">
-    <li class="active"><a href="#info">
+<ul class="nav clean tabs" id="plugin-tabs">
+    <li class="nav-item active"><a href="#info">
         <i class="icon-plus"></i> <?php echo __('Plugin'); ?></a></li>
-    <li><a href="#instances">
+    <li class="nav-item" style="padding-left: 20px"><a href="#instances">
         <i class="icon-list"></i> <?php echo sprintf(__('Instances (%d)'),
                 $plugin->getNumInstances()); ?></a></li>
 </ul>
